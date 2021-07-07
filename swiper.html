@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+<style>
+    .swiper-container {
+  width: 1110px;
+  height: 600px;
+}
+
+.carousel-item{
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+
+}
+</style>
+
+    <!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div class="carousel-item">
+            <div class="carousel-item__image">
+                <img src="image/slide-img-1.webp" alt="">
+            </div>
+            <div class="carousel-item__content">
+                <div class="item-content__title">
+                    КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ
+                </div>
+                <div class="item-content__subtitle">
+                    Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка
+                </div>
+            </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="carousel-item">
+            <div class="carousel-item__image">
+                <img src="image/slide-img-1.webp" alt="">
+            </div>
+            <div class="carousel-item__content">
+                <div class="item-content__title">
+                    КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ
+                </div>
+                <div class="item-content__subtitle">
+                    Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка
+                </div>
+            </div>
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="carousel-item">
+            <div class="carousel-item__image">
+                <img src="image/slide-img-1.webp" alt="">
+            </div>
+            <div class="carousel-item__content">
+                <div class="item-content__title">
+                    КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ
+                </div>
+                <div class="item-content__subtitle">
+                    Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка
+                </div>
+            </div>
+      </div>
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+  </div>
+ 
+ 
+ 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>   
+    
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+});
+    </script>
+</body>
+</html>
