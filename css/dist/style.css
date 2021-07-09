@@ -260,35 +260,13 @@
 .geography .geography-map__wrapper {
   text-align: center;
 }
-.geography .geography-map__wrapper .pass {
-  position: absolute;
-  background: url("../image/geo-pass.png") center center no-repeat;
-  height: 52px;
-  width: 52px;
-  z-index: 9999;
-}
-.geography .geography-map__wrapper .active {
-  position: absolute;
-  background: url("../image/geo-active.png") center center no-repeat;
-  height: 52px;
-  width: 52px;
-  z-index: 9999;
-}
-.geography .geography-map__wrapper .krasnoyarsk {
-  margin-left: 580px;
-  margin-top: 430px;
-}
 .geography .geography-map__wrapper #map path {
-  transition: all 0.5s;
+  position: relative;
 }
-.geography .geography-map__wrapper #map .usage:hover {
-  fill: url(#pattern3);
-  mask: #1697FF;
-  fill-opacity: 0.7;
-  stroke: yellowgreen;
-  mix-blend-mode: screen;
-  stroke-width: 2px;
-  stroke-opacity: 0.25;
+.geography .geography-map__wrapper #map #saha:hover {
+  background: url("../image/geo-pass.png") center center no-repeat;
+  position: absolute;
+  content: "";
 }
 
 .contacts {

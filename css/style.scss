@@ -280,36 +280,14 @@
     }
     .geography-map__wrapper {
         text-align: center;
-        .pass {
-            position: absolute;
-            background: url("../image/geo-pass.png") center center no-repeat;
-            height: 52px;
-            width: 52px;
-            z-index: 9999;
-        }
-        .active {
-            position: absolute;
-            background: url("../image/geo-active.png") center center no-repeat;
-            height: 52px;
-            width: 52px;
-            z-index: 9999;
-        }
-        .krasnoyarsk {
-            margin-left: 580px;
-            margin-top: 430px;
-        }
         #map {
             path {
-                transition: all .5s;
+                position: relative;
             }
-            .usage:hover {
-                fill: url(#pattern3);
-                mask: #1697FF;
-                fill-opacity: 0.7;
-                stroke: yellowgreen;
-                mix-blend-mode: screen;
-                stroke-width: 2px;
-                stroke-opacity: .25;
+            #saha:hover {
+                background: url('../image/geo-pass.png') center center no-repeat;
+                position: absolute;
+                content: '';
             }
         }
     }
