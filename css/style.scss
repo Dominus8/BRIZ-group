@@ -325,16 +325,37 @@
     }
     .geography-map__wrapper {
         text-align: center;
-        #map {
-            path {
-                position: relative;
-            }
-            #saha:hover {
-                background: url('../image/geo-pass.png') center center no-repeat;
+        position: relative;
+        #map{
+            
+        }
+        .geo{
+            position: absolute;
+            height: 55px;
+            width: 55px;
+            background: url("/image/geo-pass.png") center center no-repeat;
+            animation-duration: 2s;
+            animation-delay: .5s;
+            animation-iteration-count:inherit;
+            &--active{
                 position: absolute;
-                content: '';
+                height: 55px;
+                width: 55px;
+                background: url("/image/geo-active.png") center center no-repeat;
             }
         }
+        #geo14{
+            margin-top: 405px;
+            margin-left: 565px;
+        }
+
+        #geo13{
+
+        }
+        svg{
+
+        }
+
     }
 }
 

@@ -299,16 +299,27 @@
 }
 .geography .geography-map__wrapper {
   text-align: center;
-}
-.geography .geography-map__wrapper #map path {
   position: relative;
 }
-.geography .geography-map__wrapper #map #saha:hover {
-  background: url("../image/geo-pass.png") center center no-repeat;
+.geography .geography-map__wrapper .geo {
   position: absolute;
-  content: "";
+  height: 55px;
+  width: 55px;
+  background: url("/image/geo-pass.png") center center no-repeat;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: inherit;
 }
-
+.geography .geography-map__wrapper .geo--active {
+  position: absolute;
+  height: 55px;
+  width: 55px;
+  background: url("/image/geo-active.png") center center no-repeat;
+}
+.geography .geography-map__wrapper #geo14 {
+  margin-top: 405px;
+  margin-left: 565px;
+}
 .contacts {
   background: url(../image/contact-bg.png) bottom center no-repeat;
   background-size: 100% 70%;
