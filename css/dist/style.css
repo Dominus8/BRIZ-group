@@ -339,6 +339,10 @@
   height: 160px;
   padding-left: 25px;
 }
+.contacts-items-wrapper .item__img img {
+  width: 111px;
+  height: 26px;
+}
 .contacts-items-wrapper .item__description {
   margin-top: 15px;
   font-family: "Solomon-Sans-Normal";
