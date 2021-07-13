@@ -108,7 +108,35 @@
     align-items: center;
     justify-content: space-between;
     &-item {
+        &--8{
+            margin-top: 18px;
+            &__title {
+                justify-content: center;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 96px;
+                line-height: 115px;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.2px;
+            }
+            .number-line {
+                height: 2px;
+                background: rgb(0, 40, 85);
+                background: linear-gradient(90deg, rgba(0, 40, 85, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(22, 151, 255, 1) 100%);
+            }
+            .numders-item__subtitle {
+                
+                margin-top: 20px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                text-transform: uppercase;
+            }
+        }
         &__title {
+            justify-content: center;
             font-style: normal;
             font-weight: 600;
             font-size: 96px;
@@ -123,6 +151,7 @@
             background: linear-gradient(90deg, rgba(0, 40, 85, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(22, 151, 255, 1) 100%);
         }
         .numders-item__subtitle {
+            
             margin-top: 20px;
             font-style: normal;
             font-weight: 600;
@@ -331,11 +360,11 @@
         flex-wrap: wrap;
         justify-content: space-between;
         .item {
-            margin-top: 60px;
+            margin-top: 40px;
             padding-top: 8px;
             border-left: 5px solid #002855;
             width: 419px;
-            height: 224px;
+            height: 160px;
             padding-left: 25px;
             &__img {}
             &__description {
