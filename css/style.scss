@@ -163,24 +163,39 @@
             height: 301px;
             width: 190px;
             margin-top: 40px;
-            &__image {}
+            &__image {
+                img{
+                    width: 190px;
+                    height: 190px;
+                }
+            }
+
+            a{
+                text-decoration: none;
+            }
             //------------Заголовок в карточке направления---------------
             &__title {
                 width: 160px;
                 height: 38px;
                 margin: 14px 15px 0 15px;
+                text-transform: uppercase;
                 font-family: 'Solomon-Sans-Bold';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 19px;
                 color: #002855;
+                span{
+                    margin-left: -7px;
+                    margin-top: 50px;
+                    
+                }
             }
             //------------------ссылка в карточке -----------------------
             &__link {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: start;
                 color: #0072CE;
                 margin-top: 25px;
                 display: flex;
@@ -188,6 +203,7 @@
                     width: 12px;
                     height: 12px;
                     margin-left: 15px;
+                    margin-right: 15px;
                     color: #0072CE;
                     background: url("../image/directions-ico.png") center center;
                 }
