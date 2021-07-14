@@ -24,3 +24,25 @@ $(document).ready(function () {
     $('#area14-3').attr("visibility", "hidden");
   });
 });
+$(document).ready(function () {
+  $("#hd1").click(function () {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#head1").offset().top - 121
+    }, 600);
+  });
+  $("#b1").click(function () {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#el1").offset().top - 121
+    }, 600);
+  });
+  $("#b2").click(function () {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#el2").offset().top - 121
+    }, 600);
+  });
+  $("#b3").click(function () {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#el3").offset().top - 121
+    }, 600);
+  });
+});

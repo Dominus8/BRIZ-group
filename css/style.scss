@@ -8,14 +8,17 @@
     .section-inner {
         // padding: 0 165px;
         width: 1440px;
-        min-width: 0;
     }
 }
 
 .header {
-    font-family: 'Solomon-Sans-Normal';
+    position: fixed;
+    top: 0;
+    z-index: 50;
     padding: 0 165px;
+    width: 1110px;
     color: cornsilk;
+    font-family: 'Solomon-Sans-Normal';
     background-color: #002855;
     display: flex;
     align-items: center;
@@ -28,6 +31,7 @@
             justify-content: space-between;
             margin-left: -120px;
             li {
+                cursor: pointer;
                 list-style-type: none;
             }
         }
@@ -41,11 +45,11 @@
 
 //-------------------slider--------------------------------
 .slider {
+    margin-top: 121px;
     color: cornsilk;
     padding: 0 165px;
     height: 597px;
-    min-width: 0;
-    background: url('../image/slider-bg-1.png'), #002B5A no-repeat;
+    background: url('../image/slider-bg-1.webp'), #002B5A no-repeat;
     background-size: 100% 100%;
     .swiper-container {
         .swiper-wrapper {
@@ -108,7 +112,7 @@
     align-items: center;
     justify-content: space-between;
     &-item {
-        &--8{
+        &--8 {
             margin-top: 18px;
             &__title {
                 justify-content: center;
@@ -126,7 +130,6 @@
                 background: linear-gradient(90deg, rgba(0, 40, 85, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(22, 151, 255, 1) 100%);
             }
             .numders-item__subtitle {
-                
                 margin-top: 20px;
                 font-style: normal;
                 font-weight: 600;
@@ -151,7 +154,6 @@
             background: linear-gradient(90deg, rgba(0, 40, 85, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(22, 151, 255, 1) 100%);
         }
         .numders-item__subtitle {
-            
             margin-top: 20px;
             font-style: normal;
             font-weight: 600;
@@ -164,7 +166,7 @@
 
 //-------------------directions-----------------------------
 .directions {
-    background: url('../image/slider-bg.png'), #002B5A no-repeat;
+    background: url('../image/slider-bg.webp'), #002B5A no-repeat;
     background-size: 100% 100%;
     height: 1093px;
     padding: 0 165px;
@@ -193,13 +195,12 @@
             width: 190px;
             margin-top: 40px;
             &__image {
-                img{
+                img {
                     width: 190px;
                     height: 190px;
                 }
             }
-
-            a{
+            a {
                 text-decoration: none;
             }
             //------------Заголовок в карточке направления---------------
@@ -214,10 +215,9 @@
                 font-size: 16px;
                 line-height: 19px;
                 color: #002855;
-                span{
+                span {
                     margin-left: -7px;
                     margin-top: 50px;
-                    
                 }
             }
             //------------------ссылка в карточке -----------------------
@@ -326,36 +326,28 @@
     .geography-map__wrapper {
         text-align: center;
         position: relative;
-        #map{
-            
-        }
-        .geo{
+        #map {}
+        .geo {
             position: absolute;
             height: 55px;
             width: 55px;
             background: url("/image/geo-pass.png") center center no-repeat;
             animation-duration: 2s;
             animation-delay: .5s;
-            animation-iteration-count:inherit;
-            &--active{
+            animation-iteration-count: inherit;
+            &--active {
                 position: absolute;
                 height: 55px;
                 width: 55px;
                 background: url("/image/geo-active.png") center center no-repeat;
             }
         }
-        #geo14{
+        #geo14 {
             margin-top: 405px;
             margin-left: 565px;
         }
-
-        #geo13{
-
-        }
-        svg{
-
-        }
-
+        #geo13 {}
+        svg {}
     }
 }
 
@@ -388,14 +380,14 @@
             height: 160px;
             padding-left: 25px;
             &__img {
-                img{
+                img {
                     width: 111px;
                     height: 26px;
                 }
             }
             &__description {
                 margin-top: 15px;
-                font-family: 'Solomon-Sans-Normal';
+                font-family: 'Solomon-Sans' Normal;
                 font-style: normal;
                 font-weight: normal;
                 font-size: 12px;
@@ -403,7 +395,7 @@
             }
             &__number {
                 margin-top: 15px;
-                font-family: 'Solomon-Sans-Normal';
+                font-family: 'Solomon-Sans' Normal;
                 font-style: normal;
                 font-weight: 500;
                 font-size: 14px;
@@ -411,7 +403,7 @@
             }
             &__link {
                 margin-top: 15px;
-                font-family: 'Solomon-Sans-Normal';
+                font-family: 'Solomon-Sans' Normal;
                 font-style: normal;
                 font-weight: normal;
                 font-size: 12px;
@@ -435,6 +427,8 @@
         &__title {
             margin-top: 36px;
             width: 180px;
+            margin-bottom: 5px;
+            font-family: 'Solomon-Sans' Normal;
             font-style: normal;
             font-weight: bold;
             font-size: 10.6539px;
@@ -442,7 +436,7 @@
         }
         &__subtitle {
             width: 180px;
-            margin-top: 9px;
+            font-family: 'Solomon-Sans' Normal;
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
@@ -459,6 +453,11 @@
         &__copywrite {
             margin-top: 150px;
             text-align: right;
+            font-family: 'Solomon-Sans' Normal;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
         }
     }
 }
