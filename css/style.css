@@ -37,6 +37,10 @@
           justify-content: space-between;
 }
 
+.header .header-logo {
+  cursor: pointer;
+}
+
 .header .header-nav ul {
   width: 305px;
   display: -webkit-box;
