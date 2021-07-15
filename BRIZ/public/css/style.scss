@@ -1,0 +1,465 @@
+@import url(/css/dist/font.css);
+//---------------------header-------------------------------
+.section-outor {
+    font-family: 'Solomon-Sans-Normal';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .section-inner {
+        // padding: 0 165px;
+        width: 1440px;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    padding: 0 165px;
+    width: 1110px;
+    color: cornsilk;
+    font-family: 'Solomon-Sans-Normal';
+    background-color: #002855;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .header-logo {
+        cursor: pointer;
+    }
+    .header-nav {
+        ul {
+            width: 305px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: -120px;
+            li {
+                cursor: pointer;
+                list-style-type: none;
+            }
+        }
+    }
+    .header-contacts {
+        width: 287px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+//-------------------slider--------------------------------
+.slider {
+    margin-top: 121px;
+    color: cornsilk;
+    padding: 0 165px;
+    height: 597px;
+    background: url('../../image/slider-bg-1.webp'), #002B5A no-repeat;
+    background-size: 100% 100%;
+    .swiper-container {
+        .swiper-wrapper {
+            margin-top: 85px;
+            .swiper-slide {
+                .carousel-item {
+                    display: flex;
+                    .carousel-item__image {}
+                    .carousel-item__content {
+                        margin-top: 80px;
+                        margin-left: 41px;
+                        .item-content__title {
+                            font-family: 'Solomon-Sans-SemiBold';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 40px;
+                            line-height: 120%;
+                        }
+                        .item-content__subtitle {
+                            width: 363px;
+                            margin-top: 20px;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 19px;
+                        }
+                    }
+                }
+            }
+        }
+        .swiper-control-btn {
+            display: flex;
+            padding-left: 51.70%;
+            margin-top: -55px;
+            .btn-prev {
+                width: 48px;
+                height: 48px;
+                background: url("../../image/slider-rew-arrow.png") center center no-repeat;
+                cursor: pointer;
+                z-index: 9000;
+            }
+            .btn-next {
+                margin-left: 16px;
+                width: 48px;
+                height: 48px;
+                background: url("../../image/slider-next-arrow.png") center center no-repeat;
+                cursor: pointer;
+                z-index: 9000;
+            }
+        }
+    }
+}
+
+//------------------numbers--------------------------------
+.numbers {
+    background: url('../../image/numbers-bg.png'), #002B5A no-repeat;
+    height: 294px;
+    padding: 0 256px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-item {
+        &--8 {
+            margin-top: 18px;
+            &__title {
+                justify-content: center;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 96px;
+                line-height: 115px;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.2px;
+            }
+            .number-line {
+                height: 2px;
+                background: rgb(0, 40, 85);
+                background: linear-gradient(90deg, rgba(0, 40, 85, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(22, 151, 255, 1) 100%);
+            }
+            .numders-item__subtitle {
+                margin-top: 20px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                text-transform: uppercase;
+            }
+        }
+        &__title {
+            justify-content: center;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 96px;
+            line-height: 115px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.2px;
+        }
+        .number-line {
+            height: 2px;
+            background: rgb(0, 40, 85);
+            background: linear-gradient(90deg, rgba(0, 40, 85, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(22, 151, 255, 1) 100%);
+        }
+        .numders-item__subtitle {
+            margin-top: 20px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+//-------------------directions-----------------------------
+.directions {
+    background: url('../../image/slider-bg.webp'), #002B5A no-repeat;
+    background-size: 100% 100%;
+    height: 1093px;
+    padding: 0 165px;
+    &-title {
+        color: #fff;
+        padding-top: 120px;
+        margin-bottom: 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 120%;
+        text-transform: uppercase;
+        /* identical to box height, or 48px */
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.2px;
+    }
+    &-item__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        //-----------Карточка направления-------------------------------
+        .directions-item {
+            background-color: #fff;
+            height: 301px;
+            width: 190px;
+            margin-top: 40px;
+            &__image {
+                img {
+                    width: 190px;
+                    height: 190px;
+                }
+            }
+            a {
+                text-decoration: none;
+            }
+            //------------Заголовок в карточке направления---------------
+            &__title {
+                width: 160px;
+                height: 38px;
+                margin: 14px 15px 0 15px;
+                text-transform: uppercase;
+                font-family: 'Solomon-Sans-Bold';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+                color: #002855;
+                span {
+                    margin-left: -7px;
+                    margin-top: 50px;
+                }
+            }
+            //------------------ссылка в карточке -----------------------
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                color: #0072CE;
+                margin-top: 25px;
+                display: flex;
+                .ico {
+                    width: 12px;
+                    height: 12px;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    color: #0072CE;
+                    background: url("../../image/directions-ico.png") center center;
+                }
+                .link {
+                    margin-right: 25px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 19px;
+                    color: #0072CE;
+                }
+            }
+            &:hover {
+                background-color: #0072CE;
+                transition: .3s;
+                .directions-item__title {
+                    color: #ffffff;
+                }
+                .directions-item__link {
+                    .ico {
+                        background: url("../../image/directions-ico-active.png") center center;
+                    }
+                    .link {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+            &:active {
+                background-color: #002855;
+                color: white;
+            }
+        }
+    }
+    .button-all-links {
+        margin-top: 60px;
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'Solomon-Sans-Normal';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #002855;
+        button {
+            outline: none;
+            border: none;
+            width: 230px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .button-ico {
+                width: 48px;
+                height: 48px;
+                background: url("../../image/directions-button-arrow.png") center center no-repeat;
+            }
+            &:hover {
+                outline: none;
+                border: none;
+                transition: .3s;
+                background-color: #1697FF;
+                .button-text {
+                    color: white;
+                }
+                .button-ico {
+                    background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
+                }
+            }
+            &:active {
+                outline: none;
+                border: none;
+                background-color: #002855;
+            }
+        }
+    }
+}
+
+//-------------------geography------------------------------
+.geography {
+    margin: 0 165px;
+    &-title {
+        margin-top: 120px;
+        font-family: 'Solomon-Sans-Normal';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #002855;
+    }
+    .geography-map__wrapper {
+        text-align: center;
+        position: relative;
+        #map {}
+        .geo {
+            position: absolute;
+            height: 55px;
+            width: 55px;
+            background: url("/image/geo-pass.png") center center no-repeat;
+            animation-duration: 2s;
+            animation-delay: .5s;
+            animation-iteration-count: inherit;
+            &--active {
+                position: absolute;
+                height: 55px;
+                width: 55px;
+                background: url("/image/geo-active.png") center center no-repeat;
+            }
+        }
+        #geo14 {
+            margin-top: 405px;
+            margin-left: 565px;
+        }
+        #geo13 {}
+        svg {}
+    }
+}
+
+//----------------------contacts----------------------------
+.contacts {
+    background: url(../image/contact-bg.png) bottom center no-repeat;
+    background-size: 100% 70%;
+    padding: 0 165px;
+    padding-bottom: 120px;
+    &-title {
+        margin-top: 120px;
+        font-family: 'Solomon-Sans-Normal';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #002855;
+    }
+    &-items-wrapper {
+        padding-right: 85px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .item {
+            margin-top: 40px;
+            padding-top: 8px;
+            border-left: 5px solid #002855;
+            width: 419px;
+            height: 160px;
+            padding-left: 25px;
+            &__img {
+                img {
+                    width: 111px;
+                    height: 26px;
+                }
+            }
+            &__description {
+                margin-top: 15px;
+                font-family: 'Solomon-Sans' Normal;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+            }
+            &__number {
+                margin-top: 15px;
+                font-family: 'Solomon-Sans' Normal;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+            }
+            &__link {
+                margin-top: 15px;
+                font-family: 'Solomon-Sans' Normal;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+//------------------------footer----------------------------
+.footer {
+    padding: 0 165px;
+    height: 251px;
+    background-color: #002855;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-top: 90px;
+    &-contacts {
+        &__logo {}
+        &__title {
+            margin-top: 36px;
+            width: 180px;
+            margin-bottom: 5px;
+            font-family: 'Solomon-Sans' Normal;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 10.6539px;
+            line-height: 13px;
+        }
+        &__subtitle {
+            width: 180px;
+            font-family: 'Solomon-Sans' Normal;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    .footer-logos {
+        &__wrapper {
+            width: 533px;
+            display: flex;
+            justify-content: space-between;
+            .logo {}
+        }
+        &__copywrite {
+            margin-top: 150px;
+            text-align: right;
+            font-family: 'Solomon-Sans' Normal;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}
