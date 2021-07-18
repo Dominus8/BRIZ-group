@@ -21,3 +21,7 @@ Route::get('/download', function () {
     return view('download');
 });
 
+Route::get('/admin', function () {
+    return view('admin');
+});
+

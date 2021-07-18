@@ -17,12 +17,5 @@
     </div>
 </div>
 
-<script>
-$(document).ready(function() {
-    $('#home').hover(function(){
-       window.location.href='/index.php';
-    })
-});
-</script>
 
 @endsection
