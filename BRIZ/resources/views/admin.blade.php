@@ -10,13 +10,27 @@
 
 @section('main_content')
 
-<div class="container">
-    <form action="" method="post">
-        <input type="data" class="form-control"> <br>
-        <input type="text" class="form-control"><br>
-        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-        <button type="sucsess">кек</button>
-    </form>
+<div class="container admin-body">
+    <div class="create-slide">
+        <div class="create-slide__title">
+            <h2>Создать слайд</h2> 
+        </div>
+        <div class="create-slide__body">
+        <form action="/admin/create-slide" method="post" enctype="multipart/form-data" >
+             {{ csrf_field() }}
+            <div class="form-group"> 
+                <lable for="si" class="form-label"> <h6>Изображение слайда 535х387</h6>  </lable>
+                <input id="si" type="file" class="form-control" name='slide_image'> <br>
+                <lable for="st" class="form-label"> <h6>Заголовок слайта</h6>  </lable>
+                <input id="st" type="text" class="form-control" name='slide_title' > <br>
+                <lable for="sb" class="form-label"> <h6>Тескт слайда</h6> </lable>
+                <textarea id="sb" name="slide_body" cols="20" rows="5" class="form-control"></textarea> <br>
+                <button class="btn btn-primary" type="sucsess"> Создать слайд</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
 </div>
 
 

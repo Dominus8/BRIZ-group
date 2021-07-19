@@ -1,10 +1,10 @@
 @import url(/css/dist/font.css);
-
-*{
-    a{
+* {
+    a {
         text-decoration: none;
     }
 }
+
 //---------------------header-------------------------------
 .section-outor {
     font-family: 'Solomon-Sans-Normal';
@@ -18,11 +18,12 @@
 }
 
 .header {
+    height: 121px;
+    width: 1440px;
     position: fixed;
     top: 0;
     z-index: 50;
     padding: 0 165px;
-    width: 1110px;
     color: cornsilk;
     font-family: 'Solomon-Sans-Normal';
     background-color: #002855;
@@ -468,4 +469,12 @@
             line-height: 16px;
         }
     }
+}
+
+//====================admin=====================
+.admin-body {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
 }

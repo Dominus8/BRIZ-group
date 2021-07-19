@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MainController::class, 'home']);
 
-Route::get('/download', function () {
-    return view('download');
-});
+Route::get('/download', [MainController::class, 'download']);
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/admin', [MainController::class, 'admin']);
+
+Route::get('/admin', [MainController::class, 'admin']);
+
+Route::post('/admin/create-slide', [MainController::class, 'create_slide']);
+
+
 

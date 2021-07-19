@@ -1,4 +1,8 @@
 @import url(/css/dist/font.css);
+* a {
+  text-decoration: none;
+}
+
 .section-outor {
   font-family: 'Solomon-Sans-Normal';
   display: -webkit-box;
@@ -18,11 +22,12 @@
 }
 
 .header {
+  height: 121px;
+  width: 1440px;
   position: fixed;
   top: 0;
   z-index: 50;
   padding: 0 165px;
-  width: 1110px;
   color: cornsilk;
   font-family: 'Solomon-Sans-Normal';
   background-color: #002855;
@@ -72,7 +77,7 @@
   color: cornsilk;
   padding: 0 165px;
   height: 597px;
-  background: url("../image/slider-bg-1.webp"), #002B5A no-repeat;
+  background: url("../../image/slider-bg-1.webp"), #002B5A no-repeat;
   background-size: 100% 100%;
 }
 
@@ -119,7 +124,7 @@
 .slider .swiper-container .swiper-control-btn .btn-prev {
   width: 48px;
   height: 48px;
-  background: url("../image/slider-rew-arrow.png") center center no-repeat;
+  background: url("../../image/slider-rew-arrow.png") center center no-repeat;
   cursor: pointer;
   z-index: 9000;
 }
@@ -128,13 +133,13 @@
   margin-left: 16px;
   width: 48px;
   height: 48px;
-  background: url("../image/slider-next-arrow.png") center center no-repeat;
+  background: url("../../image/slider-next-arrow.png") center center no-repeat;
   cursor: pointer;
   z-index: 9000;
 }
 
 .numbers {
-  background: url("../image/numbers-bg.png"), #002B5A no-repeat;
+  background: url("../../image/numbers-bg.png"), #002B5A no-repeat;
   height: 294px;
   padding: 0 256px;
   display: -webkit-box;
@@ -219,7 +224,7 @@
 }
 
 .directions {
-  background: url("../image/slider-bg.webp"), #002B5A no-repeat;
+  background: url("../../image/slider-bg.webp"), #002B5A no-repeat;
   background-size: 100% 100%;
   height: 1093px;
   padding: 0 165px;
@@ -310,7 +315,7 @@
   margin-left: 15px;
   margin-right: 15px;
   color: #0072CE;
-  background: url("../image/directions-ico.png") center center;
+  background: url("../../image/directions-ico.png") center center;
 }
 
 .directions-item__wrapper .directions-item__link .link {
@@ -333,7 +338,7 @@
 }
 
 .directions-item__wrapper .directions-item:hover .directions-item__link .ico {
-  background: url("../image/directions-ico-active.png") center center;
+  background: url("../../image/directions-ico-active.png") center center;
 }
 
 .directions-item__wrapper .directions-item:hover .directions-item__link .link {
@@ -379,7 +384,7 @@
 .directions .button-all-links button .button-ico {
   width: 48px;
   height: 48px;
-  background: url("../image/directions-button-arrow.png") center center no-repeat;
+  background: url("../../image/directions-button-arrow.png") center center no-repeat;
 }
 
 .directions .button-all-links button:hover {
@@ -395,7 +400,7 @@
 }
 
 .directions .button-all-links button:hover .button-ico {
-  background: url("../image/directions-button-arrow-active.png") center center no-repeat;
+  background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
 }
 
 .directions .button-all-links button:active {
@@ -450,7 +455,7 @@
 }
 
 .contacts {
-  background: url(../image/contact-bg.png) bottom center no-repeat;
+  background: url(../../image/contact-bg.png) bottom center no-repeat;
   background-size: 100% 70%;
   padding: 0 165px;
   padding-bottom: 120px;
@@ -572,5 +577,12 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
+}
+
+.admin-body {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
 }
 /*# sourceMappingURL=style.css.map */

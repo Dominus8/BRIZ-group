@@ -14,11 +14,12 @@
 }
 
 .header {
+  height: 121px;
+  width: 1440px;
   position: fixed;
   top: 0;
   z-index: 50;
   padding: 0 165px;
-  width: 1110px;
   color: cornsilk;
   font-family: "Solomon-Sans-Normal";
   background-color: #002855;
@@ -430,4 +431,11 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
+}
+
+.admin-body {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
 }
