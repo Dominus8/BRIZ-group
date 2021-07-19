@@ -60,6 +60,10 @@
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
   display: flex;
 }
+.slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+  width: 535px;
+  height: 387px;
+}
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
   margin-top: 80px;
   margin-left: 41px;
@@ -438,4 +442,15 @@
   margin-bottom: 50px;
   padding-bottom: 20px;
   border-bottom: 1px solid #000;
+}
+
+.slides {
+  margin: 20px 0;
+  padding: 0 50px;
+}
+.slides .slide {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

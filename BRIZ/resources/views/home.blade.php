@@ -25,52 +25,27 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
+                        @foreach($slides as $slide)
                         <div class="swiper-slide">
                             <div class="carousel-item">
                                 <div class="carousel-item__image">
-                                    <img src="image/slide-img-1.webp" alt="">
+                                    <img src="storage/slider_image/{{$slide->slide_image}}" alt="">
                                 </div>
                                 <div class="carousel-item__content">
                                     <div class="item-content__title">
-                                        КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ
+                                        {{$slide->slide_title}} <!-- КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ -->
                                     </div>
                                     <div class="item-content__subtitle">
-                                        Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка
+                                        {{$slide->slide_body}} <!-- Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="carousel-item">
-                                <div class="carousel-item__image">
-                                    <img src="image/slide-img-1.webp" alt="">
-                                </div>
-                                <div class="carousel-item__content">
-                                    <div class="item-content__title">
-                                        КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ
-                                    </div>
-                                    <div class="item-content__subtitle">
-                                        Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
-                        <div class="swiper-slide">
-                            <div class="carousel-item">
-                                <div class="carousel-item__image">
-                                    <img src="image/slide-img-1.webp" alt="">
-                                </div>
-                                <div class="carousel-item__content">
-                                    <div class="item-content__title">
-                                        КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ
-                                    </div>
-                                    <div class="item-content__subtitle">
-                                        Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
+
                     </div>
 
                     <div class="swiper-control-btn">

@@ -11,6 +11,9 @@
 @section('main_content')
 
 <div class="container admin-body">
+
+<!--Форма добавления слайдов-->
+
     <div class="create-slide">
         <div class="create-slide__title">
             <h2>Создать слайд</h2> 
@@ -30,6 +33,21 @@
         </form>
         </div>
     </div>
+
+<!--Список существующих слайдов-->
+
+<div class="slides">
+    
+
+        @foreach($slide as $el)
+            <div class="slide ">
+                <h6>{{$el->slide_title }}</h6>
+                <a class='btn btn-primary' href="/admin/dell_slide/{{$el->id}}">x</a>
+            </div>
+        @endforeach
+
+    
+</div>
 
 </div>
 

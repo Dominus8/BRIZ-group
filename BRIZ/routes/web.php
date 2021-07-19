@@ -18,11 +18,13 @@ Route::get('/', [MainController::class, 'home']);
 
 Route::get('/download', [MainController::class, 'download']);
 
-Route::get('/admin', [MainController::class, 'admin']);
+// Route::get('/admin', [MainController::class, 'admin']);
 
-Route::get('/admin', [MainController::class, 'admin']);
+Route::get('/admin', [MainController::class, 'admin']) ->name('admin');
 
-Route::post('/admin/create-slide', [MainController::class, 'create_slide']);
+Route::post('/admin/create-slide', [MainController::class, 'create_slide']) ->name('create_slide');
+
+Route::get('/admin/dell_slide/{id}', [MainController::class, 'dell_slide']) ->name('dell_slide');
 
 
 
