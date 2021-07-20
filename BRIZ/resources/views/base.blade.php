@@ -30,7 +30,7 @@
     <div class="section-outor header-bg">
         <div class="section-inner">
             <div class="header">
-                <div class="header-content col-md-12">
+                <div class="header-content">
 
                 <div class="header-logo">
                     <svg id="hd1" width="250" height="117" viewBox="0 0 250 117" fill="none" xmlns="http://www.w3.org/2000/svg">

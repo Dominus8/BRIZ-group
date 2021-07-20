@@ -20,7 +20,7 @@
 
             <!-- оболочка слайдера  -->
         
-            <div id="head1" class="slider col-md-12">
+            <div id="head1" class="slider">
                 <!-- Slider main container -->
                 <div class="swiper-container">
                     <!-- Additional required wrapper -->

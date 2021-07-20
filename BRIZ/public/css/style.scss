@@ -143,8 +143,8 @@
     background: url('../../image/numbers-bg.png'), #002B5A no-repeat;
 }
 .numbers {
-    height: 294px;
-    padding: 0 256px;
+    min-height: 294px;
+    padding: 40px 256px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -209,8 +209,8 @@
 }
 .directions {
 
-    height: 1093px;
-    padding: 0 165px;
+    min-height: 1093px;
+    padding: 0 165px 40px 165px;
     &-title {
         color: #fff;
         padding-top: 120px;
@@ -423,7 +423,7 @@
             padding-top: 8px;
             border-left: 5px solid #002855;
             width: 419px;
-            height: 160px;
+            min-height: 160px;
             padding-left: 25px;
             &__img {
                 img {
@@ -536,4 +536,45 @@
             }
         }
     }
+}
+
+@media screen and (max-device-width: 1439px) {
+    .header-content{
+        padding: 0;
+    }
+    .slider{
+        padding: 0 100px;
+        .swiper-container{}
+    }
+   }
+
+@media screen and (max-device-width: 1250px) {
+ .header-content{
+     padding: 0 250px !important;
+     
+ }
+ .slider{
+     padding: 0 60px;
+     height: 480px;
+     .swiper-container{
+        .swiper-wrapper{
+            .swiper-slide{
+                .carousel-item{
+                    .carousel-item__image{
+                        img {
+                            width: 435px;
+                            height: 287px;
+                        }
+                     } 
+                    .carousel-item__content{
+                        margin-top: 0 ;
+                    }
+                 }
+             }
+         }
+     }
+     .swiper-control-btn{
+         display: hidden ;
+     }
+ }
 }
