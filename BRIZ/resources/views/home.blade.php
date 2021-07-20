@@ -14,12 +14,13 @@
 
     <!-- slider -->
 
-    <div class="section-outor">
-        <div class="section-inner ">
+    <div class="section-outor slider-bg">
+        
+        <div class="section-inner">
 
             <!-- оболочка слайдера  -->
-
-            <div id="head1" class="slider">
+        
+            <div id="head1" class="slider col-md-12">
                 <!-- Slider main container -->
                 <div class="swiper-container">
                     <!-- Additional required wrapper -->
@@ -56,7 +57,7 @@
 
     <!-- numbers -->
 
-    <div id="el1" class="section-outor">
+    <div id="el1" class="section-outor numbers-bg">
         <div class="section-inner">
             <div class="numbers">
                 <div class="numbers-item">
@@ -85,7 +86,7 @@
 
     <!-- directions -->
 
-    <div id="el2" class="section-outor">
+    <div id="el2" class="section-outor directions-bg">
         <div class="section-inner">
             <div class="directions">
                 <div class="directions-title">Направления</div>
@@ -1025,7 +1026,7 @@
 
     <!-- contacts -->
 
-    <div id="el3" class="section-outor">
+    <div id="el3" class="section-outor contacts-bg">
         <div class="section-inner">
             <div class="contacts">
                 <div class="contacts-title">контакты</div>
@@ -1190,6 +1191,5 @@
             </div>
         </div>
     </div>
-
 
     @endsection

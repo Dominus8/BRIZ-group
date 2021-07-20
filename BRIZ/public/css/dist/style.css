@@ -10,19 +10,31 @@
   align-items: center;
 }
 .section-outor .section-inner {
-  width: 1440px;
+  width: 100%;
+  left: 0;
+}
+
+.section-inner {
+  min-width: 0;
+  max-width: 1440px !important;
 }
 
 .header {
   height: 121px;
-  width: 1440px;
+  width: 100%;
+  padding-left: 50%;
+  background-color: #002B5A;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 50;
-  padding: 0 165px;
   color: cornsilk;
   font-family: "Solomon-Sans-Normal";
-  background-color: #002855;
+}
+.header .header-content {
+  margin-left: -720px;
+  width: 1440px;
+  padding: 0 165px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,13 +58,20 @@
   justify-content: space-between;
 }
 
+.slider-outer {
+  width: 100%;
+}
+
+.slider-bg {
+  background: url("../../image/slider-bg-1.webp"), #002B5A no-repeat;
+  background-size: 100% 100%;
+}
+
 .slider {
   margin-top: 121px;
   color: cornsilk;
   padding: 0 165px;
   height: 597px;
-  background: url("../../image/slider-bg-1.webp"), #002B5A no-repeat;
-  background-size: 100% 100%;
 }
 .slider .swiper-container .swiper-wrapper {
   margin-top: 85px;
@@ -104,13 +123,17 @@
   z-index: 9000;
 }
 
-.numbers {
+.numbers-bg {
   background: url("../../image/numbers-bg.png"), #002B5A no-repeat;
+}
+
+.numbers {
   height: 294px;
   padding: 0 256px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .numbers-item--8 {
   margin-top: 18px;
@@ -162,9 +185,12 @@
   text-transform: uppercase;
 }
 
-.directions {
+.directions-bg {
   background: url("../../image/slider-bg.webp"), #002B5A no-repeat;
   background-size: 100% 100%;
+}
+
+.directions {
   height: 1093px;
   padding: 0 165px;
 }
@@ -339,9 +365,12 @@
   margin-top: 405px;
   margin-left: 565px;
 }
-.contacts {
+.contacts-bg {
   background: url(../../image/contact-bg.png) bottom center no-repeat;
   background-size: 100% 70%;
+}
+
+.contacts {
   padding: 0 165px;
   padding-bottom: 120px;
 }
@@ -398,10 +427,13 @@
   line-height: 16px;
 }
 
+.footer-bg {
+  background-color: #002855;
+}
+
 .footer {
   padding: 0 165px;
   height: 34vh;
-  background-color: #002855;
   display: flex;
   justify-content: space-between;
   color: white;

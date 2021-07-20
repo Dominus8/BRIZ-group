@@ -27,9 +27,10 @@
 
     <!-- header -->
 
-    <div class="section-outor">
+    <div class="section-outor header-bg">
         <div class="section-inner">
             <div class="header">
+                <div class="header-content col-md-12">
 
                 <div class="header-logo">
                     <svg id="hd1" width="250" height="117" viewBox="0 0 250 117" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +66,7 @@
                     <div class="header-contacts_phone_number">8(800)333 63 28</div>
                     <div class="header-contacts_email">office@briz.group</div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
@@ -73,7 +75,7 @@
 
     <!-- footer -->
 
-    <div class="section-outor">
+    <div class="section-outor footer-bg">
         <div class="section-inner">
             <div class="footer">
                 <div class="footer-contacts">

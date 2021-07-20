@@ -17,7 +17,7 @@ class CreateDirectionsCardModelsTable extends Migration
             $table->id();
             $table->string('directions_card_image');
             $table->string('directions_card_title');
-            $table->strin('directions_card_link');
+            $table->string('directions_card_link');
             $table->timestamps();
         });
     }
