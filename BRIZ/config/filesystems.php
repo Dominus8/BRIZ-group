@@ -41,13 +41,28 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
+//для слайдов
         'slider_image' => [
             'driver' => 'local',
             'root' => storage_path('app/public/slider_image'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+//для карточек
+        'directions_image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/directions_image'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+//для контактов
+        'contacts_image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/contacts_image'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
 
 
         's3' => [

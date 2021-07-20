@@ -290,6 +290,9 @@
         font-size: 12px;
         line-height: 16px;
         color: #002855;
+        a {
+            text-decoration: none;
+        }
         button {
             outline: none;
             border: none;
@@ -430,7 +433,7 @@
 //------------------------footer----------------------------
 .footer {
     padding: 0 165px;
-    height: 251px;
+    height: 34vh;
     background-color: #002855;
     display: flex;
     justify-content: space-between;
@@ -481,16 +484,25 @@
     margin-top: 150px;
     margin-bottom: 50px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #000;
-}
-
-.slides {
-    margin: 20px 0;
-    padding: 0 50px;
-    .slide {
-        margin: 5px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .admin-section {
+        margin: 90px 0;
+        &__title {}
+        &__form {}
+        &__manage {
+            height: 10vh;
+            border: 4px inset rgb(69, 72, 211);
+            margin: 10px 0;
+            .manage-element {
+                margin: 5px 0;
+                padding: 0 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:hover {
+                    background-color: rgb(150, 141, 141, .3);
+                    transition: .5;
+                }
+            }
+        }
     }
 }

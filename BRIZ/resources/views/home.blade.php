@@ -42,10 +42,6 @@
                             </div>
                         </div>
                         @endforeach
-
-
-
-
                     </div>
 
                     <div class="swiper-control-btn">
@@ -94,25 +90,28 @@
             <div class="directions">
                 <div class="directions-title">Направления</div>
                 <div class="directions-item__wrapper">
+                    @foreach($directions_card as $el)
                     <div class="directions-item">
                         <div class="directions-item__image">
-                            <img src="image/its.webp" alt="image">
+                            <img src="storage/directions_image/{{$el->directions_card_image}}" alt="image">
                         </div>
-                        <a href="https://msu24.ru" target="_blank">
+                        <a href="{{$el->directions_card_link}}" target="_blank">
                             <div class="directions-item__title">
-                                интеллектуальные транспортные системы
+                                {{$el->directions_card_title}}
                             </div>
                             <div class="directions-item__link">
                                 <div class="ico">
 
                                 </div>
                                 <div class="link">
-                                    www.msu24.ru
+                                    {{$el->directions_card_link}}
                                 </div>
                             </div>
                         </a>
 
                     </div>
+                    @endforeach
+
 
                     <div class="directions-item">
                         <div class="directions-item__image">
@@ -1032,6 +1031,17 @@
                 <div class="contacts-title">контакты</div>
                 <div class="contacts-items-wrapper">
                     <!-- ГК БРИЗ -->
+                    @foreach($contact as $el)
+                    <div class="item">
+                        <div class="item__img">
+                            <img src="/storage/contacts_image/{{$el->contact_image}}" alt="">
+                        </div>
+                        <div class="item__description">{{$el->contact_body}}</div>
+                        <div class="item__number">{{$el->contact_phone}}</div>
+
+                        <div class="item__link">{{$el->contact_mail}}</div>
+                    </div>
+                    @endforeach
                     <div class="item">
                         <div class="item__img">
                             <svg width="111" height="26" viewBox="0 0 111 26" fill="none" xmlns="http://www.w3.org/2000/svg">
