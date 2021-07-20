@@ -484,6 +484,7 @@
   height: 10vh;
   border: 4px inset #4548d3;
   margin: 10px 0;
+  overflow-x: scroll;
 }
 .admin-body .admin-section__manage .manage-element {
   margin: 5px 0;
