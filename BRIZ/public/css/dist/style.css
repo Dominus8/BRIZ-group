@@ -88,7 +88,7 @@
   height: 393px;
 }
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
-  margin-top: 80px;
+  margin-top: 77px;
   margin-left: 41px;
 }
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
@@ -97,6 +97,7 @@
   font-weight: 600;
   font-size: 40px;
   line-height: 120%;
+  padding-bottom: 3px;
 }
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
   width: 363px;
@@ -114,7 +115,8 @@
 .slider .swiper-container .swiper-control-btn .btn-prev {
   width: 48px;
   height: 48px;
-  background: url("../../image/slider-rew-arrow.png") center center no-repeat;
+  background: url("../../image/arrow-down.png") center center no-repeat;
+  opacity: 0.3;
   cursor: pointer;
   z-index: 9000;
 }
@@ -133,8 +135,9 @@
 }
 
 .numbers {
+  color: #002855;
   min-height: 294px;
-  padding: 40px 256px;
+  padding: 35px 256px 65px 256px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -338,7 +341,7 @@
   margin: 0 165px;
 }
 .geography-title {
-  margin-top: 120px;
+  margin-top: 117px;
   font-family: "Solomon-Sans-Normal";
   font-style: normal;
   font-weight: 600;
@@ -348,7 +351,7 @@
   color: #002855;
 }
 .geography .geography-map__wrapper {
-  text-align: center;
+  margin-top: 65px;
   position: relative;
 }
 .geography .geography-map__wrapper .geo {
@@ -390,13 +393,13 @@
   color: #002855;
 }
 .contacts-items-wrapper {
-  padding-right: 85px;
+  padding-right: 117px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 .contacts-items-wrapper .item {
-  margin-top: 40px;
+  margin-top: 59px;
   padding-top: 8px;
   border-left: 5px solid #002855;
   width: 419px;

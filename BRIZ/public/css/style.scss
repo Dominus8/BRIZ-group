@@ -100,7 +100,7 @@
                         }
                     }
                     .carousel-item__content {
-                        margin-top: 80px;
+                        margin-top: 77px;
                         margin-left: 41px;
                         .item-content__title {
                             font-family: 'Solomon-Sans-SemiBold';
@@ -108,6 +108,7 @@
                             font-weight: 600;
                             font-size: 40px;
                             line-height: 120%;
+                            padding-bottom: 3px;
                         }
                         .item-content__subtitle {
                             width: 363px;
@@ -128,7 +129,8 @@
             .btn-prev {
                 width: 48px;
                 height: 48px;
-                background: url("../../image/slider-rew-arrow.png") center center no-repeat;
+                background: url("../../image/arrow-down.png") center center no-repeat;
+                opacity: 0.3;
                 cursor: pointer;
                 z-index: 9000;
             }
@@ -150,8 +152,9 @@
     background: url('../../image/numbers-bg.png'), #002B5A no-repeat;
 }
 .numbers {
+    color: #002855;
     min-height: 294px;
-    padding: 40px 256px;
+    padding: 35px 256px 65px 256px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -365,7 +368,7 @@
 .geography {
     margin: 0 165px;
     &-title {
-        margin-top: 120px;
+        margin-top: 117px;
         font-family: 'Solomon-Sans-Normal';
         font-style: normal;
         font-weight: 600;
@@ -375,9 +378,10 @@
         color: #002855;
     }
     .geography-map__wrapper {
-        text-align: center;
+        margin-top: 65px;
+        // text-align: center;
         position: relative;
-        #map {}
+        
         .geo {
             position: absolute;
             height: 55px;
@@ -421,12 +425,12 @@
         color: #002855;
     }
     &-items-wrapper {
-        padding-right: 85px;
+        padding-right: 117px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         .item {
-            margin-top: 40px;
+            margin-top: 59px;
             padding-top: 8px;
             border-left: 5px solid #002855;
             width: 419px;
