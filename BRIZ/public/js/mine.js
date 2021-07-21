@@ -6,7 +6,12 @@ const swiper = new Swiper('.swiper-container', {
     navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
-    },
+    },breakpoints: {
+        390:{
+            spaceBetween: 200
+        }   
+    }
+
 });
 
 
@@ -53,4 +58,14 @@ $(document).ready(function() {
             scrollTop: $("#el3").offset().top - 121
         }, 600);
     });
+});
+
+
+$(document).ready(function() {
+    document.querySelector('.menu-bar').addEventListener('click', function(){
+        document.querySelector('.menu-bar span').classList.toggle('active');
+        document.querySelector('.menu').classList.toggle('animate');
+        
+})
+
 });

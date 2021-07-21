@@ -89,7 +89,7 @@
     <div id="el2" class="section-outor directions-bg">
         <div class="section-inner">
             <div class="directions">
-                <div class="directions-title">Направления</div>
+                <div class="directions-title"><span>Направления</span></div>
                 <div class="directions-item__wrapper">
                     @foreach($directions_card as $el)
                     <div class="directions-item">
@@ -291,7 +291,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="button-all-links">
+                <div class="button-all-links ">
                     <a href="/download"><button class="animated infinite pulse delay-5s slower" >
                         
                     <div class="button-text">СМОТРЕТЬ ПРЕЗЕНТАЦИИ</div><div class="button-ico"></div>     

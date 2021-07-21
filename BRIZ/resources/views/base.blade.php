@@ -61,6 +61,19 @@
                 <div class="header-nav">
                     @yield('nav')
                 </div>
+                <div class="header-nav--mobile">
+                <div class="menu-bar">
+		<span></span>
+	</div>
+	<div class="menu ">
+		<ul>
+        <li id="b1">О нас</li>
+        <li id="b2">Направления</li>
+        <li id="b3">Контакты</li>
+		</ul>
+	</div>
+
+                </div>
 
                 <div class="header-contacts">
                     <div class="header-contacts_phone_number">8(800)333 63 28</div>
@@ -176,6 +189,7 @@
     <!-- js include -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/wow.min.js"></script>
     <script src="/js/mine.js"></script>
