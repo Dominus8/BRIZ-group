@@ -1,5 +1,7 @@
-@import url(/css/dist/font.css);
-* {
+@import url(/css/font.css);
+
+body {
+    font-family: 'SolomonSans-Regular';
     a {
         text-decoration: none;
     }
@@ -7,7 +9,7 @@
 
 //---------------------header-------------------------------
 .section-outor {
-    font-family: 'Solomon-Sans-Normal';
+    font-family: 'SolomonSans-Regular';
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +36,7 @@
     left: 0;
     z-index: 50;
     color: cornsilk;
-    font-family: 'Solomon-Sans-Normal';
+    font-family: 'SolomonSans-Regular';
     border-bottom: 1px solid rgb(255, 255, 255);
     
 
@@ -61,6 +63,10 @@
             li {
                 cursor: pointer;
                 list-style-type: none;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 19px;
 
             }
         }
@@ -75,6 +81,10 @@
         display: flex;
         justify-content: space-between;
         padding-left: 2px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
     }
 }
 
@@ -88,7 +98,7 @@
 }
 .slider {
     margin-top: 117px;
-    color: cornsilk;
+    color: white;
     padding: 0 165px;
     height: 597px;
 
@@ -108,16 +118,19 @@
                         margin-top: 77px;
                         margin-left: 41px;
                         .item-content__title {
-                            font-family: 'Solomon-Sans-SemiBold';
+                            font-family: 'SolomonSans-SemiBold';
                             font-style: normal;
                             font-weight: 600;
                             font-size: 40px;
                             line-height: 120%;
-                            padding-bottom: 3px;
                         }
                         .item-content__subtitle {
                             width: 363px;
                             margin-top: 20px;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 19px;
                             font-style: normal;
                             font-weight: normal;
                             font-size: 16px;
@@ -157,6 +170,7 @@
     background: url('../../image/numbers-bg.png'), #002B5A no-repeat;
 }
 .numbers {
+    font-family: 'SolomonSans-SemiBold';
     color: #002855;
     min-height: 294px;
     padding: 35px 256px 65px 256px;
@@ -219,7 +233,7 @@
 
 //-------------------directions-----------------------------
 .directions-bg{
-    background: url('../../image/slider-bg.webp'), #002B5A no-repeat;
+    background: url('../../image/categories_bg-min.png'), #002B5A no-repeat;
     background-size: 100% 100%;   
 }
 .directions {
@@ -227,17 +241,15 @@
     min-height: 1093px;
     padding: 0 165px 40px 165px;
     &-title {
-        color: #fff;
+        color: white;
         padding-top: 120px;
         margin-bottom: 20px;
+        font-family: 'SolomonSans-SemiBold';
         font-style: normal;
         font-weight: 600;
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
-        /* identical to box height, or 48px */
-        display: flex;
-        align-items: center;
         letter-spacing: 0.2px;
     }
     &-item__wrapper {
@@ -246,7 +258,7 @@
         flex-wrap: wrap;
         //-----------Карточка направления-------------------------------
         .directions-item {
-            background-color: #fff;
+            background-color: white;
             height: 301px;
             width: 190px;
             margin-top: 40px;
@@ -265,7 +277,7 @@
                 height: 38px;
                 margin: 14px 15px 0 15px;
                 text-transform: uppercase;
-                font-family: 'Solomon-Sans-Bold';
+                font-family: 'SolomonSans-Bold';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -305,14 +317,14 @@
                 background-color: #0072CE;
                 transition: .3s;
                 .directions-item__title {
-                    color: #ffffff;
+                    color: white;
                 }
                 .directions-item__link {
                     .ico {
                         background: url("../../image/directions-ico-active.png") center center;
                     }
                     .link {
-                        color: #FFFFFF;
+                        color: white;
                     }
                 }
             }
@@ -328,14 +340,14 @@
         left: 0;
         height: 73px;
         text-align: center;
-        background-color: honeydew;
+        background-color: white;
         margin-top: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Solomon-Sans-Normal';
+        font-family: 'SolomonSans-Regular';
         font-style: normal;
-        font-weight: normal;
+        font-weight: 600;
         font-size: 12px;
         line-height: 16px;
 
@@ -383,12 +395,13 @@
     margin: 0 165px;
     &-title {
         margin-top: 117px;
-        font-family: 'Solomon-Sans-Normal';
+        font-family: 'SolomonSans-SemiBold';
         font-style: normal;
         font-weight: 600;
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
+        letter-spacing: 0.2px;
         color: #002855;
     }
     .geography-map__wrapper {
@@ -431,12 +444,13 @@
     padding-bottom: 120px;
     &-title {
         margin-top: 120px;
-        font-family: 'Solomon-Sans-Normal';
+        font-family: 'SolomonSans-SemiBold';
         font-style: normal;
         font-weight: 600;
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
+        letter-spacing: 0.2px;
         color: #002855;
     }
     &-items-wrapper {
@@ -461,13 +475,14 @@
                 margin-top: 15px;
                 font-family: 'Solomon-Sans' Normal;
                 font-style: normal;
-                font-weight: normal;
+                font-weight: 400;
                 font-size: 12px;
                 line-height: 16px;
             }
             &__number {
+                color: #002855;
                 margin-top: 15px;
-                font-family: 'Solomon-Sans' Normal;
+                font-family: 'SolomonSans-Medium';
                 font-style: normal;
                 font-weight: 500;
                 font-size: 14px;
@@ -477,7 +492,7 @@
                 margin-top: 15px;
                 font-family: 'Solomon-Sans' Normal;
                 font-style: normal;
-                font-weight: normal;
+                font-weight: 400;
                 font-size: 12px;
                 line-height: 16px;
             }
@@ -593,7 +608,7 @@ ul{
     width: 300px;
     height: auto;
     background: #333;
-    color: #ccc;
+    color: white;
     padding: 10px;
     position: fixed;
     left: -320px;

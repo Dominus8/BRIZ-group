@@ -292,7 +292,7 @@
                     </div>
                 </div>
                 <div class="button-all-links ">
-                    <a href="/download"><button class="animated infinite pulse delay-5s slower" >
+                    <a href="/download"><button >
                         
                     <div class="button-text">СМОТРЕТЬ ПРЕЗЕНТАЦИИ</div><div class="button-ico"></div>     
                 </button></a>

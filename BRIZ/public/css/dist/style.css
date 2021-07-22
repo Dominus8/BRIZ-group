@@ -1,10 +1,13 @@
-@import url(/css/dist/font.css);
-* a {
+@import url(/css/font.css);
+body {
+  font-family: "SolomonSans-Regular";
+}
+body a {
   text-decoration: none;
 }
 
 .section-outor {
-  font-family: "Solomon-Sans-Normal";
+  font-family: "SolomonSans-Regular";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +32,7 @@
   left: 0;
   z-index: 50;
   color: cornsilk;
-  font-family: "Solomon-Sans-Normal";
+  font-family: "SolomonSans-Regular";
   border-bottom: 1px solid white;
 }
 .header .header-content {
@@ -54,6 +57,10 @@
 .header .header-nav ul li {
   cursor: pointer;
   list-style-type: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
 }
 .header .header-nav--mobile {
   display: none;
@@ -63,6 +70,10 @@
   display: flex;
   justify-content: space-between;
   padding-left: 2px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .slider-outer {
@@ -76,7 +87,7 @@
 
 .slider {
   margin-top: 117px;
-  color: cornsilk;
+  color: white;
   padding: 0 165px;
   height: 597px;
 }
@@ -95,16 +106,19 @@
   margin-left: 41px;
 }
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
-  font-family: "Solomon-Sans-SemiBold";
+  font-family: "SolomonSans-SemiBold";
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 120%;
-  padding-bottom: 3px;
 }
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
   width: 363px;
   margin-top: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -138,6 +152,7 @@
 }
 
 .numbers {
+  font-family: "SolomonSans-SemiBold";
   color: #002855;
   min-height: 294px;
   padding: 35px 256px 65px 256px;
@@ -197,7 +212,7 @@
 }
 
 .directions-bg {
-  background: url("../../image/slider-bg.webp"), #002B5A no-repeat;
+  background: url("../../image/categories_bg-min.png"), #002B5A no-repeat;
   background-size: 100% 100%;
 }
 
@@ -206,7 +221,7 @@
   padding: 0 165px 40px 165px;
 }
 .directions-title {
-  color: #fff;
+  color: white;
   padding-top: 120px;
   margin-bottom: 20px;
   font-style: normal;
@@ -225,7 +240,7 @@
   flex-wrap: wrap;
 }
 .directions-item__wrapper .directions-item {
-  background-color: #fff;
+  background-color: white;
   height: 301px;
   width: 190px;
   margin-top: 40px;
@@ -242,7 +257,7 @@
   height: 38px;
   margin: 14px 15px 0 15px;
   text-transform: uppercase;
-  font-family: "Solomon-Sans-Bold";
+  font-family: "SolomonSans-Bold";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -282,13 +297,13 @@
   transition: 0.3s;
 }
 .directions-item__wrapper .directions-item:hover .directions-item__title {
-  color: #ffffff;
+  color: white;
 }
 .directions-item__wrapper .directions-item:hover .directions-item__link .ico {
   background: url("../../image/directions-ico-active.png") center center;
 }
 .directions-item__wrapper .directions-item:hover .directions-item__link .link {
-  color: #FFFFFF;
+  color: white;
 }
 .directions-item__wrapper .directions-item:active {
   background-color: #002855;
@@ -300,14 +315,14 @@
   left: 0;
   height: 73px;
   text-align: center;
-  background-color: honeydew;
+  background-color: white;
   margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Solomon-Sans-Normal";
+  font-family: "SolomonSans-Regular";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 12px;
   line-height: 16px;
 }
@@ -353,7 +368,7 @@
 }
 .geography-title {
   margin-top: 117px;
-  font-family: "Solomon-Sans-Normal";
+  font-family: "SolomonSans-Regular";
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
@@ -399,7 +414,7 @@
 }
 .contacts-title {
   margin-top: 120px;
-  font-family: "Solomon-Sans-Normal";
+  font-family: "SolomonSans-Regular";
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
@@ -429,13 +444,14 @@
   margin-top: 15px;
   font-family: "Solomon-Sans" Normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
 }
 .contacts-items-wrapper .item__number {
+  color: #002855;
   margin-top: 15px;
-  font-family: "Solomon-Sans" Normal;
+  font-family: "SolomonSans-Medium";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -445,7 +461,7 @@
   margin-top: 15px;
   font-family: "Solomon-Sans" Normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
 }
@@ -559,7 +575,7 @@ ul {
   width: 300px;
   height: auto;
   background: #333;
-  color: #ccc;
+  color: white;
   padding: 10px;
   position: fixed;
   left: -320px;
