@@ -182,6 +182,7 @@
                     </div>
                     <div class="footer-logos__copywrite">© 2021 «ГК БРИЗ» Все права защищены</div>
                 </div>
+                <div class="footer-logos__copywrite--mobile">© 2021 «ГК БРИЗ» Все права защищены</div>
             </div>
         </div>
     </div>

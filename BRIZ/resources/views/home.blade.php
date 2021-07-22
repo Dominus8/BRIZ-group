@@ -1020,6 +1020,16 @@
                         </svg>
 
                 </div>
+                <div class="geography-map__wrapper--mobile">
+                    <div class="slide-item-wrapper">
+                        <div class="image">
+                            <img class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="">
+                        </div>
+                        <div class="title">Красноярск</div>
+                        <div class="subtitle">Разработка и внедрение систем управления городом</div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -1094,7 +1104,7 @@
                     </div>
                     <!-- БРИЗ-Центр -->
                     <div class="item">
-                        <div class="item_img">
+                        <div class="item__img">
                             <svg width="111" height="26" viewBox="0 0 111 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M49.4887 0.0523636H32.9366V3.09268H49.4887V0.0523636Z" fill="#002855"/>
                             <path d="M71.409 12.5281H76.6654L86.7868 3.19748V12.5281H90.3657V0.104743H84.8856L75.4911 8.80634V0.104743H71.409V12.5281Z" fill="#002855"/>
