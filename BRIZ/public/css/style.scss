@@ -93,8 +93,9 @@ body {
     width: 100%;
 }
 .slider-bg{
-    background: url('../../image/header_bg-min.png'), #002B5A no-repeat;
-    background-size: 100% 100%;  
+    background: url('../../image/header_bg-min.png') center center, #002B5A no-repeat;
+
+    background-size: cover;
 }
 .slider {
     margin-top: 117px;
@@ -167,7 +168,8 @@ body {
 
 //------------------numbers--------------------------------
 .numbers-bg{
-    background: url('../../image/numbers-bg.png'), #002B5A no-repeat;
+    background: url('../../image/numbers-bg.png')bottom center, #002B5A no-repeat;
+    background-size: cover;
 }
 .numbers {
     font-family: 'SolomonSans-SemiBold';
@@ -233,8 +235,8 @@ body {
 
 //-------------------directions-----------------------------
 .directions-bg{
-    background: url('../../image/categories_bg-min.png'), #002B5A no-repeat;
-    background-size: 100% 100%;   
+    background: url('../../image/categories_bg-min.png') center center, #002B5A no-repeat;
+    background-size: cover;   
 }
 .directions {
 
@@ -436,8 +438,8 @@ body {
 
 //----------------------contacts----------------------------
 .contacts-bg{
-    background: url(../../image/contact-bg.png) bottom center no-repeat;
-    background-size: 100% 70%;
+    background: url(../../image/contact-bg.png) bottom left, no-repeat;
+    background-size: cover;
 }
 .contacts {
     padding: 0 165px;
@@ -506,7 +508,8 @@ body {
 }
 .footer {
     padding: 0 165px;
-    height: 34vh;
+    height: auto;
+    padding-bottom: 40px;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -693,7 +696,7 @@ ul{
  }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:428px) {
 
     .header{
         padding: 0;
@@ -741,12 +744,12 @@ ul{
                         flex-direction: column-reverse;
                         justify-content: last baseline;
                         .carousel-item__image{
-                            width: 390px;
+                            max-width: 428px;
                             height: 388px;
                             text-align: center;
                             img{
                                 display: inline-block;
-                                width: 390px;
+                                max-width: 428px;
                                 height: 388px;
                             }
                         }
@@ -766,6 +769,8 @@ ul{
     
                             }
                             .item-content__subtitle{
+                                white-space:normal;
+                                
                                 font-style: normal;
                                 font-weight: normal;
                                 font-size: 15px;
@@ -878,15 +883,16 @@ ul{
                 width: 100%;
                 height: 396px;
                 .directions-item__image{
+                    display: block;
                     img{
-                        width: 360px;
+                        width: 100%;
                         height: 263px
                     }
 ;
                 }
                 .directions-item__title{
                     margin-top: 20px;
-                    width: 320px;
+                    max-width: 320px;
                     span{
                         font-style: normal;
                         font-weight: bold;
@@ -939,7 +945,7 @@ ul{
 
     .geography{
         margin: 0;
-        width: 390px !important;
+        max-width: 428px !important;
         position: relative;
         padding: 50px 15px 0px 15px;
         .geography-title{
@@ -987,7 +993,7 @@ ul{
         margin: 0;
         padding: 0;
         padding-top: 50px;
-        width: 390px !important;
+        width: 100% !important;
         position: relative;
         
         
@@ -1006,12 +1012,13 @@ ul{
             border-image-slice: 1;
         }
         .contacts-items-wrapper{
+            
             padding: 0;
             .item{
                 align-items: center;
                 padding: 30px 15px 40px 15px;
                 margin: 0;
-                width: 390px;
+                width: 100%;
                 height: 348px;
                 border: none;
                 background: url(../../image/numbers-bg.png) no-repeat bottom right,  #f5f5f5;
@@ -1049,7 +1056,7 @@ ul{
     }
 
     .footer{
-        width: 390px;
+        max-width: 428px;
         height: 398px;
         padding: 50px 15px 50px 15px;
         display: flex;
@@ -1082,9 +1089,44 @@ ul{
             display: none;
         }
         .footer-logos__copywrite--mobile{
-            display: block;
+            display: inline;
+            max-width: 428px;
+            white-space:pre-wrap;
         }
 
+    }
+
+}
+
+@media screen and (max-width:428px){
+    .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle{
+        width: 310px;
+    }
+}
+
+@media screen and (max-width:768px){
+
+}
+
+@media screen and (max-width:1024px){
+    .footer{
+        height: auto;
+        padding-bottom: 20px;
+
+    }
+
+    .footer .footer-logos{
+        max-width: 300px;
+    }
+
+    .footer .footer-logos__wrapper{
+        max-width: 300px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer-logos__wrapper .logo{
+        margin-bottom: 20px;
     }
 
 }

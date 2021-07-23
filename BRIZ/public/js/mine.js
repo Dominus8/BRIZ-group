@@ -9,6 +9,9 @@ const swiper = new Swiper('.swiper-container', {
     },breakpoints: {
         390:{
             spaceBetween: 200
+        },
+        320:{
+            spaceBetween: 250
         }   
     }
 
