@@ -862,7 +862,7 @@ ul {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .header .header-content {
     -ms-flex-pack: distribute;
         justify-content: space-around;
