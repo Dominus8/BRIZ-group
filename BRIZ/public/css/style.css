@@ -147,6 +147,7 @@ body a {
   font-weight: 600;
   font-size: 40px;
   line-height: 120%;
+  text-transform: uppercase;
 }
 
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
@@ -823,14 +824,27 @@ ul {
 }
 
 @media screen and (max-width: 1024px) {
+  .numbers {
+    padding: 35px 165px 65px 165px;
+  }
+  .directions {
+    padding: 0 100px 180 px 100px;
+  }
+  .geography {
+    margin: 0 100px;
+  }
+  .contacts {
+    padding: 0 100px 120px 100px;
+  }
   .footer {
+    padding: 90px 100px 20px 100px;
     height: auto;
-    padding-bottom: 20px;
   }
   .footer .footer-logos {
     max-width: 300px;
   }
   .footer .footer-logos__wrapper {
+    display: none;
     max-width: 300px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -839,9 +853,12 @@ ul {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
   .footer .footer-logos__wrapper .logo {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 
@@ -850,17 +867,66 @@ ul {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .header .header-content .header-logo {
+    padding-left: 30px;
+  }
+  .header .header-content .header-nav {
+    padding-right: 30px;
+  }
   .header .header-content .header-contacts {
     display: none;
+  }
+  .slider {
+    height: 580px;
+    margin-top: 0;
+    padding: 0 50px 40px 50px;
+  }
+  .slider .swiper-container {
+    text-align: center;
+  }
+  .slider .swiper-container .swiper-wrapper {
+    padding-bottom: 60px;
+  }
+  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
+    margin-top: 60px;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+    margin: 0;
+    padding-top: 20px;
+  }
+  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    display: none;
+  }
+  .slider .swiper-container .swiper-control-btn {
+    display: none;
+  }
+  .numbers {
+    padding: 0 50px;
   }
   .directions {
     padding: 0 50px;
     padding-bottom: 200px;
   }
+  .geography {
+    margin: 0;
+    padding: 0 50px;
+  }
+  .contacts {
+    padding: 0 50px 60px 50px;
+  }
+  .footer {
+    padding: 90px 50px 30px 50px;
+  }
 }
 
 @media screen and (max-width: 428px) {
   .header {
+    position: fixed;
     padding: 0;
     margin: 0;
   }
@@ -875,9 +941,11 @@ ul {
   }
   .header .header-content .header-logo {
     margin-left: 15px;
+    padding: 0;
   }
   .header .header-content .header-nav {
     display: none;
+    padding: 0;
   }
   .header .header-content .header-contacts {
     display: none;
@@ -892,9 +960,14 @@ ul {
   .slider {
     margin: 0;
     padding: 0;
-    height: 720px;
+    height: 725px;
+  }
+  .slider .swiper-container {
+    margin-top: 0px;
+    text-align: left;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
+    text-align: left;
     margin: 15px 0;
     margin-top: 57px;
     -webkit-box-orient: vertical;
@@ -908,7 +981,6 @@ ul {
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image {
     max-width: 428px;
     height: 388px;
-    text-align: center;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
     display: inline-block;
@@ -916,6 +988,7 @@ ul {
     height: 388px;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+    padding-top: 0;
     margin: 0  15px 30px 15px !important;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1260,6 +1333,18 @@ ul {
 @media screen and (max-width: 380px) {
   .menu {
     width: 220px;
+  }
+  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .slider {
+    height: 750px;
+  }
+  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    width: 300px;
   }
 }
 /*# sourceMappingURL=style.css.map */
