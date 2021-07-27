@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use Intervention\Image\ImageManagerStatic as Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,20 @@ Route::post('/admin/create-contact', [MainController::class, 'create_contact']) 
 Route::get('/admin/dell-contact/{id}', [MainController::class, 'dell_contact']) ->name('dell_contact');
 
 
+// Загрузка презентации
+Route::post('/admin/create-presentation', [MainController::class, 'create_presentation']) ->name('create-presentation'); 
+
+//Удаление презентации
+Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation');
+
+//Скачивание презентации
+Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation');
+
+
+
+Route::get('/test', function()
+{
+    $img = Image::make('https://1.bp.blogspot.com/-1GhwO8zE0pw/Xv28T99HyPI/AAAAAAAAA_Y/BmJFpREe5fIuDjlbZ-mPPCzSSyZeL0UkgCK4BGAsYHg/s1017/Thumb_laravel.jpg')->fit(200);
+
+    return $img->response('jpg');
+});

@@ -99,3 +99,18 @@ $(document).ready(function() {
 })
 
 });
+
+$( document ).ready(function(){
+
+    let width = $( ".directions-item__image" ).width();
+    let height = $( ".directions-item__image" ).height();
+
+    // $.post({
+    //     URL:'/',
+    //     dataType:'json',
+    //     data:{
+    //         width:190,
+    //         height:190,
+    //     },
+    // })
+});

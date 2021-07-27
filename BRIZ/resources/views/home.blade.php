@@ -11,7 +11,7 @@
 @section('main_content')
     
 
-
+    
     <!-- slider -->
 
     <div class="section-outor slider-bg">
@@ -1202,4 +1202,5 @@
         </div>
     </div>
 
+    
     @endsection

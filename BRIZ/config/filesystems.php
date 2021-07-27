@@ -63,7 +63,20 @@ return [
             'visibility' => 'public',
         ],
 
+//для презентаций
+        'presentation_image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/presentation_image'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
+        'presentation_file' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/presentation_file'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

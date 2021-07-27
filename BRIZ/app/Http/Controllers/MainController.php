@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Intervention\Image\ImageManager;
+use Intervention\Image\ImageManagerStatic as Image;
+
 use Illuminate\Http\Request;
 use App\Models\SlideModel;
 use App\Models\DirectionsCardModel;
 use App\Models\ContactModel;
+use App\Models\PresentationModel;
 
 
 class MainController extends Controller
@@ -16,22 +20,25 @@ class MainController extends Controller
         $slides= new SlideModel();
         $directions_card = new DirectionsCardModel();
         $contact = new ContactModel();
-
-        return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(), 'contact'=>$contact->all()]);
+    
+        return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(),'contact'=>$contact->all()]);
     }
 // Проброс данных в админку
     public function admin(){
         $slide = new SlideModel();
         $directions_card = new DirectionsCardModel();
         $contact = new ContactModel();
+        $presentation = new PresentationModel();
 
-        return view('admin',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all()]);
+        return view('admin',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all()]);
     }
 
 // Роут для просмотра и загрузки презентаций
     public function download(){
-        return view('download');
+        $presentation = new PresentationModel();
+        return view('download',['presentation'=>$presentation->all()]);
     }
+
 // Для создания слайда
     public function create_slide(Request $request){
         $image = $request->file('slide_image')->store('storage', 'slider_image');
@@ -75,31 +82,73 @@ class MainController extends Controller
 
     }
     
-//Создание карточки кнтактов
-    public function create_contact(Request $request){
-        $image = $request->file('contact_image')->store('storage', 'contacts_image');
-        $contact = new ContactModel();
-        $contact->contact_image = $image;
-        $contact->contact_body = $request->input('contact_body');
-        $contact->contact_phone = $request->input('contact_phone');
-        $contact->contact_mail = $request->input('contact_mail');
+    //Создание карточки кнтактов
+        public function create_contact(Request $request){
+            $image = $request->file('contact_image')->store('storage', 'contacts_image');
+            $contact = new ContactModel();
+            $contact->contact_image = $image;
+            $contact->contact_body = $request->input('contact_body');
+            $contact->contact_phone = $request->input('contact_phone');
+            $contact->contact_mail = $request->input('contact_mail');
 
-        $contact->save();
+            $contact->save();
 
-        return redirect()->route('admin');
-}
-
-// Для удаления карточек контактов
-    public function dell_contact($id){
-
-        $contact = ContactModel::find($id)->delete();
-
-        return redirect()->route('admin');
-
+            return redirect()->route('admin');
     }
 
+    // Для удаления карточек контактов
+        public function dell_contact($id){
+
+            $contact = ContactModel::find($id)->delete();
+
+            return redirect()->route('admin');
+
+        }
+
+
+    //Создание презентации
+        public function create_presentation(Request $request){
+            $image = $request->file('presentation_image')->store('storage', 'presentation_image');
+            $file = $request->file('presentation_file')->store('storage', 'presentation_file');
+            $presentation = new PresentationModel();
+            $presentation->presentation_file = $file;
+            $presentation->presentation_image = $image;
+            $presentation->presentation_title = $request->input('presentation_title');
+            $presentation->presentation_subtitle = $request->input('presentation_subtitle');
+            
+
+            $presentation->save();
+
+            return redirect()->route('admin');
+    }
+
+    // Для удаления презентации
+        public function dell_presentation($id){
+
+            $presentation = PresentationModel::find($id)->delete();
+
+            return redirect()->route('admin');
+
+        }
+
+    // Для удаления презентации
+        public function download_presentation($id){
+            $presentation = PresentationModel::find($id);
+
+            $file= public_path()."/storage/presentation_file/$presentation->presentation_file";
+
+            $name = $presentation->presentation_title;
+
+            $headers = array(
+                'Content-Type: application/pdf',
+            );
+
+            return response()->download($file, $name, $headers);
+
+        }
+
  
-}// закрывает клас
+}// закрывает клас 
 
 
 
