@@ -41,6 +41,14 @@ class MainController extends Controller
 
 // Для создания слайда
     public function create_slide(Request $request){
+
+        $valid = $request->validate([
+            'slide_image'=>'required',
+            'slide_title'=>'required|max:40',
+            'slide_body'=>'required|max:150',
+        ]);
+
+
         $image = $request->file('slide_image')->store('storage', 'slider_image');
         $slide = new SlideModel();
         $slide->slide_image = $image;
@@ -60,8 +68,14 @@ class MainController extends Controller
 
     }
 //Создание карточки направления
-
     public function create_direction_card(Request $request){
+
+        $valid = $request->validate([
+            'direction_card_image'=>'required',
+            'direction_card_title'=>'required|max:40',
+            'direction_card_link'=>'required|max:40',
+        ]);
+
         $image = $request->file('direction_card_image')->store('storage', 'directions_image');
         $directions_card = new DirectionsCardModel();
         $directions_card->directions_card_image = $image;
@@ -84,6 +98,14 @@ class MainController extends Controller
     
     //Создание карточки кнтактов
         public function create_contact(Request $request){
+
+            $valid = $request->validate([
+                'contact_image'=>'required',
+                'contact_body'=>'required|max:40',
+                'contact_phone'=>'required|max:150',
+                'contact_mail'=>'required|max:150',
+            ]);
+
             $image = $request->file('contact_image')->store('storage', 'contacts_image');
             $contact = new ContactModel();
             $contact->contact_image = $image;
@@ -108,6 +130,12 @@ class MainController extends Controller
 
     //Создание презентации
         public function create_presentation(Request $request){
+            $valid = $request->validate([
+                'presentation_image'=>'required',
+                'presentation_file'=>'required',
+                'presentation_title'=>'required',
+                'presentation_subtitle'=>'required',
+            ]);
             $image = $request->file('presentation_image')->store('storage', 'presentation_image');
             $file = $request->file('presentation_file')->store('storage', 'presentation_file');
             $presentation = new PresentationModel();

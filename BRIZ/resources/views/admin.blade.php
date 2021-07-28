@@ -13,7 +13,21 @@
 
 @section('main_content')
 
+
+
+
 <div class="container admin-body">
+@if($errors->any())
+
+<div class="div alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+
+@endif
 
 <!--Форма добавления слайдов-->
 
@@ -28,9 +42,9 @@
                     <lable for="si" class="form-label"> <h6>Изображение слайда 535х387</h6>  </lable>
                     <input id="si" type="file" class="form-control" name='slide_image'> <br>
                     <lable for="st" class="form-label"> <h6>Заголовок слайта</h6>  </lable>
-                    <input id="st" type="text" class="form-control" name='slide_title' > <br>
+                    <input id="st" type="text" class="form-control" name='slide_title' placeholder="небольше 40 символов" > <br>
                     <lable for="sb" class="form-label"> <h6>Тескт слайда</h6> </lable>
-                    <textarea id="sb" name="slide_body" cols="20" rows="5" class="form-control"></textarea> <br>
+                    <textarea id="sb" name="slide_body" cols="20" rows="5" class="form-control" placeholder="небольше 150 символов"></textarea> <br>
                     <button class="btn btn-primary" type="sucsess"> Создать слайд</button>
                 </div>
             </form>        
@@ -59,9 +73,9 @@
                     <lable for="di" class="form-label"> <h6>Изображение карточки 190х190</h6>  </lable>
                     <input id="di" type="file" class="form-control" name='direction_card_image'> <br>
                     <lable for="dt" class="form-label"> <h6>Заголовок карточки</h6>  </lable>
-                    <input id="dt" type="text" class="form-control" name='direction_card_title' > <br>
+                    <input id="dt" type="text" class="form-control" name='direction_card_title' placeholder="небольше 40 символов" > <br>
                     <lable for="db" class="form-label"> <h6>Ссылка направления</h6> </lable>
-                    <input id="db"  class="form-control" name="direction_card_link"></textarea> <br>
+                    <input id="db"  class="form-control" name="direction_card_link" placeholder="небольше 40 символов"></input> <br>
                     <button class="btn btn-primary" type="sucsess"> Создать карточку направления</button>
                 </div>
             </form>
