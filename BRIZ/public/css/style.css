@@ -333,7 +333,7 @@ body a {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: 190px;
 }
 
 .directions-item__wrapper .directions-item a {
@@ -1470,6 +1470,7 @@ ul {
     width: 220px;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    width: 353px;
     padding-right: 20px;
   }
 }
@@ -1495,7 +1496,7 @@ ul {
   }
   .directions .directions-item__wrapper .directions-item a .directions-item__title {
     font-size: 20px;
-    width: 300px;
+    width: 270px;
   }
 }
 /*# sourceMappingURL=style.css.map */
