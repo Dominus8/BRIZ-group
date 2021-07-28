@@ -611,7 +611,95 @@ body a {
   line-height: 16px;
 }
 
+.presentations {
+  padding: 0 165px;
+  margin-top: 117px;
+  min-height: 700px;
+}
+
+.presentations .presentations-title {
+  margin-top: 150px;
+  font-family: 'SolomonSans-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  color: #002855;
+}
+
+.presentations .all_categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.presentations .all_categories .presentation-item {
+  margin: 20px 20px;
+  width: 190px;
+  height: 301px;
+  background-color: #002855;
+  color: white;
+}
+
+.presentations .all_categories .presentation-item__title {
+  font-family: 'SolomonSans-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  margin: 5px 15px 5px 15px;
+}
+
+.presentations .all_categories .presentation-item__subtitle {
+  height: 37px;
+  padding-bottom: 5px;
+  font-family: 'SolomonSans-Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0px 15px;
+  overflow: scroll;
+}
+
+.presentations .all_categories .presentation-item__subtitle::-webkit-scrollbar {
+  width: 0;
+}
+
+.presentations .all_categories .presentation-item__download {
+  border: 1px inset #002855;
+  text-align: center;
+  background-color: white;
+}
+
+.presentations .all_categories .presentation-item__download:hover {
+  background-color: #0072CE;
+  opacity: 50;
+  -webkit-transition: .1;
+  transition: .1;
+}
+
+.presentations .all_categories .presentation-item__download:hover a svg {
+  height: 25px;
+  width: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.presentations .all_categories .presentation-item__download:hover a svg path {
+  fill: white;
+}
+
 .footer-bg {
+  bottom: 0;
   background-color: #002855;
 }
 
@@ -945,6 +1033,9 @@ ul {
   }
   .footer {
     padding: 90px 50px 30px 50px;
+  }
+  .presentations {
+    padding: 0 35px;
   }
 }
 
@@ -1351,6 +1442,20 @@ ul {
     display: inline;
     max-width: 428px;
     white-space: pre-wrap;
+  }
+  .presentations {
+    margin: 0;
+    padding: 0 165px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 

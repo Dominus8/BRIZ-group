@@ -1,11 +1,19 @@
 @extends('base')
 
 @section('nav')
-<ul>
-    <li id="b1">О нас</li>
-    <li id="b2">Направления</li>
-    <li id="b3">Контакты</li>
-</ul>  
+    <ul>
+        <li id="b1">О нас</li>
+        <li id="b2">Направления</li>
+        <li id="b3">Контакты</li>
+    </ul>  
+@endsection
+
+@section('nav-mobile')
+    <ul>
+            <li id="mb1">О нас</li>
+            <li id="mb2">Направления</li>
+            <li id="mb3">Контакты</li>
+    </ul>
 @endsection
 
 @section('main_content')

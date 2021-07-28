@@ -68,11 +68,7 @@
 	                	<span></span>
 	                </div>
 	                <div class="menu ">
-	                	<ul>
-                        <li id="mb1">О нас</li>
-                        <li id="mb2">Направления</li>
-                        <li id="mb3">Контакты</li>
-	                	</ul>
+                        @yield('nav-mobile')
 	                </div>
                 </div>
 
