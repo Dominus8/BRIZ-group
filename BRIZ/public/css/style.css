@@ -415,8 +415,13 @@ body a {
 }
 
 .directions .button-all-links {
+  position: static;
+}
+
+.directions .button-all-links .links-wrapper {
+  margin-bottom: 40px;
   width: 100% !important;
-  position: absolute;
+  position: static;
   left: 0;
   height: 73px;
   text-align: center;
@@ -438,11 +443,11 @@ body a {
   line-height: 16px;
 }
 
-.directions .button-all-links a {
+.directions .button-all-links .links-wrapper a {
   text-decoration: none;
 }
 
-.directions .button-all-links button {
+.directions .button-all-links .links-wrapper a button {
   color: white;
   background-color: #002855;
   outline: none;
@@ -459,13 +464,13 @@ body a {
       justify-content: space-around;
 }
 
-.directions .button-all-links button .button-ico {
+.directions .button-all-links .links-wrapper a button .button-ico {
   width: 48px;
   height: 48px;
   background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
 }
 
-.directions .button-all-links button:hover {
+.directions .button-all-links .links-wrapper a button:hover {
   outline: none;
   border: none;
   -webkit-transition: .3s;
@@ -473,15 +478,15 @@ body a {
   background-color: #1697FF;
 }
 
-.directions .button-all-links button:hover .button-text {
+.directions .button-all-links .links-wrapper a button:hover .button-text {
   color: white;
 }
 
-.directions .button-all-links button:hover .button-ico {
+.directions .button-all-links .links-wrapper a button:hover .button-ico {
   background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
 }
 
-.directions .button-all-links button:active {
+.directions .button-all-links .links-wrapper a button:active {
   outline: none;
   border: none;
   background-color: #002855;

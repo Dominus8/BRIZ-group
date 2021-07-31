@@ -300,10 +300,14 @@
                     </div>
                 </div>
                 <div class="button-all-links ">
-                    <a href="/download"><button >
-                        
-                    <div class="button-text">СМОТРЕТЬ ПРЕЗЕНТАЦИИ</div><div class="button-ico"></div>     
-                </button></a>
+                    <div class="links-wrapper">
+                        <a href="/download">
+                            <button >
+                                <div class="button-text">СМОТРЕТЬ ПРЕЗЕНТАЦИИ</div><div class="button-ico"></div>     
+                            </button>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>

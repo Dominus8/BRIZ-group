@@ -354,57 +354,63 @@ body {
         }
     }
     .button-all-links {
-        width: 100% !important;
-        position: absolute;
-        left: 0;
-        height: 73px;
-        text-align: center;
-        background-color: white;
-        margin-top: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'SolomonSans-Regular';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 16px;
-        a {
-            text-decoration: none;
-        }
-        button {
-            color: white;
-            background-color: #002855;
-            outline: none;
-            border: none;
-            width: 230px;
-            height: 43px;
+        position: static;
+        .links-wrapper{
+            margin-bottom: 40px;
+            width: 100% !important;
+            position: static;
+            left: 0;
+            height: 73px;
+            text-align: center;
+            background-color: white;
+            margin-top: 60px;
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-around;
-            .button-ico {
-                width: 48px;
-                height: 48px;
-                background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
-            }
-            &:hover {
-                outline: none;
-                border: none;
-                transition: .3s;
-                background-color: #1697FF;
-                .button-text {
+            font-family: 'SolomonSans-Regular';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            a {
+                text-decoration: none;
+                button {
                     color: white;
-                }
-                .button-ico {
-                    background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
+                    background-color: #002855;
+                    outline: none;
+                    border: none;
+                    width: 230px;
+                    height: 43px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    .button-ico {
+                        width: 48px;
+                        height: 48px;
+                        background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
+                    }
+                    &:hover {
+                        outline: none;
+                        border: none;
+                        transition: .3s;
+                        background-color: #1697FF;
+                        .button-text {
+                            color: white;
+                        }
+                        .button-ico {
+                            background: url("../../image/directions-button-arrow-active.png") center center no-repeat;
+                        }
+                    }
+                    &:active {
+                        outline: none;
+                        border: none;
+                        background-color: #002855;
+                    }
                 }
             }
-            &:active {
-                outline: none;
-                border: none;
-                background-color: #002855;
-            }
+
         }
+
     }
 }
 

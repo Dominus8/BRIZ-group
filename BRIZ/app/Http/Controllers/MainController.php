@@ -10,6 +10,7 @@ use App\Models\SlideModel;
 use App\Models\DirectionsCardModel;
 use App\Models\ContactModel;
 use App\Models\PresentationModel;
+use Illuminate\Support\Facades\Storage;
 
 
 class MainController extends Controller
@@ -47,9 +48,12 @@ class MainController extends Controller
             'slide_title'=>'required|max:40',
             'slide_body'=>'required|max:150',
         ]);
-
-
+         
         $image = $request->file('slide_image')->store('storage', 'slider_image');
+        
+        $img = Image::make( $request->file('slide_image'))->resize(535, 387)->save('storage/slider_image/'.$image);
+
+
         $slide = new SlideModel();
         $slide->slide_image = $image;
         $slide->slide_title = $request->input('slide_title');
@@ -62,7 +66,11 @@ class MainController extends Controller
 // Для удаления слайда
     public function dell_slide($id){
 
-        $slide = SlideModel::find($id)->delete();
+        $slide = SlideModel::find($id);
+
+        Storage::disk('slider_image')->delete($slide->slide_image);
+
+        $slide->delete();
 
         return redirect()->route('admin');
 
@@ -159,7 +167,7 @@ class MainController extends Controller
 
         }
 
-    // Для удаления презентации
+    // Для Скачивания презентации
         public function download_presentation($id){
             $presentation = PresentationModel::find($id);
 
@@ -174,6 +182,8 @@ class MainController extends Controller
             return response()->download($file, $name, $headers);
 
         }
+
+        
 
  
 }// закрывает клас 

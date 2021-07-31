@@ -59,6 +59,8 @@ Route::get('/download/download-presentation/{id}', [MainController::class, 'down
 Route::get('/test', function()
 {
     $img = Image::make('https://1.bp.blogspot.com/-1GhwO8zE0pw/Xv28T99HyPI/AAAAAAAAA_Y/BmJFpREe5fIuDjlbZ-mPPCzSSyZeL0UkgCK4BGAsYHg/s1017/Thumb_laravel.jpg')->fit(200);
-
-    return $img->response('jpg');
+    // $img->response('jpg');
+    // dd($image);
+     return view('test');
+    //  
 });
