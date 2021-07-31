@@ -85,6 +85,9 @@ class MainController extends Controller
         ]);
 
         $image = $request->file('direction_card_image')->store('storage', 'directions_image');
+
+        $img = Image::make( $request->file('direction_card_image'))->resize(398, 263)->save('storage/directions_image/'.$image);
+
         $directions_card = new DirectionsCardModel();
         $directions_card->directions_card_image = $image;
         $directions_card->directions_card_title = $request->input('direction_card_title');
@@ -98,7 +101,11 @@ class MainController extends Controller
 // Для удаления карточек направления
     public function dell_directions_card($id){
 
-        $slide = DirectionsCardModel::find($id)->delete();
+        $dcard = DirectionsCardModel::find($id);
+
+        Storage::disk('directions_image')->delete($dcard->directions_card_image);
+        
+        $dcard->delete();
 
         return redirect()->route('admin');
 
