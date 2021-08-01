@@ -102,7 +102,14 @@
                     @foreach($directions_card as $el)
                     <div class="directions-item">
                         <div class="directions-item__image">
-                            <img src="storage/directions_image/{{$el->directions_card_image}}" alt="image">
+                            <div class="directions-item__image--desktop">
+                                <img  src="storage/directions_image/{{$el->directions_card_image}}" alt="image">
+                            </div>
+                            
+                            <div class="directions-item__image--mobile">
+                                <img src="storage/directions_image/mob_img/{{$el->directions_card_image}}" alt="image">
+                            </div>
+                            
                         </div>
                         <a href="{{$el->directions_card_link}}" target="_blank">
                             <div class="directions-item__title">
@@ -122,7 +129,7 @@
                     @endforeach
 
 
-                    <div class="directions-item">
+                    <!-- <div class="directions-item">
                         <div class="directions-item__image">
                             <img src="image/directions-img2.webp" alt="image">
                         </div>
@@ -271,9 +278,9 @@
                             <span>микростеклошарик</span>
                         </div>
                         <div class="directions-item__link">
-                            <!-- <div class="ico">
+                             <div class="ico">
 
-                            </div> -->
+                            </div> 
                             <div class="link">
 
                             </div>
@@ -297,7 +304,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="button-all-links ">
                     <div class="links-wrapper">

@@ -86,7 +86,7 @@ class MainController extends Controller
 
         $image = $request->file('direction_card_image')->store('storage', 'directions_image');
 
-        $img = Image::make( $request->file('direction_card_image'))->resize(398, 263)->save('storage/directions_image/'.$image);
+        $img = Image::make( $request->file('direction_card_image'))->resize(398, 263)->save('storage/directions_image/mob_img/'.$image)->fit(190)->save('storage/directions_image/'.$image);
 
         $directions_card = new DirectionsCardModel();
         $directions_card->directions_card_image = $image;
@@ -104,6 +104,7 @@ class MainController extends Controller
         $dcard = DirectionsCardModel::find($id);
 
         Storage::disk('directions_image')->delete($dcard->directions_card_image);
+        Storage::disk('directions_image')->delete('mob_img/'.$dcard->directions_card_image);
         
         $dcard->delete();
 
@@ -116,12 +117,15 @@ class MainController extends Controller
 
             $valid = $request->validate([
                 'contact_image'=>'required',
-                'contact_body'=>'required|max:40',
+                'contact_body'=>'required|max:200',
                 'contact_phone'=>'required|max:150',
                 'contact_mail'=>'required|max:150',
             ]);
 
             $image = $request->file('contact_image')->store('storage', 'contacts_image');
+
+            $img = Image::make( $request->file('contact_image'))->resize(111, 26)->save('storage/contacts_image/'.$image);
+
             $contact = new ContactModel();
             $contact->contact_image = $image;
             $contact->contact_body = $request->input('contact_body');
@@ -136,7 +140,11 @@ class MainController extends Controller
     // Для удаления карточек контактов
         public function dell_contact($id){
 
-            $contact = ContactModel::find($id)->delete();
+            $contact = ContactModel::find($id);
+            
+            Storage::disk('contacts_image')->delete($contact->contact_image);
+            
+            $contact->delete();
 
             return redirect()->route('admin');
 
@@ -152,6 +160,7 @@ class MainController extends Controller
                 'presentation_subtitle'=>'required',
             ]);
             $image = $request->file('presentation_image')->store('storage', 'presentation_image');
+            $img = Image::make( $request->file('presentation_image'))->resize(190, 190)->save('storage/presentation_image/'.$image);
             $file = $request->file('presentation_file')->store('storage', 'presentation_file');
             $presentation = new PresentationModel();
             $presentation->presentation_file = $file;
@@ -168,7 +177,13 @@ class MainController extends Controller
     // Для удаления презентации
         public function dell_presentation($id){
 
-            $presentation = PresentationModel::find($id)->delete();
+            $presentation = PresentationModel::find($id);
+            
+            Storage::disk('presentation_image')->delete($presentation->presentation_image);
+
+            Storage::disk('presentation_file')->delete($presentation->presentation_file);
+            
+            $presentation->delete();
 
             return redirect()->route('admin');
 
