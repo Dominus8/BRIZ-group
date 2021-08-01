@@ -20,7 +20,7 @@ Route::get('/', [MainController::class, 'home']);
 Route::get('/download', [MainController::class, 'download']);
 
 
-Route::get('/admin', [MainController::class, 'admin']) ->name('admin');
+Route::get('/admin', [MainController::class, 'admin']) ->name('admin')->middleware('auth');
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
@@ -67,4 +67,6 @@ Route::get('/test', function()
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [MainController::class, 'admin'])->name('home');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -11,6 +11,7 @@ use App\Models\DirectionsCardModel;
 use App\Models\ContactModel;
 use App\Models\PresentationModel;
 use Illuminate\Support\Facades\Storage;
+use Auth;
 
 
 class MainController extends Controller
@@ -206,7 +207,10 @@ class MainController extends Controller
         }
 
         
-
+        public function logout(Request $request) {
+            Auth::logout();
+            return redirect('/');
+        }
  
 }// закрывает клас 
 

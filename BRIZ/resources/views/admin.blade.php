@@ -7,6 +7,8 @@
 <ul>
     <li></li>
         <li onclick="window.location.href='/';" >Главная</li>
+        <li onclick="window.location.href='/logout';" >Выйти из админки</li>
+        
     <li></li>
 </ul>  
 @endsection
