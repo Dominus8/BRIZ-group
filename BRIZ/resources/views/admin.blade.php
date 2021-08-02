@@ -5,12 +5,16 @@
 
 @section('nav')
 <ul>
-    <li></li>
         <li onclick="window.location.href='/';" >Главная</li>
         <li onclick="window.location.href='/logout';" >Выйти из админки</li>
-        
-    <li></li>
 </ul>  
+@endsection
+
+@section('nav-mobile')
+    <ul>
+        <li onclick="window.location.href='/';" >Главная</li>
+        <li onclick="window.location.href='/logout';" >Выйти из админки</li>
+    </ul>
 @endsection
 
 @section('main_content')

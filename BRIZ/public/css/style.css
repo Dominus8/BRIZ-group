@@ -856,16 +856,20 @@ ul {
 }
 
 .menu {
-  width: 300px;
+  width: 70%;
   height: auto;
   background: #002855;
   color: white;
-  padding: 10px;
+  padding: 5px;
   position: fixed;
   left: -320px;
   top: 4px;
   -webkit-transition: left 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: left 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu ul li {
+  padding: 2px 0;
 }
 
 .menu.animate {
@@ -1490,7 +1494,7 @@ ul {
        object-fit: cover;
   }
   .menu {
-    width: 220px;
+    width: 75%;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     width: 353px;
