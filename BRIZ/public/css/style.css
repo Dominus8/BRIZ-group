@@ -410,6 +410,7 @@ body a {
 }
 
 .directions-item__wrapper .directions-item__link .link {
+  width: 130;
   margin-right: 25px;
   font-style: normal;
   font-weight: 500;
