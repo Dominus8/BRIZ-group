@@ -276,12 +276,16 @@ body {
             height: 301px;
             width: 190px;
             margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 10px;
             &__image {
                 .directions-item__image--desktop {
                     img {
                         object-fit: cover;
                         // width: 100%;
-                        // height: 190px;  
+                        // height: 190px;
                     }
                 }
                 .directions-item__image--mobile {
@@ -289,13 +293,18 @@ body {
                 }
             }
             a {
+                padding-top: 14px;
+                height: 111px;
                 text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             }
             //------------Заголовок в карточке направления---------------
             &__title {
                 width: 160px;
                 height: 38px;
-                margin: 14px 15px 0 15px;
+                margin: 0 15px;
                 text-transform: uppercase;
                 font-family: 'SolomonSans-Bold';
                 font-style: normal;
@@ -314,7 +323,7 @@ body {
                 align-items: center;
                 justify-content: start;
                 color: #0072CE;
-                margin-top: 25px;
+                // margin-top: 25px;
                 display: flex;
                 .ico {
                     width: 12px;

@@ -52,7 +52,7 @@ class MainController extends Controller
          
         $image = $request->file('slide_image')->store('storage', 'slider_image');
         
-        $img = Image::make( $request->file('slide_image'))->resize(535, 387)->save('storage/slider_image/'.$image);
+        $img = Image::make( $request->file('slide_image'))->fit(535, 387)->save('storage/slider_image/'.$image);
 
 
         $slide = new SlideModel();
@@ -161,7 +161,7 @@ class MainController extends Controller
                 'presentation_subtitle'=>'required',
             ]);
             $image = $request->file('presentation_image')->store('storage', 'presentation_image');
-            $img = Image::make( $request->file('presentation_image'))->resize(190, 190)->save('storage/presentation_image/'.$image);
+            $img = Image::make( $request->file('presentation_image'))->fit(190, 190)->save('storage/presentation_image/'.$image);
             $file = $request->file('presentation_file')->store('storage', 'presentation_file');
             $presentation = new PresentationModel();
             $presentation->presentation_file = $file;

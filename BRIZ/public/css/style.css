@@ -326,6 +326,17 @@ body a {
   height: 301px;
   width: 190px;
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .directions-item__wrapper .directions-item__image .directions-item__image--desktop img {
@@ -338,13 +349,25 @@ body a {
 }
 
 .directions-item__wrapper .directions-item a {
+  padding-top: 14px;
+  height: 111px;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .directions-item__wrapper .directions-item__title {
   width: 160px;
   height: 38px;
-  margin: 14px 15px 0 15px;
+  margin: 0 15px;
   text-transform: uppercase;
   font-family: 'SolomonSans-Bold';
   font-style: normal;
@@ -370,7 +393,6 @@ body a {
       -ms-flex-pack: start;
           justify-content: start;
   color: #0072CE;
-  margin-top: 25px;
   display: flex;
 }
 
