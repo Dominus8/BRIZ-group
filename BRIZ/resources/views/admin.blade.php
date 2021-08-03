@@ -1,12 +1,13 @@
 @extends('base')
+
 @section('head-link')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 @endsection
 
 @section('nav')
 <ul>
-        <li onclick="window.location.href='/';" >Главная</li>
-        <li onclick="window.location.href='/logout';" >Выйти из админки</li>
+    <li onclick="window.location.href='/';" style='padding-left:50px; padding-bottom:0;' >Главная</li>
+    <li onclick="window.location.href='/logout';" style='padding-bottom:0;'>Выйти из админки</li>
 </ul>  
 @endsection
 
