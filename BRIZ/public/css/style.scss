@@ -325,7 +325,9 @@ body {
                 color: #0072CE;
                 // margin-top: 25px;
                 display: flex;
+                flex-grow: 1;
                 .ico {
+                    display: block;
                     width: 12px;
                     height: 12px;
                     margin-left: 15px;
