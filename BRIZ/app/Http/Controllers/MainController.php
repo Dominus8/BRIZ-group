@@ -35,7 +35,7 @@ class MainController extends Controller
         return view('admin',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all()]);
     }
 
-// Роут для просмотра и загрузки презентаций
+// Для просмотра и загрузки презентаций
     public function download(){
         $presentation = new PresentationModel();
         return view('download',['presentation'=>$presentation->all()]);
@@ -64,6 +64,46 @@ class MainController extends Controller
 
         return redirect()->route('admin');
     }
+
+// Для редактирования слайда
+    public function edit_slide($id){
+
+        $slide = new SlideModel;
+
+        return view('editslide',['slide'=>$slide->find($id)]);
+    }
+
+// Для обновления слайда
+    public function update_slide($id, Request $request ){
+
+        $valid = $request->validate([
+            // 'slide_image'=>'required',
+            'slide_title'=>'required|max:40',
+            'slide_body'=>'required|max:150',
+        ]);
+        
+        if($request->file('slide_image')){
+
+            Storage::disk('slider_image')->delete(SlideModel::find($id)->slide_image);
+
+            $image = $request->file('slide_image')->store('storage', 'slider_image');
+            
+            Image::make( $request->file('slide_image'))->fit(535, 387)->save('storage/slider_image/'.$image);
+        }else{
+            $image = SlideModel::find($id)->slide_image;
+        }
+    
+
+        $slide = SlideModel::find($id);
+        $slide->slide_image = $image;
+        $slide->slide_title = $request->input('slide_title');
+        $slide->slide_body = $request->input('slide_body');
+
+        $slide->save();
+
+        return redirect()->route('admin');
+    }
+
 // Для удаления слайда
     public function dell_slide($id){
 
@@ -74,8 +114,8 @@ class MainController extends Controller
         $slide->delete();
 
         return redirect()->route('admin');
-
     }
+
 //Создание карточки направления
     public function create_direction_card(Request $request){
 
@@ -87,9 +127,49 @@ class MainController extends Controller
 
         $image = $request->file('direction_card_image')->store('storage', 'directions_image');
 
-        $img = Image::make( $request->file('direction_card_image'))->resize(398, 263)->save('storage/directions_image/mob_img/'.$image)->fit(190)->save('storage/directions_image/'.$image);
+        Image::make( $request->file('direction_card_image'))->fit(398, 263)->save('storage/directions_image/mob_img/'.$image);
+        Image::make( $request->file('direction_card_image'))->fit(190)->save('storage/directions_image/'.$image);
 
         $directions_card = new DirectionsCardModel();
+        $directions_card->directions_card_image = $image;
+        $directions_card->directions_card_title = $request->input('direction_card_title');
+        $directions_card->directions_card_link = $request->input('direction_card_link');
+
+        $directions_card->save();
+
+        return redirect()->route('admin');
+    }
+
+// Для редактирования карточки направления
+    public function edit_directions_card($id){
+
+        $dcard = new DirectionsCardModel;
+
+        return view('editdcard',['dcard'=>$dcard->find($id)]);
+    }
+
+// Для обновления карточки направления
+    public function update_direction_card($id, Request $request){
+
+        $valid = $request->validate([
+            'direction_card_title'=>'required|max:40',
+            'direction_card_link'=>'required|max:40',
+        ]);
+
+        if($request->file('direction_card_image')){
+
+            Storage::disk('directions_image')->delete(DirectionsCardModel::find($id)->directions_card_image);
+            Storage::disk('directions_image')->delete('mob_img/'.DirectionsCardModel::find($id)->directions_card_image);
+
+            $image = $request->file('direction_card_image')->store('storage', 'directions_image');
+
+            Image::make( $request->file('direction_card_image'))->fit(398, 263)->save('storage/directions_image/mob_img/'.$image);
+            Image::make( $request->file('direction_card_image'))->fit(190)->save('storage/directions_image/'.$image);
+        }else{
+            $image = DirectionsCardModel::find($id)->directions_card_image;
+        }
+
+        $directions_card = DirectionsCardModel::find($id);
         $directions_card->directions_card_image = $image;
         $directions_card->directions_card_title = $request->input('direction_card_title');
         $directions_card->directions_card_link = $request->input('direction_card_link');

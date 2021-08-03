@@ -394,9 +394,6 @@ body a {
           justify-content: start;
   color: #0072CE;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .directions-item__wrapper .directions-item__link .ico {
@@ -934,6 +931,16 @@ ul {
           align-items: center;
 }
 
+.admin-body .admin-section__manage .manage-element h6 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.admin-body .admin-section__manage .manage-element a {
+  margin-right: 5px;
+}
+
 .admin-body .admin-section__manage .manage-element:hover {
   background-color: rgba(150, 141, 141, 0.3);
   -webkit-transition: .5;
@@ -1140,9 +1147,9 @@ ul {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    -webkit-box-pack: last baseline;
-        -ms-flex-pack: last baseline;
-            justify-content: last baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image {
     max-width: 428px;
@@ -1161,6 +1168,7 @@ ul {
             justify-content: center;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
+    height: 62px;
     font-style: normal;
     font-weight: 600;
     font-size: 26px;
@@ -1175,6 +1183,7 @@ ul {
     letter-spacing: 0.2px;
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    height: 77px;
     white-space: normal;
     font-style: normal;
     font-weight: normal;
@@ -1312,6 +1321,9 @@ ul {
     font-weight: bold;
     font-size: 22px;
     line-height: 26px;
+  }
+  .directions .directions-item__wrapper .directions-item a {
+    height: 100%;
   }
   .directions .directions-item__wrapper .directions-item a .directions-item__title {
     margin-top: 20px;
@@ -1544,6 +1556,7 @@ ul {
   }
   .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     width: 300px;
+    height: 96px;
   }
   .directions .directions-item__wrapper .directions-item {
     min-height: 396px;

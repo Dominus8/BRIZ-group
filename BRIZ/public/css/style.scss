@@ -325,7 +325,6 @@ body {
                 color: #0072CE;
                 // margin-top: 25px;
                 display: flex;
-                flex-grow: 1;
                 .ico {
                     display: block;
                     width: 12px;
@@ -767,6 +766,12 @@ ul {
                 padding: 0 5px;
                 display: flex;
                 justify-content: space-between;
+                h6 {
+                    flex-grow: 1;
+                }
+                a {
+                    margin-right: 5px;
+                }
                 align-items: center;
                 &:hover {
                     background-color: rgba(150, 141, 141, 0.3);
@@ -978,7 +983,7 @@ ul {
                         margin: 15px 0;
                         margin-top: 57px;
                         flex-direction: column-reverse;
-                        justify-content: last baseline;
+                        justify-content: space-between;
                         .carousel-item__image {
                             max-width: 428px;
                             height: 388px;
@@ -993,6 +998,7 @@ ul {
                             margin: 0 15px 30px 15px !important;
                             justify-content: center;
                             .item-content__title {
+                                height: 62px;
                                 font-style: normal;
                                 font-weight: 600;
                                 font-size: 26px;
@@ -1003,6 +1009,7 @@ ul {
                                 letter-spacing: 0.2px;
                             }
                             .item-content__subtitle {
+                                height: 77px;
                                 white-space: normal;
                                 font-style: normal;
                                 font-weight: normal;
@@ -1130,6 +1137,7 @@ ul {
                     }
                 }
                 a {
+                    height: 100%;
                     .directions-item__title {
                         margin-top: 20px;
                         width: 320px;
@@ -1348,6 +1356,7 @@ ul {
     }
     .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
         width: 300px;
+        height: 96px;
     }
     .directions .directions-item__wrapper .directions-item {
         min-height: 396px;

@@ -61,7 +61,8 @@
             @foreach($slide as $el)
                 <div class="manage-element slide">
                     <h6>{{$el->slide_title }}</h6>
-                    <a class='btn btn-primary' href="/admin/dell-slide/{{$el->id}}">x</a>
+                    <a class='btn btn-warning' href="/admin/edit-slide/{{$el->id}}">edit</a>
+                    <a class='btn btn-danger' href="/admin/dell-slide/{{$el->id}}">x</a>
                 </div>
             @endforeach        
         </div>
@@ -92,7 +93,8 @@
             @foreach($directions_card as $el)
                 <div class="manage-element directions_card">
                     <h6>{{$el->directions_card_title }}</h6>
-                    <a class='btn btn-primary' href="/admin/dell-directions-card/{{$el->id}}">x</a>
+                    <a class='btn btn-warning' href="/admin/edit-directions-card/{{$el->id}}">edit</a>
+                    <a class='btn btn-danger' href="/admin/dell-directions-card/{{$el->id}}">x</a>
                 </div>
             @endforeach   
         </div>
@@ -127,7 +129,8 @@
             @foreach($contact as $el)
                 <div class="manage-element directions_card">
                     <h6>{{$el->contact_body}}</h6>
-                    <a class='btn btn-primary' href="/admin/dell-contact/{{$el->id}}">x</a>
+                    <a class='btn btn-warning' href="/admin/dell-contact/{{$el->id}}/edit">edit</a>
+                    <a class='btn btn-danger' href="/admin/dell-contact/{{$el->id}}">x</a>
                 </div>
             @endforeach 
         </div>
@@ -160,7 +163,8 @@
             @foreach($presentation as $el)
                 <div class="manage-element directions_card">
                     <h6>{{$el->presentation_title}}</h6>
-                    <a class='btn btn-primary' href="/admin/dell-presentation/{{$el->id}}">x</a>
+                    <a class='btn btn-warning' href="/admin/dell-presentation/{{$el->id}}/edit">edit</a>
+                    <a class='btn btn-danger' href="/admin/dell-presentation/{{$el->id}}">x</a>
                 </div>
             @endforeach 
         </div>

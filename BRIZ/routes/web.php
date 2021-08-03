@@ -26,12 +26,23 @@ Route::get('/admin', [MainController::class, 'admin']) ->name('admin')->middlewa
 
 Route::post('/admin/create-slide', [MainController::class, 'create_slide']) ->name('create_slide');
 
+Route::get('/admin/edit-slide/{id}', [MainController::class, 'edit_slide']) ->name('edit_slide');
+
+Route::post('/admin/update-slide/{id}', [MainController::class, 'update_slide']) ->name('update_slide');
+
 Route::get('/admin/dell-slide/{id}', [MainController::class, 'dell_slide']) ->name('dell_slide');
+
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
 // Создание карточек направления
-Route::post('/admin/create-direction-card', [MainController::class, 'create_direction_card']) ->name('create_direction_card'); 
+Route::post('/admin/create-direction-card', [MainController::class, 'create_direction_card']) ->name('create_direction_card');
+
+//Редактирование карточек направления
+Route::get('/admin/edit-directions-card/{id}', [MainController::class, 'edit_directions_card']) ->name('edit_direction_card');
+
+//обновление карточек направления
+Route::post('/admin/update-direction-card/{id}', [MainController::class, 'update_direction_card']) ->name('update_direction_card');
 
 //Удаление карточек направления
 Route::get('/admin/dell-directions-card/{id}', [MainController::class, 'dell_directions_card']) ->name('dell_direction_card');
