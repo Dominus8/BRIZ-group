@@ -19,7 +19,6 @@ Route::get('/', [MainController::class, 'home']);
 
 Route::get('/download', [MainController::class, 'download']);
 
-
 Route::get('/admin', [MainController::class, 'admin']) ->name('admin')->middleware('auth');
 
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -70,11 +69,16 @@ Route::post('/admin/create-presentation', [MainController::class, 'create_presen
 //Скачивание презентации
 Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation');
 
-//Удаление презентации
+//Изменение презентации
 Route::get('/admin/edit-presentation/{id}', [MainController::class, 'edit_presentation']) ->name('edit-presentation');
+
+//обновление презентации
+Route::post('/admin/update-presentation/{id}', [MainController::class, 'update_presentation']) ->name('update-presentation');
 
 //Удаление презентации
 Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation');
+
+
 
 Route::get('/test', function()
 {

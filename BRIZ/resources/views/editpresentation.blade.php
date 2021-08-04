@@ -6,21 +6,29 @@
 
 @section('nav')
 <ul>
-    <li onclick="window.location.href='/';" style='padding-left:50px; padding-bottom:0;' >Главная</li>
-    <li onclick="window.location.href='/logout';" style='padding-bottom:0;'>Выйти из админки</li>
+    <li onclick="window.location.href='/admin';" >Назад</li>
+    <li onclick="window.location.href='/';"  >Главная</li><!--style='padding-left:50px; padding-bottom:0;' style='padding-bottom:0;'-->
+    <li onclick="window.location.href='/logout';" >Выйти из админки</li>
 </ul>  
 @endsection
 
 @section('nav-mobile')
     <ul>
+        <li onclick="window.location.href='/admin';" >Назад</li>
         <li onclick="window.location.href='/';" >Главная</li>
         <li onclick="window.location.href='/logout';" >Выйти из админки</li>
     </ul>
 @endsection
 
+@section('style')
+    <style>
+        .header .header-content{
+            padding: 0;
+        }
+    </style>
+@endsection
+
 @section('main_content')
-
-
 
 
 <div class="container admin-body">
@@ -56,7 +64,7 @@
                 <lable for="pf" class="form-label"> <h6>Файл презентации</h6></lable>
                 <input id="pf" type="file" class="form-control" name='presentation_file'><br>
 
-                <button class="btn btn-primary" type="sucsess"> Загрузить презентацию</button>
+                <button class="btn btn-primary" type="sucsess">Обновить презентацию</button>
             </div>
         </form>
     </div>

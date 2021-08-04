@@ -303,6 +303,38 @@ class MainController extends Controller
         return view('editpresentation',['presentation'=>$presentation->find($id)]);
     }
 
+//обновление презентации
+    public function update_presentation($id, Request $request){
+        $valid = $request->validate([
+            'presentation_title'=>'required',
+            'presentation_subtitle'=>'required',
+        ]);
+
+        if($request->file('presentation_image')){
+            $image = $request->file('presentation_image')->store('storage', 'presentation_image');
+            $img = Image::make( $request->file('presentation_image'))->fit(190, 190)->save('storage/presentation_image/'.$image);
+        }else{
+            $image = PresentationModel::find($id)->presentation_image;
+        }
+
+        if($request->file('presentation_file')){
+            $file = $request->file('presentation_file')->store('storage', 'presentation_file');
+        }else{
+            $file = PresentationModel::find($id)->presentation_file;
+        }
+
+        $presentation = PresentationModel::find($id);
+        $presentation->presentation_file = $file;
+        $presentation->presentation_image = $image;
+        $presentation->presentation_title = $request->input('presentation_title');
+        $presentation->presentation_subtitle = $request->input('presentation_subtitle');
+
+
+        $presentation->save();
+
+        return redirect()->route('admin');
+    }
+
 // Для удаления презентации
         public function dell_presentation($id){
 

@@ -34,6 +34,7 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
+                        @if(count($slides)>=1)
                         @foreach($slides as $slide)
                         <div class="swiper-slide">
                             <div class="carousel-item">
@@ -42,15 +43,32 @@
                                 </div>
                                 <div class="carousel-item__content">
                                     <div class="item-content__title">
-                                        {{$slide->slide_title}} <!-- КОМПЛЕКСНЫЕ РЕШЕНИЯ ОБУСТРОЙСТВА ДОРОГ -->
+                                        {{$slide->slide_title}}
                                     </div>
                                     <div class="item-content__subtitle">
-                                        {{$slide->slide_body}} <!-- Комплекс услуг по благоустройству автодорог и парковок: нанесение разметки, установка светофоров, дорожно-знаковой информации, проекционная разметка -->
+                                        {{$slide->slide_body}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
+                        @else
+                        <div class="swiper-slide">
+                            <div class="carousel-item">
+                                <div class="carousel-item__image">
+                                    <img src="image/no-image.jpg" alt="Изображение">
+                                </div>
+                                <div class="carousel-item__content">
+                                    <div class="item-content__title">
+                                        Заголовок
+                                    </div>
+                                    <div class="item-content__subtitle">
+                                        Описание
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="swiper-control-btn">
@@ -99,6 +117,7 @@
             <div class="directions">
                 <div class="directions-title"><span>Направления</span></div>
                 <div class="directions-item__wrapper">
+                    @if(count($directions_card)>=1)
                     @foreach($directions_card as $el)
                     <div class="directions-item">
                         <div class="directions-item__image">
@@ -111,7 +130,7 @@
                             </div>
                             
                         </div>
-                        <a href="{{$el->directions_card_link}}" target="_blank">
+                        <a href="http://{{$el->directions_card_link}}" target="_blank">
                             <div class="directions-item__title">
                                 {{$el->directions_card_title}}
                             </div>
@@ -124,9 +143,30 @@
                                 </div>
                             </div>
                         </a>
-
                     </div>
                     @endforeach
+                    @else
+                    
+                    <div class="directions-item">
+                        <div class="directions-item__image">
+                            <img src="image/no-image190.jpg" alt="Изображение">
+                        </div>
+                        <a href="http://www.showtoyou.ru" target="_blank">
+                            <div class="directions-item__title">
+                                Карточка направления
+                            </div>
+                            <div class="directions-item__link">
+                                <div class="ico">
+
+                                </div>
+                                <div class="link">
+                                www.showtoyou.ru
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                    @endif
 
 
                     <!-- <div class="directions-item">
@@ -1061,6 +1101,7 @@
                 <div class="contacts-title">контакты</div>
                 <div class="contacts-items-wrapper">
                     <!-- ГК БРИЗ -->
+                    @if(count($contact)>=1)
                     @foreach($contact as $el)
                     <div class="item">
                         <div class="item__img">
@@ -1072,7 +1113,19 @@
                         <div class="item__link">{{$el->contact_mail}}</div>
                     </div>
                     @endforeach
+                    @else
                     <div class="item">
+                        <div class="item__img">
+                        <img src="image//c-plug.jpg" alt="Изображение">
+                        </div>
+                        <div class="item__description">
+                            Адрес карточки контакта
+                        </div>
+                        <div class="item__number">8 (800) 000-00-00</div>
+                        <div class="item__link">info@briz.group</div>
+                    </div>
+                    @endif
+                    <!-- <div class="item">
                         <div class="item__img">
                             <svg width="111" height="26" viewBox="0 0 111 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.7894 0H0V3.28668H16.7894V0Z" fill="#002855"/>
@@ -1094,12 +1147,10 @@
                             Красноярский край, Емельяновский районмуниципальное образование Солонцовский сельский совет, площадка Западная, участок №2 А, строение 3, 658083
                         </div>
                         <div class="item__number">8 (800) 250-40-92</div>
-                        <!-- <div class="item__number">8 (391) 204-04-70</div>
-                        <div class="item__number">8 (391) 204-04-71</div> -->
                         <div class="item__link">west@briz.group</div>
-                    </div>
+                    </div> -->
                     <!-- БРИЗ-Восток -->
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="item__img">
                             <svg width="111" height="27" viewBox="0 0 111 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.8242 25.9425V18.1953H26.6382C28.4773 18.1953 29.3672 18.8409 29.3672 20.1908C29.3672 20.719 29.2486 21.1299 29.0113 21.4233C28.8333 21.6581 28.6553 21.7754 28.3587 21.8341C28.5367 21.8928 28.6553 21.9515 28.8333 22.0689C29.3079 22.421 29.5452 22.9493 29.5452 23.6535C29.5452 24.4752 29.3079 25.0621 28.8333 25.4143C28.418 25.7664 27.7061 25.8838 26.8162 25.8838H20.8242V25.9425ZM21.5955 18.9583V21.482H26.9349C27.4688 21.482 27.8841 21.4233 28.1214 21.2472C28.3587 21.0712 28.5367 20.719 28.5367 20.2495C28.5367 19.8387 28.418 19.4865 28.1807 19.3104C27.9434 19.0757 27.5281 18.9583 26.9349 18.9583H21.5955ZM21.5955 22.245V25.1208H27.1128C27.6468 25.1208 28.0621 25.0034 28.2994 24.7687C28.596 24.5339 28.7147 24.1818 28.7147 23.6535C28.7147 23.184 28.596 22.8319 28.2994 22.5971C28.0027 22.3624 27.5874 22.245 27.0535 22.245H21.5955Z" fill="#00A499"/>
@@ -1120,9 +1171,9 @@
                         <div class="item__description">Хабаровский край, Хабаровск​, Окружная, 19, Офис № 104, 680031</div>
                         <div class="item__number">8 (999) 317 29 29</div>
                         <div class="item__link">Dv@briz2001.ru</div>
-                    </div>
+                    </div> -->
                     <!-- БРИЗ-Центр -->
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="item__img">
                             <svg width="111" height="26" viewBox="0 0 111 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M49.4887 0.0523636H32.9366V3.09268H49.4887V0.0523636Z" fill="#002855"/>
@@ -1142,9 +1193,9 @@
                         <div class="item__description">Красноярский край, Емельяновский район, муниципальное образование Солонцовский сельский совет, площадка Западная, участок №2 А, строение 3, 663020</div>
                         <div class="item__number">8(800) 250-40-92</div>
                         <div class="item__link">bc@briz2001.ru</div>
-                    </div>
+                    </div> -->
                     <!-- БРИЗ-Запад -->
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="item__img">
                             <svg width="111" height="26" viewBox="0 0 111 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M70.939 12.5702H76.2766L86.4927 3.1157V12.5702H90.1086V0H84.5987L75.0713 8.80991V0H70.939V12.5702Z" fill="#002855"/>
@@ -1165,7 +1216,7 @@
                         <div class="item__number">8(800) 250-40-92</div>
 
                         <div class="item__link">west@briz2001.ru</div>
-                    </div>
+                    </div> -->
                     <!-- Модульные системы управления -->
                     <!-- <div class="item">
                         <div class="item__img">

@@ -17,10 +17,12 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     
+    
     @yield('head-link')
 
     <title>BRIZ GROUP</title>
-
+    
+    @yield('style')
 </head>
 
 <body>
