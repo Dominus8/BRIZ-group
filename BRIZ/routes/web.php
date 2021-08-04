@@ -50,22 +50,31 @@ Route::get('/admin/dell-directions-card/{id}', [MainController::class, 'dell_dir
 //---------------------------------------------------------------------------------------------------------------------------------
 
 // Создание карточек Контактов
-Route::post('/admin/create-contact', [MainController::class, 'create_contact']) ->name('create_contact'); 
+Route::post('/admin/create-contact', [MainController::class, 'create_contact']) ->name('create_contact');
+
+//Изменение карточек направления
+Route::get('/admin/edit-contact/{id}', [MainController::class, 'edit_contact']) ->name('edit_contact');
+
+//Обновление карточек направления
+Route::post('/admin/update-contact/{id}', [MainController::class, 'update_contact']) ->name('update_contact');
 
 //Удаление карточек направления
 Route::get('/admin/dell-contact/{id}', [MainController::class, 'dell_contact']) ->name('dell_contact');
 
 
+
+//---------------------------------------------------------------------------------------------------------------------------------
 // Загрузка презентации
 Route::post('/admin/create-presentation', [MainController::class, 'create_presentation']) ->name('create-presentation'); 
-
-//Удаление презентации
-Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation');
 
 //Скачивание презентации
 Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation');
 
+//Удаление презентации
+Route::get('/admin/edit-presentation/{id}', [MainController::class, 'edit_presentation']) ->name('edit-presentation');
 
+//Удаление презентации
+Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation');
 
 Route::get('/test', function()
 {

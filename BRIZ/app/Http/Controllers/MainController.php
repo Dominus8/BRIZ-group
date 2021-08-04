@@ -193,7 +193,7 @@ class MainController extends Controller
 
     }
     
-    //Создание карточки кнтактов
+//Создание карточки кнтактов
         public function create_contact(Request $request){
 
             $valid = $request->validate([
@@ -206,19 +206,59 @@ class MainController extends Controller
             $image = $request->file('contact_image')->store('storage', 'contacts_image');
 
             $img = Image::make( $request->file('contact_image'))->resize(111, 26)->save('storage/contacts_image/'.$image);
-
+    
             $contact = new ContactModel();
             $contact->contact_image = $image;
             $contact->contact_body = $request->input('contact_body');
             $contact->contact_phone = $request->input('contact_phone');
             $contact->contact_mail = $request->input('contact_mail');
-
+    
             $contact->save();
-
+    
             return redirect()->route('admin');
+
     }
 
-    // Для удаления карточек контактов
+// Редактирование карточки направления
+    public function edit_contact($id){
+
+        $contact = new ContactModel;
+
+        return view('editcontact',['contact'=>$contact->find($id)]);
+    }
+
+//Обновление карточки кнтактов
+    public function update_contact($id, Request $request){
+
+        $valid = $request->validate([
+            'contact_body'=>'required|max:200',
+            'contact_phone'=>'required|max:150',
+            'contact_mail'=>'required|max:150',
+        ]);
+
+        if($request->file('contact_image')){
+            $image = $request->file('contact_image')->store('storage', 'contacts_image');
+
+            $img = Image::make( $request->file('contact_image'))->resize(111, 26)->save('storage/contacts_image/'.$image);
+
+            Storage::disk('contacts_image')->delete(ContactModel::find($id)->contact_image);
+
+        }else{
+            $image = ContactModel::find($id)->contact_image;
+        }
+
+        $contact = ContactModel::find($id);
+        $contact->contact_image = $image;
+        $contact->contact_body = $request->input('contact_body');
+        $contact->contact_phone = $request->input('contact_phone');
+        $contact->contact_mail = $request->input('contact_mail');
+
+        $contact->save();
+
+        return redirect()->route('admin');
+}
+
+// Для удаления карточек контактов
         public function dell_contact($id){
 
             $contact = ContactModel::find($id);
@@ -232,7 +272,7 @@ class MainController extends Controller
         }
 
 
-    //Создание презентации
+//Создание презентации
         public function create_presentation(Request $request){
             $valid = $request->validate([
                 'presentation_image'=>'required',
@@ -255,7 +295,15 @@ class MainController extends Controller
             return redirect()->route('admin');
     }
 
-    // Для удаления презентации
+// Редактирование карточки направления
+    public function edit_presentation($id){
+
+        $presentation = new PresentationModel;
+
+        return view('editpresentation',['presentation'=>$presentation->find($id)]);
+    }
+
+// Для удаления презентации
         public function dell_presentation($id){
 
             $presentation = PresentationModel::find($id);
@@ -270,7 +318,7 @@ class MainController extends Controller
 
         }
 
-    // Для Скачивания презентации
+// Для Скачивания презентации
         public function download_presentation($id){
             $presentation = PresentationModel::find($id);
 

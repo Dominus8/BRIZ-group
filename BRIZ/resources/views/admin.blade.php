@@ -23,7 +23,10 @@
 
 
 
+
+
 <div class="container admin-body">
+
 @if($errors->any())
 
 <div class="div alert alert-danger">
@@ -36,9 +39,21 @@
 
 @endif
 
-<!--Форма добавления слайдов-->
+<nav class='mt200'>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-slide" type="button" role="tab" aria-controls="nav-slide" aria-selected="true">Слайды</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-dcard" type="button" role="tab" aria-controls="nav-dcard" aria-selected="false">Карточки направлений</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Карточки адресов</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-dwnload" type="button" role="tab" aria-controls="nav-dwnload" aria-selected="false">Карточки презентаций</button>
+  
+</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
 
-<div class="admin-section slider-admin">
+
+
+  <div class="tab-pane fade show active" id="nav-slide" role="tabpanel" aria-labelledby="nav-home-tab">
+  <div class="admin-section slider-admin">
         <div class="admin-section__title">
             <h2>Создать слайд</h2>
         </div>
@@ -67,8 +82,12 @@
             @endforeach        
         </div>
     </div>
+  </div>
 
-    <!--Форма добавления карточек направления-->
+
+
+  <div class="tab-pane fade" id="nav-dcard" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <!--Форма добавления карточек направления-->
 
     <div class="admin-section directions-admin">
         <div class="admin-section__title">
@@ -99,26 +118,31 @@
             @endforeach   
         </div>
     </div>
+  </div>
 
+
+
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <!--Форма добавления карточек контактов-->
     <div class="admin-section contacts-admin">
         <div class="admin-section__title">
             <h2>Создать карточку контакта</h2>
         </div>
         <div class="admin-section__form">
-        <form action="/admin/create-contact" method="post" enctype="multipart/form-data" >
+            <form action="/admin/create-contact" method="post" enctype="multipart/form-data" >
                 {{ csrf_field() }}
                 <div class="form-group"> 
                     <lable for="ci" class="form-label"> <h6>Изображение контакта</h6>  </lable>
                     <input id="ci" type="file" class="form-control" name='contact_image'> <br>
 
                     <lable for="cb" class="form-label"> <h6>Адрес контакта</h6>  </lable>
-                    <input id="cb" type="text" class="form-control" name='contact_body' > <br>
+                    <textarea id="cb" type="text" class="form-control" name='contact_body' ></textarea> <br>
 
                     <lable for="cp" class="form-label"> <h6>Телефон контакта</h6> </lable>
-                    <input id="cp"  class="form-control" name="contact_phone"></textarea> <br>
+                    <input id="cp"  class="form-control" name="contact_phone"> <br>
 
                     <lable for="cm" class="form-label"> <h6>почта контакта</h6> </lable>
-                    <input id="cm"  class="form-control" name="contact_mail"></textarea> <br>
+                    <input id="cm" type="email"  class="form-control" name="contact_mail"> <br>
 
                     <button class="btn btn-primary" type="sucsess"> Создать карточку контакта</button>
                 </div>
@@ -129,16 +153,14 @@
             @foreach($contact as $el)
                 <div class="manage-element directions_card">
                     <h6>{{$el->contact_body}}</h6>
-                    <a class='btn btn-warning' href="/admin/dell-contact/{{$el->id}}/edit">edit</a>
+                    <a class='btn btn-warning' href="/admin/edit-contact/{{$el->id}}">edit</a>
                     <a class='btn btn-danger' href="/admin/dell-contact/{{$el->id}}">x</a>
                 </div>
             @endforeach 
         </div>
-    </div>
-
-        <!--Форма добавления презентации-->
-
-        <div class="admin-section presentation-admin">
+    </div></div>
+  <div class="tab-pane fade" id="nav-dwnload" role="tabpanel" aria-labelledby="nav-contact-tab"><!--Форма добавления презентации-->
+    <div class="admin-section presentation-admin">
         <div class="admin-section__title">
             <h2>Загрузить презентацию</h2>
         </div>
@@ -163,14 +185,13 @@
             @foreach($presentation as $el)
                 <div class="manage-element directions_card">
                     <h6>{{$el->presentation_title}}</h6>
-                    <a class='btn btn-warning' href="/admin/dell-presentation/{{$el->id}}/edit">edit</a>
+                    <a class='btn btn-warning' href="/admin/edit-presentation/{{$el->id}}">edit</a>
                     <a class='btn btn-danger' href="/admin/dell-presentation/{{$el->id}}">x</a>
                 </div>
             @endforeach 
         </div>
-    </div>
-
-
+    </div></div>
+</div>
 
 </div>
 
