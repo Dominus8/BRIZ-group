@@ -356,7 +356,7 @@ class MainController extends Controller
 
             $file= public_path()."/storage/presentation_file/$presentation->presentation_file";
 
-            $name = $presentation->presentation_title;
+            $name = $presentation->presentation_title.".pdf";
 
             $headers = array(
                 'Content-Type: application/pdf',

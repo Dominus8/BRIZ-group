@@ -23,60 +23,60 @@ Route::get('/admin', [MainController::class, 'admin']) ->name('admin')->middlewa
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
-Route::post('/admin/create-slide', [MainController::class, 'create_slide']) ->name('create_slide');
+Route::post('/admin/create-slide', [MainController::class, 'create_slide']) ->name('create_slide')->middleware('auth');
 
-Route::get('/admin/edit-slide/{id}', [MainController::class, 'edit_slide']) ->name('edit_slide');
+Route::get('/admin/edit-slide/{id}', [MainController::class, 'edit_slide']) ->name('edit_slide')->middleware('auth');
 
-Route::post('/admin/update-slide/{id}', [MainController::class, 'update_slide']) ->name('update_slide');
+Route::post('/admin/update-slide/{id}', [MainController::class, 'update_slide']) ->name('update_slide')->middleware('auth');
 
-Route::get('/admin/dell-slide/{id}', [MainController::class, 'dell_slide']) ->name('dell_slide');
+Route::get('/admin/dell-slide/{id}', [MainController::class, 'dell_slide']) ->name('dell_slide')->middleware('auth');
 
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
 // Создание карточек направления
-Route::post('/admin/create-direction-card', [MainController::class, 'create_direction_card']) ->name('create_direction_card');
+Route::post('/admin/create-direction-card', [MainController::class, 'create_direction_card']) ->name('create_direction_card')->middleware('auth');
 
 //Редактирование карточек направления
-Route::get('/admin/edit-directions-card/{id}', [MainController::class, 'edit_directions_card']) ->name('edit_direction_card');
+Route::get('/admin/edit-directions-card/{id}', [MainController::class, 'edit_directions_card']) ->name('edit_direction_card')->middleware('auth');
 
 //обновление карточек направления
-Route::post('/admin/update-direction-card/{id}', [MainController::class, 'update_direction_card']) ->name('update_direction_card');
+Route::post('/admin/update-direction-card/{id}', [MainController::class, 'update_direction_card']) ->name('update_direction_card')->middleware('auth');
 
 //Удаление карточек направления
-Route::get('/admin/dell-directions-card/{id}', [MainController::class, 'dell_directions_card']) ->name('dell_direction_card');
+Route::get('/admin/dell-directions-card/{id}', [MainController::class, 'dell_directions_card']) ->name('dell_direction_card')->middleware('auth');
 
 //---------------------------------------------------------------------------------------------------------------------------------
 
 // Создание карточек Контактов
-Route::post('/admin/create-contact', [MainController::class, 'create_contact']) ->name('create_contact');
+Route::post('/admin/create-contact', [MainController::class, 'create_contact']) ->name('create_contact')->middleware('auth');
 
 //Изменение карточек направления
-Route::get('/admin/edit-contact/{id}', [MainController::class, 'edit_contact']) ->name('edit_contact');
+Route::get('/admin/edit-contact/{id}', [MainController::class, 'edit_contact']) ->name('edit_contact')->middleware('auth');
 
 //Обновление карточек направления
-Route::post('/admin/update-contact/{id}', [MainController::class, 'update_contact']) ->name('update_contact');
+Route::post('/admin/update-contact/{id}', [MainController::class, 'update_contact']) ->name('update_contact')->middleware('auth');
 
 //Удаление карточек направления
-Route::get('/admin/dell-contact/{id}', [MainController::class, 'dell_contact']) ->name('dell_contact');
+Route::get('/admin/dell-contact/{id}', [MainController::class, 'dell_contact']) ->name('dell_contact')->middleware('auth');
 
 
 
 //---------------------------------------------------------------------------------------------------------------------------------
 // Загрузка презентации
-Route::post('/admin/create-presentation', [MainController::class, 'create_presentation']) ->name('create-presentation'); 
+Route::post('/admin/create-presentation', [MainController::class, 'create_presentation']) ->name('create-presentation')->middleware('auth'); 
 
 //Скачивание презентации
-Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation');
+Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation')->middleware('auth');
 
 //Изменение презентации
-Route::get('/admin/edit-presentation/{id}', [MainController::class, 'edit_presentation']) ->name('edit-presentation');
+Route::get('/admin/edit-presentation/{id}', [MainController::class, 'edit_presentation']) ->name('edit-presentation')->middleware('auth');
 
 //обновление презентации
-Route::post('/admin/update-presentation/{id}', [MainController::class, 'update_presentation']) ->name('update-presentation');
+Route::post('/admin/update-presentation/{id}', [MainController::class, 'update_presentation']) ->name('update-presentation')->middleware('auth');
 
 //Удаление презентации
-Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation');
+Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation')->middleware('auth');
 
 
 

@@ -280,7 +280,7 @@ body {
             flex-direction: column;
             justify-content: space-between;
             padding-bottom: 10px;
-            &__image {                    
+            &__image {
                 .directions-item__image--desktop {
                     img {
                         object-fit: cover;
@@ -575,7 +575,7 @@ body {
             }
             &__subtitle {
                 height: 37px;
-                padding-bottom: 5px;
+                padding-bottom: 10px;
                 @include h5();
                 margin: 0px 15px;
                 overflow: scroll;
