@@ -373,16 +373,6 @@ class MainController extends Controller
 
 // Для обновления карты
         public function update_map(Request $request){
-
-            $r=$request->all();
-            unset($r['_token']);
-            
-            $keys=array_keys($r);
-
-            DB::table('map_models')->whereIn('id_region',$keys)->update(["status_region"=>1]);
-            DB::table('map_models')->whereNotIn('id_region',$keys)->update(["status_region"=>0]);
-            
-            
             MapModel::insert(array(
                 ["id_region"=>"RU-MOW",   "name_region"=>"Москва", "status_region"=>0],
                  ["id_region"=>"RU-CHE",   "name_region"=>"Челябинская область", "status_region"=>0],   
@@ -470,9 +460,14 @@ class MainController extends Controller
                  ["id_region"=>"RU-NEN",   "name_region"=>"Ненецскй АО",  "status_region"=>0], 
                  ["id_region"=>"RU-STA",   "name_region"=>"Ставропольский край",  "status_region"=>0], 
                  ["id_region"=>"RU-TUL",   "name_region"=>"Тульская область", "status_region"=>0]));
-                 
 
+            $r=$request->all();
+            unset($r['_token']);
+            
+            $keys=array_keys($r);
 
+            DB::table('map_models')->whereIn('id_region',$keys)->update(["status_region"=>1]);
+            DB::table('map_models')->whereNotIn('id_region',$keys)->update(["status_region"=>0]);
             
             return redirect()->route('admin');
         }
