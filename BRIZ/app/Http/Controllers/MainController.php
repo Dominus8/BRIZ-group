@@ -6,10 +6,12 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\ImageManagerStatic as Image;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Models\SlideModel;
 use App\Models\DirectionsCardModel;
 use App\Models\ContactModel;
 use App\Models\PresentationModel;
+use App\Models\MapModel;
 use Illuminate\Support\Facades\Storage;
 use Auth;
 
@@ -22,8 +24,9 @@ class MainController extends Controller
         $slides= new SlideModel();
         $directions_card = new DirectionsCardModel();
         $contact = new ContactModel();
+        $mapid='RU-KYA';
     
-        return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(),'contact'=>$contact->all()]);
+        return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'mapid'=>$mapid]);
     }
 // Проброс данных в админку
     public function admin(){
@@ -31,8 +34,9 @@ class MainController extends Controller
         $directions_card = new DirectionsCardModel();
         $contact = new ContactModel();
         $presentation = new PresentationModel();
+        $map= new MapModel();
 
-        return view('admin',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all()]);
+        return view('admin',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
     }
 
 // Для просмотра и загрузки презентаций
@@ -74,7 +78,7 @@ class MainController extends Controller
     }
 
 // Для обновления слайда
-    public function update_slide($id, Request $request ){
+    public function update_slide($id, Request $request){
 
         $valid = $request->validate([
             // 'slide_image'=>'required',
@@ -366,12 +370,126 @@ class MainController extends Controller
 
         }
 
-        
-        public function logout(Request $request) {
+// Для обновления карты
+        public function update_map(Request $request){
+            $r=$request->toArray();
+            unset($r['_token']);
+            
+
+            foreach($r as $el){
+                $y=array_search($el,$r);
+                $region = MapModel::where('id_region','=',$y)->first();
+                $region->id_region=$region->id_region;
+                $region->name_region=$region->name_region;
+                dd($request->input($y));
+                if($request->input($y)=="on"){
+                    $region->status_region=true;
+                }
+
+                $region->save();
+            }
+
+            
+            // MapModel::insert(array(
+            //     ["id_region"=>"RU-MOW",   "name_region"=>"Москва", "status_region"=>0],
+            //      ["id_region"=>"RU-CHE",   "name_region"=>"Челябинская область", "status_region"=>0],   
+            //      ["id_region"=>"RU-ORL",   "name_region"=>"Орловская область", "status_region"=>0], 
+            //      ["id_region"=>"RU-OMS",   "name_region"=>"Омская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-LIP",   "name_region"=>"Липецкая область", "status_region"=>0],  
+            //      ["id_region"=>"RU-KRS",   "name_region"=>"Курская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-RYA",   "name_region"=>"Рязанская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-BRY",   "name_region"=>"Брянская область", "status_region"=>0], 
+            //      ["id_region"=>"RU-KIR",   "name_region"=>"Кировская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-ARK",   "name_region"=>"Архангельская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-MUR",   "name_region"=>"Мурманская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-SPE",   "name_region"=>"Санкт-Петербург",  "status_region"=>0], 
+            //      ["id_region"=>"RU-YAR",   "name_region"=>"Ярославская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-ULY",   "name_region"=>"Ульяновская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-NVS",   "name_region"=>"Новосибирская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-TYU",   "name_region"=>"Тюменская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-SVE",   "name_region"=>"Свердловская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-NGR",   "name_region"=>"Новгородская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-KGN",   "name_region"=>"Курганская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-KGD",   "name_region"=>"Калининградская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-IVA",   "name_region"=>"Ивановская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-AST",   "name_region"=>"Астраханская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-KHA",   "name_region"=>"Хабаровский край", "status_region"=>0],  
+            //      ["id_region"=>"RU-CE",    "name_region"=>"Чеченская республика",   "status_region"=>0], 
+            //      ["id_region"=>"RU-UD",    "name_region"=>"Удмуртская республика",  "status_region"=>0],  
+            //      ["id_region"=>"RU-SE",    "name_region"=>"Республика Северная Осетия",   "status_region"=>0], 
+            //      ["id_region"=>"RU-MO",    "name_region"=>"Республика Мордовия",  "status_region"=>0],  
+            //      ["id_region"=>"RU-KR",    "name_region"=>"Республика  Карелия",  "status_region"=>0],  
+            //      ["id_region"=>"RU-KL",    "name_region"=>"Республика  Калмыкия",   "status_region"=>0], 
+            //      ["id_region"=>"RU-IN",    "name_region"=>"Республика  Ингушетия",  "status_region"=>0],  
+            //      ["id_region"=>"RU-AL",    "name_region"=>"Республика Алтай",   "status_region"=>0], 
+            //      ["id_region"=>"RU-BA",    "name_region"=>"Республика Башкортостан",  "status_region"=>0],  
+            //      ["id_region"=>"RU-AD",    "name_region"=>"Республика Адыгея",  "status_region"=>0],  
+            //      ["id_region"=>"RU-CR",    "name_region"=>"Республика Крым",  "status_region"=>0],  
+            //      ["id_region"=>"RU-SEV",   "name_region"=>"Севастополь",  "status_region"=>0], 
+            //      ["id_region"=>"RU-KO",    "name_region"=>"Республика Коми",  "status_region"=>0],  
+            //      ["id_region"=>"RU-PNZ",   "name_region"=>"Пензенская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-TAM",   "name_region"=>"Тамбовская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-LEN",   "name_region"=>"Ленинградская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-VLG",   "name_region"=>"Вологодская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-KOS",   "name_region"=>"Костромская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-PSK",   "name_region"=>"Псковская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-YAN",   "name_region"=>"Ямало-Ненецкий АО",  "status_region"=>0], 
+            //      ["id_region"=>"RU-CHU",   "name_region"=>"Чукотский АО", "status_region"=>0],  
+            //      ["id_region"=>"RU-YEV",   "name_region"=>"Еврейская автономская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-TY",    "name_region"=>"Республика Тыва",  "status_region"=>0],  
+            //      ["id_region"=>"RU-SAK",   "name_region"=>"Сахалинская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-AMU",   "name_region"=>"Амурская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-BU",    "name_region"=>"Республика Бурятия",   "status_region"=>0], 
+            //      ["id_region"=>"RU-KK",    "name_region"=>"Республика Хакасия",   "status_region"=>0], 
+            //      ["id_region"=>"RU-KEM",   "name_region"=>"Кемеровская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-ALT",   "name_region"=>"Алтайский край", "status_region"=>0],  
+            //      ["id_region"=>"RU-DA",    "name_region"=>"Республика Дагестан",  "status_region"=>0],  
+            //      ["id_region"=>"RU-KB",    "name_region"=>"Кабардино-Балкарская республика",  "status_region"=>0],  
+            //      ["id_region"=>"RU-KC",    "name_region"=>"Карачаевая-Черкесская республика",   "status_region"=>0], 
+            //      ["id_region"=>"RU-KDA",   "name_region"=>"Краснодарский край", "status_region"=>0],  
+            //      ["id_region"=>"RU-ROS",   "name_region"=>"Ростовская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-SAM",   "name_region"=>"Самарская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-TA",    "name_region"=>"Республика Татарстан",   "status_region"=>0], 
+            //      ["id_region"=>"RU-ME",    "name_region"=>"Республика Марий Эл",  "status_region"=>0],  
+            //      ["id_region"=>"RU-CU",    "name_region"=>"Чувашская республика",   "status_region"=>0], 
+            //      ["id_region"=>"RU-NIZ",   "name_region"=>"Нижегородская край", "status_region"=>0],  
+            //      ["id_region"=>"RU-VLA",   "name_region"=>"Владимировская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-MOS",   "name_region"=>"Московская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-KLU",   "name_region"=>"Калужская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-BEL",   "name_region"=>"Белгородская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-ZAB",   "name_region"=>"Забайкальский край", "status_region"=>0],  
+            //      ["id_region"=>"RU-PRI",   "name_region"=>"Приморский край",  "status_region"=>0], 
+            //      ["id_region"=>"RU-KAM",   "name_region"=>"Камачатский край", "status_region"=>0],  
+            //      ["id_region"=>"RU-MAG",   "name_region"=>"Магаданская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-SA",    "name_region"=>"Республика Саха",  "status_region"=>0],  
+            //      ["id_region"=>"RU-KYA",   "name_region"=>"Красноярский край",  "status_region"=>0], 
+            //      ["id_region"=>"RU-ORE",   "name_region"=>"Оренбургская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-SAR",   "name_region"=>"Саратовская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-VGG",   "name_region"=>"Волгоградская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-VOR",   "name_region"=>"Ставропольский край",  "status_region"=>0], 
+            //      ["id_region"=>"RU-SMO",   "name_region"=>"Смоленская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-TVE",   "name_region"=>"Тверская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-PER",   "name_region"=>"Пермская область", "status_region"=>0],  
+            //      ["id_region"=>"RU-KHM",   "name_region"=>"Ханты-Мансийский АО",  "status_region"=>0], 
+            //      ["id_region"=>"RU-KHM",   "name_region"=>"Ханты-Мансийский АО",  "status_region"=>0], 
+            //      ["id_region"=>"RU-TOM",   "name_region"=>"Томская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-IRK",   "name_region"=>"Иркутская область",  "status_region"=>0], 
+            //      ["id_region"=>"RU-NEN",   "name_region"=>"Ненецскй АО",  "status_region"=>0], 
+            //      ["id_region"=>"RU-STA",   "name_region"=>"Ставропольский край",  "status_region"=>0], 
+            //      ["id_region"=>"RU-TUL",   "name_region"=>"Тульская область", "status_region"=>0]));
+                 
+
+
+            
+            return redirect()->route('admin');
+        }
+
+// Для завершения даминской сессии
+        public function logout(Request $request){
             Auth::logout();
             return redirect('/');
         }
- 
+
 }// закрывает клас 
 
 

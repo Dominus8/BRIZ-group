@@ -6,13 +6,14 @@ const swiper = new Swiper('.swiper-container', {
     navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
-    },breakpoints: {
-        390:{
+    },
+    breakpoints: {
+        390: {
             spaceBetween: 200
         },
-        320:{
+        320: {
             spaceBetween: 250
-        }   
+        }
     }
 
 });
@@ -92,25 +93,15 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    document.querySelector('.menu-bar').addEventListener('click', function(){
+    document.querySelector('.menu-bar').addEventListener('click', function() {
         document.querySelector('.menu-bar span').classList.toggle('active');
         document.querySelector('.menu').classList.toggle('animate');
-        
-})
+
+    })
 
 });
 
-$( document ).ready(function(){
+$(document).ready(function() {
 
-    let width = $( ".directions-item__image" ).width();
-    let height = $( ".directions-item__image" ).height();
 
-    // $.post({
-    //     URL:'/',
-    //     dataType:'json',
-    //     data:{
-    //         width:190,
-    //         height:190,
-    //     },
-    // })
 });

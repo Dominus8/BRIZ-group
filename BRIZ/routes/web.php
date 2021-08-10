@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,14 +80,23 @@ Route::post('/admin/update-presentation/{id}', [MainController::class, 'update_p
 Route::get('/admin/dell-presentation/{id}', [MainController::class, 'dell_presentation']) ->name('dell-presentation')->middleware('auth');
 
 
+//-------------------------------------------------------------------------------------------------------------------------------
+//обновление карты
+Route::post('/admin/update-map', [MainController::class, 'update_map']) ->name('update-map')->middleware('auth');
 
-Route::get('/test', function()
-{
-    $img = Image::make('https://1.bp.blogspot.com/-1GhwO8zE0pw/Xv28T99HyPI/AAAAAAAAA_Y/BmJFpREe5fIuDjlbZ-mPPCzSSyZeL0UkgCK4BGAsYHg/s1017/Thumb_laravel.jpg')->fit(200);
-    // $img->response('jpg');
-    // dd($image);
-     return view('test');
-    //  
+
+
+Route::post('/test', function(Request $request){
+    $a=$request->all();
+    
+    foreach($a as $el){
+        $x=$el;
+        $y=array_search($el,$a);
+        echo( $x.'&nbsp-&nbsp'.$y.'<br>');
+
+    }
+    
+
 });
 
 Auth::routes();

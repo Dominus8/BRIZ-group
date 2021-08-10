@@ -53,12 +53,11 @@
     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-dcard" type="button" role="tab" aria-controls="nav-dcard" aria-selected="false">Карточки направлений</button>
     <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Карточки адресов</button>
     <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-dwnload" type="button" role="tab" aria-controls="nav-dwnload" aria-selected="false">Карточки презентаций</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#map-edit" type="button" role="tab" aria-controls="map-edit" aria-selected="false">Управление картой</button>
   
 </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-
-
 
   <div class="tab-pane fade show active" id="nav-slide" role="tabpanel" aria-labelledby="nav-home-tab">
   <div class="admin-section slider-admin">
@@ -166,7 +165,9 @@
                 </div>
             @endforeach 
         </div>
-    </div></div>
+    </div>
+</div>
+
     <div class="tab-pane fade" id="nav-dwnload" role="tabpanel" aria-labelledby="nav-contact-tab">
     <!--Форма добавления презентации-->
         <div class="admin-section presentation-admin">
@@ -198,6 +199,27 @@
                         <a class='btn btn-danger' href="/admin/dell-presentation/{{$el->id}}">x</a>
                     </div>
                 @endforeach 
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="map-edit" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <!--Форма обновления карты-->
+        <div class="admin-section presentation-admin">
+            <div class="admin-section__title">
+                 <h2>Управление картой</h2>
+            </div>
+            <div class="admin-section__form">
+                <form action="/admin/update-map" method="post" enctype="multipart/form-data"> 
+                    {{ csrf_field() }}
+                    <div class="form-group"> 
+                        @foreach($map as $el)
+                                <p>{{$el->name_region}} @if($el->status_region)<input type="checkbox" id="scales" name="{{$el->id_region}}" checked> @else<input type="checkbox" id="scales"  name="{{$el->id_region}}" >@endif
+                        @endforeach
+                        <br>
+                        <button class="btn btn-primary" type="sucsess"> Изменить регионы</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

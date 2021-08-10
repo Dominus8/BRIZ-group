@@ -7,11 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    {{ csrf_field() }}
-    <form action="/test-download" metod='get' enctype="multipart/form-data">
-        <lable for="si" class="form-label"> <h6>Изображение слайда 535х387</h6>  </lable>
-        <input id="si" type="file" class="form-control" name='image'> <br>
-        <button class="btn btn-primary" type="sucsess"> Создать слайд</button>
-    </form>
+<div class="admin-section presentation-admin">
+            <div class="admin-section__title">
+                 <h2>Управление картой</h2>
+            </div>
+            <div class="admin-section__form">
+                <form action="/admin/update-map-test" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="form-group"> 
+                        <div>
+                          <input type="checkbox" id="RU-KYA" name="RU-KYA" value="Красноярский край" checked>
+                          <label for="RU-KYA">Красноярский край</label>
+                        </div>
+
+                        <div>
+                          <input type="checkbox" id="RU-SA" name="RU-SA" value="Республика Саха">
+                          <label for="RU-SA">Республика Саха</label>
+                        </div>
+                        <button class="btn btn-primary" type="sucsess"> Изменить регионы</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 </body>
 </html>
