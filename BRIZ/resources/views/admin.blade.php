@@ -28,11 +28,6 @@
 
 @section('main_content')
 
-
-
-
-
-
 <div class="container admin-body">
 
 @if($errors->any())
@@ -91,8 +86,6 @@
     </div>
   </div>
 
-
-
   <div class="tab-pane fade" id="nav-dcard" role="tabpanel" aria-labelledby="nav-profile-tab">
           <!--Форма добавления карточек направления-->
 
@@ -126,8 +119,6 @@
         </div>
     </div>
   </div>
-
-
 
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
     <!--Форма добавления карточек контактов-->
@@ -210,16 +201,25 @@
                  <h2>Управление картой</h2>
             </div>
             <div class="admin-section__form">
-                <form action="/admin/update-map" method="post" enctype="multipart/form-data"> 
-                    {{ csrf_field() }}
-                    <div class="form-group"> 
-                        @foreach($map as $el)
-                                <p>{{$el->name_region}} @if($el->status_region)<input type="checkbox" id="scales" name="{{$el->id_region}}" checked> @else<input type="checkbox" id="scales"  name="{{$el->id_region}}" >@endif
-                        @endforeach
-                        <br>
-                        <button class="btn btn-primary" type="sucsess"> Изменить регионы</button>
+                <div class="row" >
+                    <div class="col-md-12">
+                        <form class='mh-100' action="/admin/update-map" method="post" enctype="multipart/form-data"> 
+                            {{ csrf_field() }}
+                            <div class="form-group" style=' height:800px; max-wight:1100px; display:flex; flex-direction:column; flex-wrap:wrap; overflow:scroll; '> 
+                                @foreach($map as $el)
+                                       <div style='max-width:250px; margin:0 10px; '> <p>{{$el->name_region}} @if($el->status_region)<input type="checkbox" id="scales" name="{{$el->id_region}}" checked> @else<input type="checkbox" id="scales"  name="{{$el->id_region}}" >@endif</div>
+                                @endforeach
+                                <br>
+                                
+                                
+                            </div>
+                            <div style='margin-top:40px;'>
+                                <button class="btn btn-primary" type="sucsess"> Изменить регионы</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
     </div>

@@ -378,32 +378,10 @@ class MainController extends Controller
             unset($r['_token']);
             
             $keys=array_keys($r);
-          
 
-            
-            
-            
-            
             DB::table('map_models')->whereIn('id_region',$keys)->update(["status_region"=>1]);
             DB::table('map_models')->whereNotIn('id_region',$keys)->update(["status_region"=>0]);
             
-
-            // dd($region);
-
-            // foreach($r as $el){
-            //     $y=array_search($el,$r);
-            //     $region = DB::table('map_models')->where('id_region','=',$y)->first();
-            //     dd($region);
-            //     $region->id_region=$region->id_region;
-            //     $region->name_region=$region->name_region;
-            //     // dd($request->input($y));
-            //     if($request->input($y)=="on"){
-            //         $region->status_region=true;
-            //     }
-
-            //     $region->save();
-            // }
-
             
             // MapModel::insert(array(
             //     ["id_region"=>"RU-MOW",   "name_region"=>"Москва", "status_region"=>0],
