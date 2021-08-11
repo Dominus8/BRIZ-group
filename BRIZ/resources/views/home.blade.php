@@ -1739,17 +1739,12 @@
         </div>
     </div>
 
-    <script>
-        let a='{{$mapid}}';
-        console.log(a);
-    </script>
-
-    <!-- contacts -->
 
     <div id="el3" class="section-outor contacts-bg">
         <div class="section-inner">
             <div class="contacts">
-                <div class="contacts-title">контакты</div>
+                <div class="contacts-title">контакты
+                </div>
                 <div class="contacts-items-wrapper">
                     <!-- ГК БРИЗ -->
                     @if(count($contact)>=1)
@@ -1922,6 +1917,18 @@
             </div>
         </div>
     </div>
+ 
+ <script>
+ a = @json($arrFoMap);
+ a.forEach(function(item){
+    try {
+        document.getElementById(`${item[0]}`).classList.add("test2");
+    } catch (err) {
+        console.log(item[0]);
+        console.log(item[1]);
+    }
 
-    
+    });
+ </script>   
+
     @endsection

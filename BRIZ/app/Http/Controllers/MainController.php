@@ -25,9 +25,15 @@ class MainController extends Controller
         $slides= new SlideModel();
         $directions_card = new DirectionsCardModel();
         $contact = new ContactModel();
-        $mapid='RU-KYA';
+        $mapid = MapModel::where('status_region','=',1)->get()->values()->all();
+        $arrFoMap = array();
+        foreach ($mapid as $el) {
+            array_push($arrFoMap, [$el->id_region, $el->name_region]);
+        }
+
+        //  dd($arrFoMap);
     
-        return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'mapid'=>$mapid]);
+        return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'arrFoMap'=>$arrFoMap]);
     }
 // Проброс данных в админку
     public function admin(){

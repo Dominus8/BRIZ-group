@@ -210,8 +210,6 @@
                                        <div style='max-width:250px; margin:0 10px; '> <p>{{$el->name_region}} @if($el->status_region)<input type="checkbox" id="scales" name="{{$el->id_region}}" checked> @else<input type="checkbox" id="scales"  name="{{$el->id_region}}" >@endif</div>
                                 @endforeach
                                 <br>
-                                
-                                
                             </div>
                             <div style='margin-top:40px;'>
                                 <button class="btn btn-primary" type="sucsess"> Изменить регионы</button>
