@@ -544,6 +544,22 @@ body a {
   position: relative;
 }
 
+.geography .geography-map__wrapper svg g .r_on path:nth-child(1) {
+  fill: #002855;
+}
+
+.geography .geography-map__wrapper svg g .r_on:hover path:nth-child(1) {
+  fill: url(#pattern48);
+}
+
+.geography .geography-map__wrapper svg g .r_on:hover path:nth-child(2) {
+  visibility: visible;
+}
+
+.geography .geography-map__wrapper svg g .r_on:hover path:nth-child(3) {
+  visibility: visible;
+}
+
 .geography .geography-map__wrapper--mobile {
   display: none;
 }

@@ -444,18 +444,27 @@ body {
     }
     .geography-map__wrapper {
         margin-top: 65px;
-        // text-align: center;
         position: relative;
-        .svg {
-            #RU-KYA {
-                .no_used {
-                    #RU-KYA1 {}
-                    #RU-KYA2 {}
-                    #RU-KYA3 {}
+        svg{
+           g{
+            .r_on{
+                
+                path:nth-child(1){fill:#002855;}
+                &:hover{
+                    path:nth-child(1){
+                        fill:url(#pattern48);
+                    }
+                    path:nth-child(2){
+                        visibility: visible;
+                    }
+                    path:nth-child(3){
+                        visibility: visible;
+                    }
                 }
-                .used {}
-                .used_activ {}
-            }
+                 
+            } 
+           }
+
         }
     }
     .geography-map__wrapper--mobile {
