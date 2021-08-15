@@ -446,7 +446,8 @@ body {
         margin-top: 65px;
         position: relative;
         svg{
-           g{
+            position: relative;
+           g{position: relative;
             .r_on{
                 
                 path:nth-child(1){fill:#002855;}
