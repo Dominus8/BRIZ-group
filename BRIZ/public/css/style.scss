@@ -453,20 +453,21 @@ body {
                 path:nth-child(3){
                     fill:#002855;
                 }
-                &:hover{
-                    path:nth-child(2){
-                        visibility: visible;
-                    }
-                    path:nth-child(3){
-                        fill:#1697FF;
-                        fill-opacity:0.7;
-                    }
-                    path:nth-child(4){
-                        visibility: visible;
-                    }
+
+                
+            }
+            .geoHover{
+                path:nth-child(2){
+                    visibility: visible;
+                }
+                path:nth-child(3){
+                    fill:#1697FF;
+                    fill-opacity:0.7;
+                }
+                path:nth-child(4){
+                    visibility: visible;
                 }
             }
-
            }
 
         }

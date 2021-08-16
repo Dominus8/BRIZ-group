@@ -556,16 +556,16 @@ body a {
   fill: #002855;
 }
 
-.geography .geography-map__wrapper svg g .r_on:hover path:nth-child(2) {
+.geography .geography-map__wrapper svg g .geoHover path:nth-child(2) {
   visibility: visible;
 }
 
-.geography .geography-map__wrapper svg g .r_on:hover path:nth-child(3) {
+.geography .geography-map__wrapper svg g .geoHover path:nth-child(3) {
   fill: #1697FF;
   fill-opacity: 0.7;
 }
 
-.geography .geography-map__wrapper svg g .r_on:hover path:nth-child(4) {
+.geography .geography-map__wrapper svg g .geoHover path:nth-child(4) {
   visibility: visible;
 }
 

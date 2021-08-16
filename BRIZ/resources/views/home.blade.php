@@ -371,7 +371,7 @@
                 <div class="geography-title">география</div>
                 <div id='mapWrap' class="geography-map__wrapper">
                     <div class="geo animated bounce slower wow bounceInDown" id="geo1" ></div> <!--style="display: none;"-->
-                    <svg width="auto" height="auto" viewBox="0 0 1110 635" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <svg width="1100" height="635" viewBox="0 0 1110 635" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g clip-path="url(#clip0)">
                         <mask id="path-1-inside-1" fill="white">
                         <path d="M216.37 607.988L215.369 607.944L214.514 608.266L214.192 608.202L213.978 607.63L213.794 607.166L213.25 605.971L213.396 605.481L213.093 605.198L212.362 604.688L212.174 604.478L212.278 604.187L212.35 603.656L212.28 603.227L212.081 603.097L211.716 603.088L211.273 603.196L210.381 603.611L209.762 603.346L209.405 603.08L209.197 602.857L208.732 603.043L208.619 602.954L208.594 602.401L208.454 602.101L208.175 601.752L207.915 601.585L206.964 601.93L206.392 602.048L206.192 601.726L205.187 600.664L204.257 599.849L203.617 599.512L202.973 599.547L201.974 599.71L201.607 599.642L200.736 599.287L200.01 598.864L200.109 598.688L200.262 598.56L200.078 598.009L199.673 597.121L199.717 596.843L199.589 596.459L199.449 596.168L200.018 595.472L200.278 594.912L200.336 594.365L200.183 593.797L199.808 592.767L199.576 592.468L199.147 592.187L198.786 591.729L198.695 591.404L198.999 591.34L199.884 591.332L200.742 591.221L201.415 591.006L202.389 590.826L202.789 590.665L203.258 590.589L204.68 590.76L205.212 590.628L206.813 590.603L206.855 590.535L206.638 590.316L206.64 590.234L207.593 590.095L207.742 589.992L207.866 590.339L208.225 590.725L208.615 590.88L208.825 591.093L208.836 591.254L208.144 591.45L208.097 591.547L208.142 591.642L208.349 591.689L209.318 592.172L209.871 592.183L210.162 592.329L210.307 592.618L210.769 593.011L211.138 593.391L211.161 593.521L211.091 593.713L210.059 594.454L209.929 594.71L209.913 594.98L210.365 595.784L211.031 596.659L211.993 597.324L213.32 598.044L213.336 598.49L213.126 599.019L212.946 599.378L212.864 599.622L212.703 599.723L211.382 599.7L211.184 599.787L211.097 599.89L211.091 599.977L211.566 600.138L212.306 600.702L212.734 601.249L213.177 601.488L213.675 601.924L214.073 602.328L214.694 602.853L215.385 602.682L216.31 603.148L216.349 603.464L216.291 603.747L215.709 604.055L215.637 604.183V604.29L215.713 604.441L216.054 604.692L216.456 605.066L216.908 605.624L216.706 605.791L216.283 605.816L215.955 605.748L215.839 605.861L215.845 606.043L216.275 606.466L216.359 606.774L216.341 607.308L216.37 607.988ZM207.874 592.016L207.903 591.811L207.86 591.627L207.705 591.57L207.515 591.617L207.5 591.822L207.558 592.016L207.75 592.102L207.874 592.016ZM210.936 595.152L210.715 595.278L210.509 595.222V594.908L210.658 594.782L210.829 594.788L210.992 594.902L210.936 595.152Z"/>
@@ -2036,16 +2036,43 @@
                 region.classList.add("r_on"); //Добавил класс к элементу по ID
 
                 let dik = d3.select('#'+`${item[0]}`).select('path').node().getBBox();
-                console.log(dik);
-
+                let h = dik.height/2;
+                let w = dik.width/2;
+                
                 let mapWrap = document.getElementById('mapWrap'); // Получил оболочку карты
 
-                var geoDiv = document.createElement("div"); //Создал div для метки
+                function getRandomInt(max) {
+                      return Math.floor(Math.random() * max);
+                    }
 
-                geoDiv.setAttribute('style', 'color:red; border: 2px solid; position:absolute; left:'+`${dik.x}`+'px; top:'+`${dik.y}`+'px; height:100px; width:100px;'); 
-                geoDiv.setAttribute('id', '-geo')
-                geoDiv.innerHTML = `${item[1]}`;
+                    let random = getRandomInt(3);
+
+                var geoDiv = document.createElement("img"); //Создал div для метки
+                geoDiv.classList.add("animated", "bounce", "slower", "wow", "bounceInDown", "delay-"+`${random}`+"s");
+                geoDiv.setAttribute('src', '/image/geo-pass.png');
+                geoDiv.setAttribute('style', 'position:absolute; left:'+`${dik.x+w-11}`+'px; top:'+`${dik.y+h-11}`+'px;');
+
+                geoDiv.setAttribute('id', `${item[0]}`+'-geo');
+                // geoDiv.innerHTML = `${item[1]}`;
                 mapWrap.appendChild(geoDiv);
+
+                let geoMarkMini = document.getElementById(`${item[0]}`+'-geo');
+                console.log(geoMarkMini);
+
+                $(document).ready(function () { 
+                $('#'+`${item[0]}`+'-geo').hover(
+                 function () {
+                    $('#'+`${item[0]}`).addClass('geoHover') ;// Добавляем класс bounce
+                    $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-active.png');
+                    $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${dik.x+w-25}`+'px; top:'+`${dik.y+h-25}`+'px;');
+                    $('#'+`${item[0]}`+'-geo').attr('title', `${item[1]}`);
+                },
+                 function () {
+                    $('#'+`${item[0]}`) .removeClass('geoHover');  // Убираем класс bounce
+                    $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-pass.png');
+                    $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${dik.x+w-11}`+'px; top:'+`${dik.y+h-11}`+'px;');
+                 }
+            )});
             
             } catch (err) {
                 console.log(item[0]);
@@ -2053,6 +2080,10 @@
             }
         
             });
+            
+            
+
+
 
  </script>   
 

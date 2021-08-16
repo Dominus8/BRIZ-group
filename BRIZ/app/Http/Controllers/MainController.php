@@ -460,7 +460,6 @@ class MainController extends Controller
             //      ["id_region"=>"RU-TVE",   "name_region"=>"Тверская область", "status_region"=>0],  
             //      ["id_region"=>"RU-PER",   "name_region"=>"Пермская область", "status_region"=>0],  
             //      ["id_region"=>"RU-KHM",   "name_region"=>"Ханты-Мансийский АО",  "status_region"=>0], 
-            //      ["id_region"=>"RU-KHM",   "name_region"=>"Ханты-Мансийский АО",  "status_region"=>0], 
             //      ["id_region"=>"RU-TOM",   "name_region"=>"Томская область",  "status_region"=>0], 
             //      ["id_region"=>"RU-IRK",   "name_region"=>"Иркутская область",  "status_region"=>0], 
             //      ["id_region"=>"RU-NEN",   "name_region"=>"Ненецскй АО",  "status_region"=>0], 
