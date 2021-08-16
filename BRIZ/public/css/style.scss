@@ -447,23 +447,26 @@ body {
         position: relative;
         svg{
             position: relative;
-           g{position: relative;
+           g{
+               position: absolute;
             .r_on{
-                
-                path:nth-child(1){fill:#002855;}
+                path:nth-child(3){
+                    fill:#002855;
+                }
                 &:hover{
-                    path:nth-child(1){
-                        fill:url(#pattern48);
-                    }
                     path:nth-child(2){
                         visibility: visible;
                     }
                     path:nth-child(3){
+                        fill:#1697FF;
+                        fill-opacity:0.7;
+                    }
+                    path:nth-child(4){
                         visibility: visible;
                     }
                 }
-                 
-            } 
+            }
+
            }
 
         }
