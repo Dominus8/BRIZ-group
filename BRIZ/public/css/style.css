@@ -549,7 +549,7 @@ body a {
 }
 
 .geography .geography-map__wrapper svg g {
-  position: absolute;
+  position: relative;
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(3) {
