@@ -2121,6 +2121,20 @@
                 geoDiv.setAttribute('id', `${item[0]}`+'-geo');
                 console.log(geoDiv);
                 mapWrap.appendChild(geoDiv);
+
+                $('#'+`${item[0]}`+'-geo').hover(
+                                function () {
+                                    $('#'+`${item[0]}`).addClass('geoHover') ;// Добавляем класс bounce
+                                    $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-active.png');
+                                    $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${ycoord-w-25}`+'px; top:'+`${xcoord-h-25}`+'px;');
+                                    $('#'+`${item[0]}`+'-geo').attr('title', `${item[1]}`);
+                                },
+                                function () {
+                                    $('#'+`${item[0]}`) .removeClass('geoHover');  // Убираем класс bounce
+                                    $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-pass.png');
+                                    $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${ycoord-w-11}`+'px; top:'+`${xcoord-h-11}`+'px;');
+                                }
+                            );
                 
                     
                     // Расчёт координат для геометки при изменении размера окна
