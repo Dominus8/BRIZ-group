@@ -1153,22 +1153,23 @@
 
                         <!-- <use href='#geo' id='xzGeo' x='150px' y='150px' class="test"/> -->
                         
-                        <symbol id='bGeo'>
+                        <g id='bGeo' visibility='hidden'>
                             <g id='geoBig' width="50" height="50" >
                                 <path d="M25.0026 0C15.7978 0 8.33594 7.46187 8.33594 16.6667C8.33594 19.6271 9.13094 22.3958 10.4843 24.8042C10.7091 25.2042 10.9447 25.5979 11.2005 25.9771L25.0026 50L38.8047 25.9771C39.0172 25.6625 39.2005 25.3292 39.3901 25L39.5214 24.8042C40.8734 22.3958 41.6693 19.6271 41.6693 16.6667C41.6693 7.46187 34.2068 0 25.0026 0ZM25.0026 8.33333C29.6047 8.33333 33.3359 12.0644 33.3359 16.6667C33.3359 21.2687 29.6047 25 25.0026 25C20.4003 25 16.6693 21.2687 16.6693 16.6667C16.6693 12.0644 20.4003 8.33333 25.0026 8.33333Z" fill="#002855"/>
                                 <path d="M25.0026 6.25C19.2497 6.25 14.5859 10.9138 14.5859 16.6667C14.5859 22.4188 19.2497 27.0833 25.0026 27.0833C30.7547 27.0833 35.4193 22.4188 35.4193 16.6667C35.4193 10.9138 30.7547 6.25 25.0026 6.25ZM25.0026 10.4167C28.4547 10.4167 31.2526 13.2148 31.2526 16.6667C31.2526 20.1185 28.4547 22.9167 25.0026 22.9167C21.5505 22.9167 18.7526 20.1185 18.7526 16.6667C18.7526 13.2148 21.5505 10.4167 25.0026 10.4167Z" fill="white"/>
                                 <ellipse cx="25.0049" cy="16.2062" rx="6.48148" ry="6.94445" fill="#002855"/>
                             </g>
-                        </symbol>
-
-                        <symbol id='geo'>    
                             <g id='geoSmoll' width="22" height="22" x="14px">
                                 <path d="M11.0013 0C6.95119 0 3.66797 3.28322 3.66797 7.33333C3.66797 8.63592 4.01777 9.85417 4.61324 10.9138C4.71214 11.0898 4.81582 11.2631 4.92839 11.4299L11.0013 22L17.0742 11.4299C17.1677 11.2915 17.2484 11.1448 17.3318 11L17.3896 10.9138C17.9845 9.85417 18.3346 8.63592 18.3346 7.33333C18.3346 3.28322 15.0511 0 11.0013 0ZM11.0013 3.66667C13.0262 3.66667 14.668 5.30833 14.668 7.33333C14.668 9.35825 13.0262 11 11.0013 11C8.97629 11 7.33464 9.35825 7.33464 7.33333C7.33464 5.30833 8.97629 3.66667 11.0013 3.66667Z" fill="#0072CE"/>
                                 <path d="M11.0013 2.75C8.47002 2.75 6.41797 4.80205 6.41797 7.33333C6.41797 9.86425 8.47002 11.9167 11.0013 11.9167C13.5322 11.9167 15.5846 9.86425 15.5846 7.33333C15.5846 4.80205 13.5322 2.75 11.0013 2.75ZM11.0013 4.58333C12.5202 4.58333 13.7513 5.81451 13.7513 7.33333C13.7513 8.85216 12.5202 10.0833 11.0013 10.0833C9.48239 10.0833 8.2513 8.85216 8.2513 7.33333C8.2513 5.81451 9.48239 4.58333 11.0013 4.58333Z" fill="#1697FF"/>
                                 <ellipse cx="11.0003" cy="7.12977" rx="2.85185" ry="3.05556" fill="#002855"/>
-                            </g>
+                            </g>                        
+                        </g>
 
-                        </symbol>
+                         
+
+
+                        
 
                         <defs>
                         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -2060,170 +2061,255 @@
 
                 //получение позиции иразмеров обрасти региона
                 let dik = d3.select('#map').select('#'+`${item[0]}`).node().getBBox(); 
-                
-                let dw = dik.width/2;
-                let dh = dik.height/2;
+                let dikr = d3.select('#mapWrap').select('#'+`${item[0]}`).node();
+                let dikm = d3.select('#mapWrap').node();
 
-
+                let xcoord=dik.x;
+                let ycoord=dik.y;                
+              
                 //генерация рандомного числа для отсрочки анимации метки
                 function getRandomInt(max) {
                       return Math.floor(Math.random() * max);
                     }
                 let random = getRandomInt(3);
+
+
+
+                
+
+                let h = dik.height/2;
+                let w = dik.width/2;
+                
+                // Получение координат нижнего правого угда области
+                rToBottom=dikr.getBoundingClientRect().bottom+document.body.scrollTop;
+                rToRight=dikr.getBoundingClientRect().right
+                mToTop=dikm.getBoundingClientRect().top+document.body.scrollTop;
+                mToLeft=dikm.getBoundingClientRect().left;
+                      
+                       
+                
+                xcoord=rToBottom-mToTop;
+                ycoord=rToRight-mToLeft;
                 
                 //------------------------------------------------
-                var geoX = dik.x+dw-25;
-                var geoY = dik.y+dh-25;
-
-                var  svgns = "http://www.w3.org/2000/svg";
-                var  xlinkns = "http://www.w3.org/1999/xlink";
-
-                var  use = document.createElementNS(svgns, "use");
-
-                use.setAttributeNS(xlinkns, "href", '#geoSmoll'); 
-                use.setAttribute("x", `${geoX}`);  // offset = y+10
-                use.setAttribute("y", `${geoY}`);
-                use.setAttribute("id", `${item[0]}`+'-geo');
-                map.appendChild(use);
-
-                
-                
-
-                
-                    // $('#'+`${item[0]}`+'-geo').hover(
-                    //    function () {
-                    //        $('#'+`${item[0]}`).addClass('geoHover') ;// Добавляем класс bounce
-                    //     let mark = document.querySelector('#'+`${item[0]}`+'-geo');
-
-                    //     console.log(mark);
-                    //     mark.setAttributeNS(xlinkns, "href", '#bGeo');
-                    //    },
-                    //    function () {
-                    //        $('#'+`${item[0]}`) .removeClass('geoHover');  // Убираем класс bounce
-                    //     let mark = document.querySelector('#'+`${item[0]}`+'-geo');
+                var ww=window.innerWidth;
+                function coordsToResize(a,b){
+                            if(ww<1050){
+                                a=a+5;
+                                b=b+20;
+                                return [a,b];
+                            }else{
+                                a=a;
+                                b=b;
+                                return [a,b];
+                            }
+                        }
                         
-                    //     console.log(mark);
-                    //     mark.setAttributeNS(xlinkns, "href", '#geo');
-                    //    }
-                    // );
-                    //<use xlink:href="#geo" x="472.2659912109375" y="225.6199951171875" id="RU-KYA-geo"></use>
-                    
+                        let coordsArr=coordsToResize(xcoord,ycoord);
 
-
-
-                $(document).ready(function() {
-                    document.getElementById(`${item[0]}`+'-geo').onmouseover = function(){
-                        document.getElementById(`${item[0]}`).classList.add('geoHover');
-                        // document.getElementById(`${item[0]}`+'-geo').setAttribute('href','#geoBig');
-
-                        console.log('Its...shit');
- 
-                    };
-                    document.getElementById(`${item[0]}`+'-geo').onmouseout = function(){
-                        document.getElementById(`${item[0]}`).classList.remove('geoHover');
-                        // document.getElementById(`${item[0]}`+'-geo').setAttributeNS(xlinkns, "href", '#geo'); 
-
-                        console.log('Its...shit');
-                    };                    
-                });
-
-                
-                console.log(dbmark);
-                
-
-                // .addClass("animated", "bounce", "slower", "wow", "bounceInDown", "delay-"+`${random}`+"s");
-
-
-                // let dikr = d3.select('#mapWrap').select('#'+`${item[0]}`).node();
-                // let dikm = d3.select('#mapWrap').node();
-
-                // let xcoord=dik.x;
-                // let ycoord=dik.y;
-                // console.log(xcoord);
-
-                // let h = dik.height/2;
-                // let w = dik.width/2;
-                
-                //Получение координат нижнего правого угда области
-                // rToBottom=dikr.getBoundingClientRect().bottom+document.body.scrollTop;
-                // rToRight=dikr.getBoundingClientRect().right
-                // mToTop=dikm.getBoundingClientRect().top+document.body.scrollTop;
-                // mToLeft=dikm.getBoundingClientRect().left;                    
-                
-                // xcoord=rToBottom-mToTop;
-                // ycoord=rToRight-mToLeft;
-                //------------------------------------------------
-                
+                        
 
 
 
 
-                // let mapWrap = document.getElementById('mapWrap'); 
-
-                
-                // var geoDiv = document.createElement("img"); 
-                // geoDiv.classList.add("animated", "bounce", "slower", "wow", "bounceInDown", "delay-"+`${random}`+"s");
-                // geoDiv.setAttribute('src', '/image/geo-pass.png');
-                // geoDiv.setAttribute('style', 'position:absolute; left:'+`${coordsArr[1]-w-11}`+'px; top:'+`${coordsArr[0]-h-11}`+'px;');
-                // geoDiv.setAttribute('id', `${item[0]}`+'-geo');
-                // mapWrap.appendChild(geoDiv);
+                var mapWrap = document.getElementById('mapWrap');
+    
+                var geoDiv = document.createElement("img");
+                geoDiv.classList.add("animated", "bounce", "slower", "wow", "bounceInDown", "delay-"+`${random}`+"s");
+                geoDiv.setAttribute('src', '/image/geo-pass.png');
+                geoDiv.setAttribute('style','position:absolute; left:'+`${coordsArr[1]-w-11}`+'px; top:'+`${coordsArr[0]-h-11}`+'px;');
+                geoDiv.setAttribute('id', `${item[0]}`+'-geo');
+                console.log(geoDiv);
+                mapWrap.appendChild(geoDiv);
                 
                     
-                    //Расчёт координат для геометки при изменении размера окна
-                    // $(window).resize(function() {
-                    //     rToBottom=dikr.getBoundingClientRect().bottom+document.body.scrollTop;
-                    //     rToRight=dikr.getBoundingClientRect().right;
+                    // Расчёт координат для геометки при изменении размера окна
+                    $(window).resize(function() {
+                        rToBottom=dikr.getBoundingClientRect().bottom+document.body.scrollTop;
+                        rToRight=dikr.getBoundingClientRect().right;
 
-                    //     mToTop=dikm.getBoundingClientRect().top+document.body.scrollTop;
-                    //     mToLeft=dikm.getBoundingClientRect().left;                    
+                        mToTop=dikm.getBoundingClientRect().top+document.body.scrollTop;
+                        mToLeft=dikm.getBoundingClientRect().left;                    
                         
-                    //     xcoord=rToBottom-mToTop;
-                    //     ycoord=rToRight-mToLeft;
+                        xcoord=rToBottom-mToTop;
+                        ycoord=rToRight-mToLeft;
  
-                    //     var ww=window.innerWidth;
+                        var ww=window.innerWidth;
                         
 
-                    //     function coordsToResize(a,b){
-                    //         if(ww<1050){
-                    //             a=a+5;
-                    //             b=b+20;
-                    //             return [a,b];
-                    //         }else{
-                    //             a=a;
-                    //             b=b;
-                    //             return [a,b];
-                    //         }
-                    //     }
+                        function coordsToResize(a,b){
+                            if(ww<1050){
+                                a=a+5;
+                                b=b+20;
+                                return [a,b];
+                            }else{
+                                a=a;
+                                b=b;
+                                return [a,b];
+                            }
+                        }
                         
-                        
-                    //     let coords=coordsToResize(xcoord,ycoord);
-                    //     xcoord = coords[0];
-                    //     ycoord = coords[1];
-                    //     geoDiv.setAttribute('style', 'position:absolute; left:'+`${ycoord-w-11}`+'px; top:'+`${xcoord-h-11}`+'px;');
+                        let coords=coordsToResize(xcoord,ycoord);
+
+                        xcoord = coords[0];
+                        ycoord = coords[1];
+                        geoDiv.setAttribute('style', 'position:absolute; left:'+`${ycoord-w-11}`+'px; top:'+`${xcoord-h-11}`+'px;');
                                                 
-                    //         $('#'+`${item[0]}`+'-geo').hover(
-                    //             function () {
-                    //                 $('#'+`${item[0]}`).addClass('geoHover') ;// Добавляем класс bounce
-                    //                 $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-active.png');
-                    //                 $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${ycoord-w-25}`+'px; top:'+`${xcoord-h-25}`+'px;');
-                    //                 $('#'+`${item[0]}`+'-geo').attr('title', `${item[1]}`);
-                    //             },
-                    //             function () {
-                    //                 $('#'+`${item[0]}`) .removeClass('geoHover');  // Убираем класс bounce
-                    //                 $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-pass.png');
-                    //                 $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${ycoord-w-11}`+'px; top:'+`${xcoord-h-11}`+'px;');
-                    //             }
-                    //         );
+                            $('#'+`${item[0]}`+'-geo').hover(
+                                function () {
+                                    $('#'+`${item[0]}`).addClass('geoHover') ;// Добавляем класс bounce
+                                    $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-active.png');
+                                    $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${ycoord-w-25}`+'px; top:'+`${xcoord-h-25}`+'px;');
+                                    $('#'+`${item[0]}`+'-geo').attr('title', `${item[1]}`);
+                                },
+                                function () {
+                                    $('#'+`${item[0]}`) .removeClass('geoHover');  // Убираем класс bounce
+                                    $('#'+`${item[0]}`+'-geo').attr('src', '/image/geo-pass.png');
+                                    $('#'+`${item[0]}`+'-geo').attr('style', 'position:absolute; left:'+`${ycoord-w-11}`+'px; top:'+`${xcoord-h-11}`+'px;');
+                                }
+                            );
 
-                    // });
-                    
+                    });
 
 
+                                // //------------------------------------------------
+                // var geoX = dik.x+dw-25;
+                // var geoY = dik.y+dh-25;
+
+                // var  svgns = "http://www.w3.org/2000/svg";
+                // var  xlinkns = "http://www.w3.org/1999/xlink";
+
+                // // Создание symbol
+                // var  symbol = document.createElementNS(svgns, "symbol");
+                // symbol.setAttribute("id", `${item[0]}`+'-sgeo');
+
+                // //первая группа и symbol
+                // var  group1 = document.createElementNS(svgns, "g");
+                // group1.setAttribute("visibility","hidden");
+                // group1.setAttribute("id",`${item[0]}`+'-sgeog1');
+                // //вторая группа и symbol
+                // var  group2 = document.createElementNS(svgns, "g");
+                // group2.setAttribute("id",`${item[0]}`+'-sgeog2');
+
+                // //содержимое ервой группы
+                // var  g1p1 = document.createElementNS(svgns, "path");
+                //     g1p1.setAttribute("d","M25.0026 0C15.7978 0 8.33594 7.46187 8.33594 16.6667C8.33594 19.6271 9.13094 22.3958 10.4843 24.8042C10.7091 25.2042 10.9447 25.5979 11.2005 25.9771L25.0026 50L38.8047 25.9771C39.0172 25.6625 39.2005 25.3292 39.3901 25L39.5214 24.8042C40.8734 22.3958 41.6693 19.6271 41.6693 16.6667C41.6693 7.46187 34.2068 0 25.0026 0ZM25.0026 8.33333C29.6047 8.33333 33.3359 12.0644 33.3359 16.6667C33.3359 21.2687 29.6047 25 25.0026 25C20.4003 25 16.6693 21.2687 16.6693 16.6667C16.6693 12.0644 20.4003 8.33333 25.0026 8.33333Z");
+                //     g1p1.setAttribute("fill","#002855");
+               
+                // var  g1p2 = document.createElementNS(svgns, "path");
+                //     g1p2.setAttribute("d","M25.0026 6.25C19.2497 6.25 14.5859 10.9138 14.5859 16.6667C14.5859 22.4188 19.2497 27.0833 25.0026 27.0833C30.7547 27.0833 35.4193 22.4188 35.4193 16.6667C35.4193 10.9138 30.7547 6.25 25.0026 6.25ZM25.0026 10.4167C28.4547 10.4167 31.2526 13.2148 31.2526 16.6667C31.2526 20.1185 28.4547 22.9167 25.0026 22.9167C21.5505 22.9167 18.7526 20.1185 18.7526 16.6667C18.7526 13.2148 21.5505 10.4167 25.0026 10.4167Z");
+                //     g1p2.setAttribute("fill","white");
+                
+                // var  g1e1 = document.createElementNS(svgns, "ellipse");
+                // g1e1.setAttribute("cx","25.0049");
+                // g1e1.setAttribute("cy","16.2062");
+                // g1e1.setAttribute("rx","6.48148");
+                // g1e1.setAttribute("ry","6.94445");
+                // g1e1.setAttribute("fill","#002855");
+
+                // group1.appendChild(g1p1);
+                // group1.appendChild(g1p2);
+                // group1.appendChild(g1e1);
+
+                // //содержимое второй группы
+
+                // var  g2p1 = document.createElementNS(svgns, "path");
+                //     g2p1.setAttribute("d","M11.0013 0C6.95119 0 3.66797 3.28322 3.66797 7.33333C3.66797 8.63592 4.01777 9.85417 4.61324 10.9138C4.71214 11.0898 4.81582 11.2631 4.92839 11.4299L11.0013 22L17.0742 11.4299C17.1677 11.2915 17.2484 11.1448 17.3318 11L17.3896 10.9138C17.9845 9.85417 18.3346 8.63592 18.3346 7.33333C18.3346 3.28322 15.0511 0 11.0013 0ZM11.0013 3.66667C13.0262 3.66667 14.668 5.30833 14.668 7.33333C14.668 9.35825 13.0262 11 11.0013 11C8.97629 11 7.33464 9.35825 7.33464 7.33333C7.33464 5.30833 8.97629 3.66667 11.0013 3.66667Z");
+                //     g2p1.setAttribute("fill","#0072CE");
+               
+                // var  g2p2 = document.createElementNS(svgns, "path");
+                //     g2p2.setAttribute("d","M11.0013 2.75C8.47002 2.75 6.41797 4.80205 6.41797 7.33333C6.41797 9.86425 8.47002 11.9167 11.0013 11.9167C13.5322 11.9167 15.5846 9.86425 15.5846 7.33333C15.5846 4.80205 13.5322 2.75 11.0013 2.75ZM11.0013 4.58333C12.5202 4.58333 13.7513 5.81451 13.7513 7.33333C13.7513 8.85216 12.5202 10.0833 11.0013 10.0833C9.48239 10.0833 8.2513 8.85216 8.2513 7.33333C8.2513 5.81451 9.48239 4.58333 11.0013 4.58333Z");
+                //     g2p2.setAttribute("fill","#1697FF");
+                
+                // var  g2e1 = document.createElementNS(svgns, "ellipse");
+                // g1e1.setAttribute("cx","11.0003");
+                // g1e1.setAttribute("cy","7.12977");
+                // g1e1.setAttribute("rx","2.85185");
+                // g1e1.setAttribute("ry","3.05556");
+                // g1e1.setAttribute("fill","#002855");
+
+                // group1.appendChild(g1p1);
+                // group1.appendChild(g1p2);
+                // group1.appendChild(g1e1);
+                // group2.appendChild(g2p1);
+                // group2.appendChild(g2p2);
+                // group2.appendChild(g2e1);
+
+
+                // var  use = document.createElementNS(svgns, "use");
+
+                // use.setAttributeNS(xlinkns, "href", '#'+`${item[0]}`+'-sgeo'); 
+                // use.setAttribute("x", `${geoX}`);  // offset = y+10
+                // use.setAttribute("y", `${geoY}`);
+                // use.setAttribute("id", `${item[0]}`+'-geo');
+
+                // group1.appendChild(g1p1);
+                // group1.appendChild(g1p2);
+                // group1.appendChild(g1e1);
+                // symbol.appendChild(group1);
+                // symbol.appendChild(group2);                
+                // map.appendChild(symbol);
+                // map.appendChild(use);
+
+
+                // <g id='bGeo'>
+                //     <g id='geoBig' width="50" height="50" >
+                //         <path d="M25.0026 0C15.7978 0 8.33594 7.46187 8.33594 16.6667C8.33594 19.6271 9.13094 22.3958 10.4843 24.8042C10.7091 25.2042 10.9447 25.5979 11.2005 25.9771L25.0026 50L38.8047 25.9771C39.0172 25.6625 39.2005 25.3292 39.3901 25L39.5214 24.8042C40.8734 22.3958 41.6693 19.6271 41.6693 16.6667C41.6693 7.46187 34.2068 0 25.0026 0ZM25.0026 8.33333C29.6047 8.33333 33.3359 12.0644 33.3359 16.6667C33.3359 21.2687 29.6047 25 25.0026 25C20.4003 25 16.6693 21.2687 16.6693 16.6667C16.6693 12.0644 20.4003 8.33333 25.0026 8.33333Z" fill="#002855"/>
+                //         <path d="M25.0026 6.25C19.2497 6.25 14.5859 10.9138 14.5859 16.6667C14.5859 22.4188 19.2497 27.0833 25.0026 27.0833C30.7547 27.0833 35.4193 22.4188 35.4193 16.6667C35.4193 10.9138 30.7547 6.25 25.0026 6.25ZM25.0026 10.4167C28.4547 10.4167 31.2526 13.2148 31.2526 16.6667C31.2526 20.1185 28.4547 22.9167 25.0026 22.9167C21.5505 22.9167 18.7526 20.1185 18.7526 16.6667C18.7526 13.2148 21.5505 10.4167 25.0026 10.4167Z" fill="white"/>
+                //         <ellipse cx="25.0049" cy="16.2062" rx="6.48148" ry="6.94445" fill="#002855"/>
+                //     </g>
+                //     <g id='geoSmoll' width="22" height="22" x="14px">
+                //         <path d="M11.0013 0C6.95119 0 3.66797 3.28322 3.66797 7.33333C3.66797 8.63592 4.01777 9.85417 4.61324 10.9138C4.71214 11.0898 4.81582 11.2631 4.92839 11.4299L11.0013 22L17.0742 11.4299C17.1677 11.2915 17.2484 11.1448 17.3318 11L17.3896 10.9138C17.9845 9.85417 18.3346 8.63592 18.3346 7.33333C18.3346 3.28322 15.0511 0 11.0013 0ZM11.0013 3.66667C13.0262 3.66667 14.668 5.30833 14.668 7.33333C14.668 9.35825 13.0262 11 11.0013 11C8.97629 11 7.33464 9.35825 7.33464 7.33333C7.33464 5.30833 8.97629 3.66667 11.0013 3.66667Z" fill="#0072CE"/>
+                //         <path d="M11.0013 2.75C8.47002 2.75 6.41797 4.80205 6.41797 7.33333C6.41797 9.86425 8.47002 11.9167 11.0013 11.9167C13.5322 11.9167 15.5846 9.86425 15.5846 7.33333C15.5846 4.80205 13.5322 2.75 11.0013 2.75ZM11.0013 4.58333C12.5202 4.58333 13.7513 5.81451 13.7513 7.33333C13.7513 8.85216 12.5202 10.0833 11.0013 10.0833C9.48239 10.0833 8.2513 8.85216 8.2513 7.33333C8.2513 5.81451 9.48239 4.58333 11.0013 4.58333Z" fill="#1697FF"/>
+                //         <ellipse cx="11.0003" cy="7.12977" rx="2.85185" ry="3.05556" fill="#002855"/>
+                //     </g>                        
+                // </g>
 
                 
 
+                
+                
 
-            
+                
+                // $('#'+`${item[0]}`+'-geo').hover(
+                //    function () {
+                //        $('#'+`${item[0]}`).addClass('geoHover') ;// Добавляем класс bounce
+                //     let mark = document.querySelector('#'+`${item[0]}`+'-geo');
+
+                //     console.log(mark);
+                //     mark.setAttributeNS(xlinkns, "href", '#bGeo');
+                //    },
+                //    function () {
+                //        $('#'+`${item[0]}`) .removeClass('geoHover');  // Убираем класс bounce
+                //     let mark = document.querySelector('#'+`${item[0]}`+'-geo');
+                    
+                //     console.log(mark);
+                //     mark.setAttributeNS(xlinkns, "href", '#geo');
+                //    }
+                // );
+                //<use xlink:href="#geo" x="472.2659912109375" y="225.6199951171875" id="RU-KYA-geo"></use>
+                
+
+
+
+                // $(document).ready(function() {
+ 
+                // document.getElementById(`${item[0]}`+'-geo').onmouseenter = function(i){
+                //         document.getElementById(`${item[0]}`).classList.add('geoHover');
+                //         // g1=d3.select("#"+`${item[0]}`+'-sgeog1').attr("visibility","hidden");
+                        
+                //         // document.getElementById(`${item[0]}`+'-geo').setAttribute('href','#geoBig');
+                //         console.log(g1);
+                //     };
+                // document.getElementById(`${item[0]}`+'-geo').onmouseout = function(i){
+                //         document.getElementById(`${item[0]}`).classList.remove('geoHover');
+                        
+                //         // document.getElementById(`${item[0]}`+'-geo').setAttributeNS(xlinkns, "href", '#geo'); 
+                        
+                //     };                    
+                // });
+
+
             } catch (err) {
                 console.log("-reg");
                 
