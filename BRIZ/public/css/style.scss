@@ -449,10 +449,54 @@ body {
             position: relative;
             g {
                 position: relative;
+
+                #geo{
+                    g:nth-child(1){
+                        
+                    }
+                    g:nth-child(2){
+                        visibility:hidden ;
+                    }
+                    &:hover{
+                        g:nth-child(1){
+                            visibility:hidden ;
+                        }
+                        g:nth-child(2){
+                            
+                        }
+                    }
+                }
+
                 .r_on {
                     path:nth-child(3) {
                         fill: #002855;
                     }
+                    animation: r_on 2s infinite;
+                    @-webkit-keyframes r_on {
+                        0% {
+                          -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+                        }
+                        70% {
+                            -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                        }
+                        100% {
+                            -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                        }
+                      }
+                      @keyframes r_on {
+                        0% {
+                          -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+                          box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+                        }
+                        70% {
+                            -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                            box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                        }
+                        100% {
+                            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                            box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                        }
+                      }
                 }
                 .geoHover {
                     path:nth-child(2) {
@@ -465,6 +509,7 @@ body {
                     path:nth-child(4) {
                         visibility: visible;
                     }
+
                 }
             }
         }
