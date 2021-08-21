@@ -455,7 +455,7 @@ class MainController extends Controller
             //      ["id_region"=>"RU-ORE",   "name_region"=>"Оренбургская область", "status_region"=>0],  
             //      ["id_region"=>"RU-SAR",   "name_region"=>"Саратовская область",  "status_region"=>0], 
             //      ["id_region"=>"RU-VGG",   "name_region"=>"Волгоградская область",  "status_region"=>0], 
-            //      ["id_region"=>"RU-VOR",   "name_region"=>"Ставропольский край",  "status_region"=>0], 
+            //      ["id_region"=>"RU-VOR",   "name_region"=>"Ставрополь", "status_region"=>0], 
             //      ["id_region"=>"RU-SMO",   "name_region"=>"Смоленская область", "status_region"=>0],  
             //      ["id_region"=>"RU-TVE",   "name_region"=>"Тверская область", "status_region"=>0],  
             //      ["id_region"=>"RU-PER",   "name_region"=>"Пермская область", "status_region"=>0],  
@@ -463,7 +463,14 @@ class MainController extends Controller
             //      ["id_region"=>"RU-TOM",   "name_region"=>"Томская область",  "status_region"=>0], 
             //      ["id_region"=>"RU-IRK",   "name_region"=>"Иркутская область",  "status_region"=>0], 
             //      ["id_region"=>"RU-NEN",   "name_region"=>"Ненецскй АО",  "status_region"=>0], 
-            //      ["id_region"=>"RU-STA",   "name_region"=>"Ставропольский край",  "status_region"=>0], 
+            //      ["id_region"=>"RU-STA",   "name_region"=>"Ставропольский край",  "status_region"=>0],
+            //      ["id_region"=>"SNG-EST",   "name_region"=>"Эстония",  "status_region"=>0], 
+            //      ["id_region"=>"SNG-LAT",   "name_region"=>"Латвия",  "status_region"=>0],
+            //      ["id_region"=>"SNG-LIT",   "name_region"=>"Литва",  "status_region"=>0],
+            //      ["id_region"=>"SNG-BEL",   "name_region"=>"Белорусь",  "status_region"=>0],
+            //      ["id_region"=>"SNG-UKR",   "name_region"=>"Украина",  "status_region"=>0],
+            //      ["id_region"=>"SNG-MOL",   "name_region"=>"Молдова",  "status_region"=>0],
+            //      ["id_region"=>"SNG-ABH",   "name_region"=>"Абхазия",  "status_region"=>0],
             //      ["id_region"=>"RU-TUL",   "name_region"=>"Тульская область", "status_region"=>0]));
 
             $r=$request->all();
