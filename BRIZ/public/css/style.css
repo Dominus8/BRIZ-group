@@ -552,21 +552,46 @@ body a {
   position: relative;
 }
 
+.geography .geography-map__wrapper svg g .r_on path:nth-child(2) {
+  visibility: hidden;
+  -webkit-transition: visibility 0,5s;
+  transition: visibility 0,5s;
+}
+
 .geography .geography-map__wrapper svg g .r_on path:nth-child(3) {
   fill: #002855;
+  fill-opacity: 1;
+  -webkit-transition: fill-opacity 1s;
+  transition: fill-opacity 1s;
+  -webkit-transition: fill 0,5s;
+  transition: fill 0,5s;
+}
+
+.geography .geography-map__wrapper svg g .r_on path:nth-child(4) {
+  visibility: hidden;
+  -webkit-transition: visibility 0,5s;
+  transition: visibility 0,5s;
 }
 
 .geography .geography-map__wrapper svg g .geoHover path:nth-child(2) {
   visibility: visible;
+  -webkit-transition: visibility 0,5s;
+  transition: visibility 0,5s;
 }
 
 .geography .geography-map__wrapper svg g .geoHover path:nth-child(3) {
   fill: #1697FF;
   fill-opacity: 0.7;
+  -webkit-transition: fill-opacity 1s;
+  transition: fill-opacity 1s;
+  -webkit-transition: fill 0,5s;
+  transition: fill 0,5s;
 }
 
 .geography .geography-map__wrapper svg g .geoHover path:nth-child(4) {
   visibility: visible;
+  -webkit-transition: visibility 0,5s;
+  transition: visibility 0,5s;
 }
 
 .geography .geography-map__wrapper--mobile {
