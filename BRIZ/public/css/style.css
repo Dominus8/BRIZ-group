@@ -552,10 +552,47 @@ body a {
   position: relative;
 }
 
+.geography .geography-map__wrapper svg g .bounce {
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
 .geography .geography-map__wrapper svg g .r_on path:nth-child(2) {
   visibility: hidden;
-  -webkit-transition: visibility 0,5s;
-  transition: visibility 0,5s;
+  -webkit-transition: visibility 0, 5s;
+  transition: visibility 0, 5s;
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(3) {
@@ -563,20 +600,110 @@ body a {
   fill-opacity: 1;
   -webkit-transition: fill-opacity 1s;
   transition: fill-opacity 1s;
-  -webkit-transition: fill 0,5s;
-  transition: fill 0,5s;
+  -webkit-transition: fill 0, 5s;
+  transition: fill 0, 5s;
+  -webkit-animation: ropas infinite 6s linear;
+          animation: ropas infinite 6s linear;
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(4) {
   visibility: hidden;
-  -webkit-transition: visibility 0,5s;
-  transition: visibility 0,5s;
+  -webkit-transition: visibility 0, 5s;
+  transition: visibility 0, 5s;
+}
+
+.geography .geography-map__wrapper svg g .r_on path:nth-child(5) {
+  stroke-width: 1.4;
+  -webkit-animation: anime infinite 6s linear;
+          animation: anime infinite 6s linear;
+}
+
+@-webkit-keyframes anime {
+  0% {
+    stroke: #ffffff;
+  }
+  20% {
+    stroke: #7ba9e2;
+  }
+  40% {
+    stroke: #2b80e9;
+  }
+  80% {
+    stroke: #7ba9e2;
+  }
+  100% {
+    stroke: #ffffff;
+  }
+}
+
+@keyframes anime {
+  0% {
+    stroke: #ffffff;
+  }
+  20% {
+    stroke: #7ba9e2;
+  }
+  40% {
+    stroke: #2b80e9;
+  }
+  80% {
+    stroke: #7ba9e2;
+  }
+  100% {
+    stroke: #ffffff;
+  }
+}
+
+@-webkit-keyframes ropas {
+  0% {
+    opacity: 0.85;
+    fill: #002855;
+  }
+  20% {
+    opacity: 0.9;
+    fill: #003879;
+  }
+  40% {
+    opacity: 1;
+    fill: #1462bb;
+  }
+  80% {
+    opacity: 0.9;
+    fill: #003879;
+  }
+  100% {
+    opacity: 0.85;
+    fill: #002855;
+  }
+}
+
+@keyframes ropas {
+  0% {
+    opacity: 0.85;
+    fill: #002855;
+  }
+  20% {
+    opacity: 0.9;
+    fill: #003879;
+  }
+  40% {
+    opacity: 1;
+    fill: #1462bb;
+  }
+  80% {
+    opacity: 0.9;
+    fill: #003879;
+  }
+  100% {
+    opacity: 0.85;
+    fill: #002855;
+  }
 }
 
 .geography .geography-map__wrapper svg g .geoHover path:nth-child(2) {
   visibility: visible;
-  -webkit-transition: visibility 0,5s;
-  transition: visibility 0,5s;
+  -webkit-transition: visibility 0, 5s;
+  transition: visibility 0, 5s;
 }
 
 .geography .geography-map__wrapper svg g .geoHover path:nth-child(3) {
@@ -584,14 +711,14 @@ body a {
   fill-opacity: 0.7;
   -webkit-transition: fill-opacity 1s;
   transition: fill-opacity 1s;
-  -webkit-transition: fill 0,5s;
-  transition: fill 0,5s;
+  -webkit-transition: fill 0, 5s;
+  transition: fill 0, 5s;
 }
 
 .geography .geography-map__wrapper svg g .geoHover path:nth-child(4) {
   visibility: visible;
-  -webkit-transition: visibility 0,5s;
-  transition: visibility 0,5s;
+  -webkit-transition: visibility 0, 5s;
+  transition: visibility 0, 5s;
 }
 
 .geography .geography-map__wrapper--mobile {
