@@ -115,8 +115,8 @@ body {
     padding: 0 165px;
     height: 597px;
     .swiper-container {
+        margin-top: 190px;
         .swiper-wrapper {
-            margin-top: 90px;
             .swiper-slide {
                 .carousel-item {
                     display: flex;
@@ -449,20 +449,6 @@ body {
             position: relative;
             g {
                 position: relative;
-                .bounce {
-                    animation: bounce 2s infinite;
-                }
-                @keyframes bounce {
-                    0%,
-                    100% {
-                        transform: translateY(-25%);
-                        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-                    }
-                    50% {
-                        transform: translateY(0);
-                        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-                    }
-                }
                 .r_on {
                     path:nth-child(2) {
                         visibility: hidden;

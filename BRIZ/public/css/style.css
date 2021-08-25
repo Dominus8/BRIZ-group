@@ -126,8 +126,8 @@ body a {
   height: 597px;
 }
 
-.slider .swiper-container .swiper-wrapper {
-  margin-top: 90px;
+.slider .swiper-container {
+  margin-top: 190px;
 }
 
 .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
@@ -550,43 +550,6 @@ body a {
 
 .geography .geography-map__wrapper svg g {
   position: relative;
-}
-
-.geography .geography-map__wrapper svg g .bounce {
-  -webkit-animation: bounce 2s infinite;
-          animation: bounce 2s infinite;
-}
-
-@-webkit-keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(2) {
