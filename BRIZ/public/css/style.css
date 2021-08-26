@@ -127,8 +127,8 @@ body a {
   height: 597px;
 }
 
-.slider .swiper {
-  margin-top: 190px;
+.slider .swiper .swiper-wrapper {
+  margin-top: 90px;
 }
 
 .slider .swiper .swiper-wrapper .swiper-slide .carousel-item {

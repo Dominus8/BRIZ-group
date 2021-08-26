@@ -116,8 +116,9 @@ body {
     padding: 0 165px;
     height: 597px;
     .swiper {
-        margin-top: 190px;
+        // 
         .swiper-wrapper {
+            margin-top: 90px;
             .swiper-slide {
                 .carousel-item {
                     display: flex;
