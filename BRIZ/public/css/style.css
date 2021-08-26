@@ -312,14 +312,13 @@ body a {
 }
 
 .directions-item__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  justify-items: start;
+  -ms-grid-columns: (minmax(190px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
 }
 
 .directions-item__wrapper .directions-item {

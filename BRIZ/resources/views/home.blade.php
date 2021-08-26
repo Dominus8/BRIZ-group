@@ -2528,9 +2528,9 @@
     </div>
  
  <script>
-        $('.directions-item__wrapper .directions-item:last').css('margin-right','auto').css('margin-left','40px');
-        console.log($('.directions-item__wrapper .directions-item:last'));
+        // $('.directions-item__wrapper .directions-item:last').css('justify-self','start');
         
+
         a = @json($arrFoMap);
 
         a.forEach(function(item){
@@ -2564,8 +2564,6 @@
 
                 let rDesc = `${item[1]}`;
                 let rDescLengs = rDesc.length*10+10;
-                console.log(rDescLengs);
-                
 
                 var  svgns = "http://www.w3.org/2000/svg";
                 var  xlinkns = "http://www.w3.org/1999/xlink";
