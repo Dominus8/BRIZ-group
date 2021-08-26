@@ -2528,6 +2528,9 @@
     </div>
  
  <script>
+        $('.directions-item__wrapper .directions-item:last').css('margin-right','auto').css('margin-left','40px');
+        console.log($('.directions-item__wrapper .directions-item:last'));
+        
         a = @json($arrFoMap);
 
         a.forEach(function(item){
@@ -2778,6 +2781,10 @@
             }
             
         
+            
+
+            
+
             });
 
             
