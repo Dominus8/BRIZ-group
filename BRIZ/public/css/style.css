@@ -735,6 +735,27 @@ body a {
   display: none;
 }
 
+.geography .geography-map__wrapper--mobile .swiper .swiper-wrapper .swiper-slide .slide-item-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 552px;
+}
+
+.geography .geography-map__wrapper--mobile .swiper .swiper-wrapper .swiper-slide .slide-item-wrapper .image img {
+  max-width: 260px;
+}
+
 .contacts-bg {
   background: url(../../image/contact-bg.png) bottom left, no-repeat;
   background-size: cover;

@@ -2335,13 +2335,48 @@
 
                     </div>
                 <div class="geography-map__wrapper--mobile">
-                    <div class="slide-item-wrapper">
+                <div class="swiper">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Красноярск
+                            </div>
+                        </div>
+                    </div>            
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-SA.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Республика Саха
+                            </div>
+                        </div>
+                    </div>            
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-pagination"></div>
+
+                  <!-- If we need navigation buttons -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+
+                  <!-- If we need scrollbar -->
+                  <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+                    <!-- <div class="slide-item-wrapper">
                         <div class="image">
                             <img class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="">
                         </div>
                         <div class="title">Красноярск</div>
                         <div class="subtitle">Разработка и внедрение систем управления городом</div>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>
