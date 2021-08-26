@@ -32,6 +32,7 @@ body a {
 }
 
 .header {
+  z-index: 9999;
   height: 117px;
   width: 100%;
   background-color: #002B5A;
@@ -126,27 +127,27 @@ body a {
   height: 597px;
 }
 
-.slider .swiper-container {
+.slider .swiper {
   margin-top: 190px;
 }
 
-.slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
+.slider .swiper .swiper-wrapper .swiper-slide .carousel-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+.slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
   width: 535px;
   height: 393px;
 }
 
-.slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+.slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
   margin-top: 77px;
   margin-left: 41px;
 }
 
-.slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
+.slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
   font-family: 'SolomonSans-SemiBold';
   font-style: normal;
   font-weight: 600;
@@ -155,7 +156,7 @@ body a {
   text-transform: uppercase;
 }
 
-.slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+.slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
   width: 363px;
   margin-top: 20px;
   font-style: normal;
@@ -168,7 +169,7 @@ body a {
   line-height: 19px;
 }
 
-.slider .swiper-container .swiper-control-btn {
+.slider .swiper .swiper-control-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,23 +177,23 @@ body a {
   margin-top: -55px;
 }
 
-.slider .swiper-container .swiper-control-btn .btn-prev {
+.slider .swiper .swiper-control-btn .btn-prev {
   width: 48px;
   height: 48px;
   background: url("../../image/arrow-down.png") center center no-repeat;
   opacity: 0.3;
   cursor: pointer;
-  z-index: 9000;
+  z-index: 1;
 }
 
-.slider .swiper-container .swiper-control-btn .btn-next {
+.slider .swiper .swiper-control-btn .btn-next {
   margin-left: 16px;
   width: 48px;
   height: 48px;
   background-color: rgba(211, 211, 219, 0.884);
   background: url("../../image/slider-next-arrow.png") center center no-repeat;
   cursor: pointer;
-  z-index: 9000;
+  z-index: 1;
 }
 
 .numbers-bg {
@@ -375,6 +376,9 @@ body a {
   font-size: 16px;
   line-height: 19px;
   color: #002855;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .directions-item__wrapper .directions-item__title span {
@@ -1085,14 +1089,14 @@ ul {
     padding: 0 100px;
     height: 480px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
     width: 435px;
     height: 287px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
     margin-top: 0;
   }
-  .slider .swiper-container .swiper-control-btn {
+  .slider .swiper .swiper-control-btn {
     display: none;
   }
   .directions {
@@ -1103,11 +1107,17 @@ ul {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .header .header-contacts {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1050px) {
   .header .header-contacts {
     display: none;
   }
-  .slider .swiper-container .swiper-control-btn {
+  .slider .swiper .swiper-control-btn {
     display: none;
   }
   .numbers {
@@ -1148,6 +1158,24 @@ ul {
   }
 }
 
+@media screen and (max-width: 860px) {
+  .header {
+    padding: 0;
+  }
+  .header .header-content {
+    padding: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header .header-content .header-logo {
+    padding-left: 60px;
+  }
+  .header .header-content .header-nav {
+    padding-right: 60px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .header {
     padding: 0;
@@ -1164,21 +1192,18 @@ ul {
   .header .header-content .header-nav {
     padding-right: 30px;
   }
-  .header .header-content .header-contacts {
-    display: none;
-  }
   .slider {
     height: 580px;
     margin-top: 0;
     padding: 0 50px 40px 50px;
   }
-  .slider .swiper-container {
+  .slider .swiper {
     text-align: center;
   }
-  .slider .swiper-container .swiper-wrapper {
+  .slider .swiper .swiper-wrapper {
     padding-bottom: 60px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item {
     margin-top: 60px;
     text-align: center;
     -webkit-box-orient: vertical;
@@ -1186,14 +1211,14 @@ ul {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
     margin: 0;
     padding-top: 20px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     display: none;
   }
-  .slider .swiper-container .swiper-control-btn {
+  .slider .swiper .swiper-control-btn {
     display: none;
   }
   .numbers {
@@ -1215,6 +1240,50 @@ ul {
   }
   .presentations {
     padding: 0 35px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  body > div.section-outor.header-bg > div > div > div > div.header-nav > ul {
+    width: 235px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  body > div.section-outor.header-bg > div > div > div > div.header-nav > ul {
+    width: 235px;
+  }
+  .header {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+  }
+  .header .header-content {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0;
+    margin-left: -250px;
+    padding: 0;
+    width: 340px;
+  }
+  .header .header-content .header-logo {
+    margin-left: 285px;
+    padding: 0;
+  }
+  .header .header-content .header-nav {
+    display: none;
+    padding: 0;
+  }
+  .header .header-content .header-contacts {
+    display: none;
+  }
+  .header .header-content .header-nav--mobile {
+    display: block;
+  }
+  .header .header-content .header-nav--mobile .menu-bar {
+    margin-right: 30px;
+    margin-top: 36px;
   }
 }
 
@@ -1256,11 +1325,11 @@ ul {
     padding: 0;
     height: 725px;
   }
-  .slider .swiper-container {
+  .slider .swiper {
     margin-top: 0px;
     text-align: left;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item {
     text-align: left;
     margin: 15px 0;
     margin-top: 57px;
@@ -1272,23 +1341,23 @@ ul {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image {
     max-width: 428px;
     height: 388px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
     display: inline-block;
     max-width: 428px;
     height: 388px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
     padding-top: 0;
     margin: 0 15px 30px 15px !important;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
     height: 62px;
     font-style: normal;
     font-weight: 600;
@@ -1303,7 +1372,7 @@ ul {
             align-items: center;
     letter-spacing: 0.2px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     height: 77px;
     white-space: normal;
     font-style: normal;
@@ -1318,10 +1387,10 @@ ul {
         -ms-flex-align: center;
             align-items: center;
   }
-  .slider .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+  .slider .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     width: 310px;
   }
-  .slider .swiper-container .swiper-control-btn {
+  .slider .swiper .swiper-control-btn {
     display: none;
   }
   .numbers-bg {
@@ -1650,14 +1719,14 @@ ul {
 }
 
 @media screen and (max-width: 380px) {
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
     -o-object-fit: cover;
        object-fit: cover;
   }
   .menu {
     width: 75%;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     width: 353px;
     padding-right: 20px;
   }
@@ -1673,10 +1742,10 @@ ul {
   .slider {
     height: 805px;
   }
-  .slider .swiper-container {
+  .slider .swiper {
     height: 807px;
   }
-  .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     width: 300px;
     height: 96px;
   }

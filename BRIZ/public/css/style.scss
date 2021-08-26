@@ -41,6 +41,7 @@ body {
 }
 
 .header {
+    z-index: 9999;
     height: 117px;
     width: 100%;
     background-color: #002B5A;
@@ -114,7 +115,7 @@ body {
     color: white;
     padding: 0 165px;
     height: 597px;
-    .swiper-container {
+    .swiper {
         margin-top: 190px;
         .swiper-wrapper {
             .swiper-slide {
@@ -163,7 +164,7 @@ body {
                 background: url("../../image/arrow-down.png") center center no-repeat;
                 opacity: 0.3;
                 cursor: pointer;
-                z-index: 9000;
+                z-index: 1;
             }
             .btn-next {
                 margin-left: 16px;
@@ -172,7 +173,7 @@ body {
                 background-color: rgba(211, 211, 219, 0.884);
                 background: url("../../image/slider-next-arrow.png") center center no-repeat;
                 cursor: pointer;
-                z-index: 9000;
+                z-index: 1;
             }
         }
     }
@@ -310,6 +311,7 @@ body {
                 font-size: 16px;
                 line-height: 19px;
                 color: #002855;
+                hyphens: auto;
                 span {
                     margin-left: -7px;
                     margin-top: 50px;
@@ -854,7 +856,7 @@ ul {
     }
     .slider {
         padding: 0 100px;
-        .swiper-container {}
+        .swiper {}
     }
 }
 
@@ -866,7 +868,7 @@ ul {
     .slider {
         padding: 0 100px;
         height: 480px;
-        .swiper-container {
+        .swiper {
             .swiper-wrapper {
                 .swiper-slide {
                     .carousel-item {
@@ -885,7 +887,7 @@ ul {
             }
         }
     }
-    .slider .swiper-container .swiper-control-btn {
+    .slider .swiper .swiper-control-btn {
         display: none;
     }
     .directions {
@@ -896,14 +898,20 @@ ul {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .header .header-contacts {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1050px) {
     .header .header-contacts {
         display: none;
     }
-    .slider .swiper-container .swiper-control-btn {
+    .slider .swiper .swiper-control-btn {
         display: none;
     }
-    .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item {}
+    .slider .swiper .swiper-wrapper .swiper-slide .carousel-item {}
     .numbers {
         padding: 35px 165px 65px 165px;
     }
@@ -935,6 +943,23 @@ ul {
     }
 }
 
+@media screen and (max-width: 860px) {
+    .header {
+        padding: 0;
+        // position: relative;
+        .header-content {
+            padding: 0;
+            justify-content: space-between;
+            .header-logo {
+                padding-left: 60px;
+            }
+            .header-nav {
+                padding-right: 60px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 800px) {
     .header {
         padding: 0;
@@ -948,16 +973,13 @@ ul {
             .header-nav {
                 padding-right: 30px;
             }
-            .header-contacts {
-                display: none;
-            }
         }
     }
     .slider {
         height: 580px;
         margin-top: 0;
         padding: 0 50px 40px 50px;
-        .swiper-container {
+        .swiper {
             text-align: center;
             .swiper-wrapper {
                 padding-bottom: 60px;
@@ -1003,6 +1025,48 @@ ul {
     }
 }
 
+@media screen and (max-width: 590px) {
+    body>div.section-outor.header-bg>div>div>div>div.header-nav>ul {
+        width: 235px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    body>div.section-outor.header-bg>div>div>div>div.header-nav>ul {
+        width: 235px;
+    }
+    .header {
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        .header-content {
+            justify-content: space-between;
+            margin: 0;
+            margin-left: -250px;
+            padding: 0;
+            width: 340px;
+            .header-logo {
+                margin-left: 285px;
+                padding: 0;
+            }
+            .header-nav {
+                display: none;
+                padding: 0;
+            }
+            .header-contacts {
+                display: none;
+            }
+            .header-nav--mobile {
+                display: block;
+                .menu-bar {
+                    margin-right: 30px;
+                    margin-top: 36px;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 428px) {
     .header {
         position: fixed;
@@ -1039,7 +1103,7 @@ ul {
         margin: 0;
         padding: 0;
         height: 725px;
-        .swiper-container {
+        .swiper {
             margin-top: 0px;
             text-align: left;
             .swiper-wrapper {
@@ -1090,11 +1154,11 @@ ul {
                 }
             }
         }
-        .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+        .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
             width: 310px;
         }
     }
-    .slider .swiper-container .swiper-control-btn {
+    .slider .swiper .swiper-control-btn {
         display: none;
     }
     .numbers-bg {
@@ -1396,13 +1460,13 @@ ul {
 }
 
 @media screen and (max-width: 380px) {
-    .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+    .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
         object-fit: cover;
     }
     .menu {
         width: 75%;
     }
-    .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
         width: 353px;
         padding-right: 20px;
     }
@@ -1418,10 +1482,10 @@ ul {
     .slider {
         height: 805px;
     }
-    .slider .swiper-container {
+    .slider .swiper {
         height: 807px;
     }
-    .slider .swiper-container .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+    .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
         width: 300px;
         height: 96px;
     }

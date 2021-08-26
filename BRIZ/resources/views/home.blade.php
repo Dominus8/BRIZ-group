@@ -30,7 +30,7 @@
         
             <div id="head1" class="slider">
                 <!-- Slider main container -->
-                <div class="swiper-container">
+                <div class="swiper">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
@@ -2760,14 +2760,14 @@
                         sgeogg1.setAttribute("y", `${geoY}`);
                         
                         map.appendChild(sgeogg1);
-                        setTimeout(callback, 13000);
+                        
                     };
                 document.getElementById(`${item[0]}`).onmouseout = function(){
                         document.getElementById(`${item[0]}`).classList.remove('geoHover');
                         document.getElementById(`${item[0]}`).classList.add('r_on');
                         var sgeogg1 =document.getElementById(`${item[0]}`+'-sgeo');
                         sgeogg1.setAttribute("visibility", "hidden");
-                        setTimeout(callback, 13000);
+                        
                     };
                     
                     
