@@ -2335,7 +2335,7 @@
 
                     </div>
                 <div class="geography-map__wrapper--mobile">
-                <div class="swiper">
+                <div class="swiper2">
                   <!-- Additional required wrapper -->
                   <div class="swiper-wrapper">
                     <!-- Slides -->

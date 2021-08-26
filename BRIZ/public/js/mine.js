@@ -1,11 +1,28 @@
 const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
-    allowTouchMove: true,
-    spaceBetween: 0,
     loop: true,
     navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
+    },
+    breakpoints: {
+        390: {
+            spaceBetween: 200
+        },
+        320: {
+            spaceBetween: 250
+        }
+    }
+
+});
+
+const swiper2 = new Swiper('.swiper2', {
+    direction: 'horizontal',
+
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
     breakpoints: {
         390: {
