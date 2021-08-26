@@ -1,5 +1,6 @@
 const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
+    allowTouchMove: true,
     spaceBetween: 0,
     loop: true,
     navigation: {
