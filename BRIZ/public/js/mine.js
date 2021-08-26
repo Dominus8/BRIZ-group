@@ -18,7 +18,6 @@ const swiper = new Swiper('.swiper', {
 
 const swiper2 = new Swiper('.swiper2', {
     direction: 'horizontal',
-
     loop: true,
     navigation: {
         nextEl: '.swiper-button-next',

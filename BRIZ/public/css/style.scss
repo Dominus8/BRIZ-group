@@ -118,6 +118,7 @@ body {
     .swiper {
         // 
         .swiper-wrapper {
+            overflow: hidden;
             margin-top: 90px;
             .swiper-slide {
                 .carousel-item {
@@ -559,6 +560,7 @@ body {
         display: none;
         .swiper {
             .swiper-wrapper {
+                overflow: hidden;
                 .swiper-slide {
                     .slide-item-wrapper {
                         display: flex;
