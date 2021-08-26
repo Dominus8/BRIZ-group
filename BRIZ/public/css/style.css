@@ -128,7 +128,6 @@ body a {
 }
 
 .slider .swiper .swiper-wrapper {
-  overflow: hidden;
   margin-top: 90px;
 }
 
@@ -734,10 +733,6 @@ body a {
 
 .geography .geography-map__wrapper--mobile {
   display: none;
-}
-
-.geography .geography-map__wrapper--mobile .swiper .swiper-wrapper {
-  overflow: hidden;
 }
 
 .geography .geography-map__wrapper--mobile .swiper .swiper-wrapper .swiper-slide .slide-item-wrapper {
