@@ -2339,26 +2339,238 @@
                   <!-- Additional required wrapper -->
                   <div class="swiper-wrapper">
                     <!-- Slides -->
+
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="">
+                                <img class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="Красноярский">
                             </div>
                             <div class="title">
                                 Красноярск
                             </div>
                         </div>
-                    </div>            
+                    </div>
+
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-SA.svg" alt="">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-SA.svg" alt="Саха">
                             </div>
                             <div class="title">
                                 Республика Саха
                             </div>
                         </div>
-                    </div>            
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-KHA.svg" alt="Хабаровский">
+                            </div>
+                            <div class="title">
+                                Хабаровский край
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-AMU.svg" alt="Амурская">
+                            </div>
+                            <div class="title">
+                                Амурская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-ZAB.svg" alt="Забайкальский">
+                            </div>
+                            <div class="title">
+                            Забайкальский край
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-BU.svg" alt="Бурятия">
+                            </div>
+                            <div class="title">
+                            Республика бурятия
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-IRK.svg" alt="Иркутская">
+                            </div>
+                            <div class="title">
+                            Иркутская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-TY.svg" alt=" Тыва">
+                            </div>
+                            <div class="title">
+                            Республика Тыва
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/MN.svg" alt=" Монголия">
+                            </div>
+                            <div class="title">
+                            Монголия
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-KK.svg" alt=" Хакасия">
+                            </div>
+                            <div class="title">
+                            Республика Хакасия
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-AL.svg" alt="Алтай">
+                            </div>
+                            <div class="title">
+                            Республика Алтай
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-KEM.svg" alt="Кемеровская">
+                            </div>
+                            <div class="title">
+                            Кемеровская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-TOM.svg" alt="Томская">
+                            </div>
+                            <div class="title">
+                            Томская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-NVS.svg" alt="Новосибирская">
+                            </div>
+                            <div class="title">
+                            Новосибирская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-ALT.svg" alt="Алтайский">
+                            </div>
+                            <div class="title">
+                            Алтайский край
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-OMS.svg" alt="Омская">
+                            </div>
+                            <div class="title">
+                            Омская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/KZ.svg" alt="Казахстан">
+                            </div>
+                            <div class="title">
+                            Казахстан
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-SAM.svg" alt="Самарская">
+                            </div>
+                            <div class="title">
+                            Самарская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-TA.svg" alt="Татарстан">
+                            </div>
+                            <div class="title">
+                            Республика Татарстан
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-MOS.svg" alt="Московская">
+                            </div>
+                            <div class="title">
+                            Московская область
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  class="swiper-slide">
+                        <div class="slide-item-wrapper">
+                            <div class="image">
+                                <img class="animated infinite pulse delay-5s slower" src="image/RU-LEN.svg" alt="Ленинградская">
+                            </div>
+                            <div class="title">
+                            Ленинградская область
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                   <!-- If we need pagination -->
                   <div class="swiper-pagination"></div>

@@ -71,3 +71,30 @@ $(document).ready(function() {
     })
 
 });
+
+$(document).ready(function() {
+
+    $("#hd1").click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#head1").offset().top - 117
+        }, 600);
+    });
+
+    $("#mb1").click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#el1").offset().top - 117
+        }, 600);
+    });
+
+    $("#mb2").click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#el2").offset().top - 117
+        }, 600);
+    });
+
+    $("#mb3").click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#el3").offset().top - 117
+        }, 600);
+    });
+});

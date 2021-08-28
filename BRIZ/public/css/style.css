@@ -754,6 +754,7 @@ body a {
 
 .geography .geography-map__wrapper--mobile .swiper .swiper-wrapper .swiper-slide .slide-item-wrapper .image img {
   max-width: 260px;
+  min-width: 190px;
 }
 
 .contacts-bg {
@@ -797,11 +798,6 @@ body a {
   width: 419px;
   min-height: 160px;
   padding-left: 25px;
-}
-
-.contacts-items-wrapper .item__img img {
-  width: 111px;
-  height: 26px;
 }
 
 .contacts-items-wrapper .item__description {
