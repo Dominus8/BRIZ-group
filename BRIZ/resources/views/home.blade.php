@@ -30,7 +30,7 @@
         
             <div id="head1" class="slider">
                 <!-- Slider main container -->
-                <div class="swiper">
+                <div class="swiper swiper2">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
@@ -2335,7 +2335,7 @@
 
                     </div>
                 <div class="geography-map__wrapper--mobile">
-                <div class="swiper2">
+                <div class="swiper swiper2">
                   <!-- Additional required wrapper -->
                   <div class="swiper-wrapper">
                     <!-- Slides -->
