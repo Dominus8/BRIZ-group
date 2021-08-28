@@ -250,7 +250,7 @@ class MainController extends Controller
         if($request->file('contact_image')){
             $image = $request->file('contact_image')->store('storage', 'contacts_image');
 
-            $img = Image::make( $request->file('contact_image'))->resize(111, 26)->save('storage/contacts_image/'.$image);
+            $img = Image::make( $request->file('contact_image'))->save('storage/contacts_image/'.$image); //->resize(111, 26)
 
             Storage::disk('contacts_image')->delete(ContactModel::find($id)->contact_image);
 
