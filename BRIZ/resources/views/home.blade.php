@@ -2999,7 +2999,7 @@
 
                 
  
-                let timeOut = document.getElementById(`${item[0]}`).onmouseover = function onMouse(){
+                let timeOut = document.getElementById(`${item[0]}`).onmouseenter = function onMouse(){
                         document.getElementById(`${item[0]}`).classList.add('geoHover');
                         document.getElementById(`${item[0]}`).classList.remove('r_on');
                         var sgeogg1 =document.getElementById(`${item[0]}`+'-sgeo');
@@ -3010,7 +3010,7 @@
                         map.appendChild(sgeogg1);
                         
                     };
-                document.getElementById(`${item[0]}`).onmouseout = function(){
+                document.getElementById(`${item[0]}`).onmouseleave = function(){
                         document.getElementById(`${item[0]}`).classList.remove('geoHover');
                         document.getElementById(`${item[0]}`).classList.add('r_on');
                         var sgeogg1 =document.getElementById(`${item[0]}`+'-sgeo');
