@@ -1274,7 +1274,7 @@ ul {
         background: url(../../image/categories_bg-min.png) repeat, #002B5A;
     }
     .directions {
-        padding: 50px 15px 40px 15px;
+        padding: 50px 20px 40px 20px;
         .directions-title {
             padding: 0;
             margin-top: 0;
@@ -1514,6 +1514,9 @@ ul {
         width: 353px;
         padding-right: 20px;
     }
+    .directions {
+        padding: 50px 15px 40px 15px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -1530,8 +1533,13 @@ ul {
         height: 807px;
     }
     .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+        padding-top: 40px;
         width: 300px;
         height: 96px;
+    }
+    .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
+        padding-top: 20px;
+
     }
     .directions .directions-item__wrapper .directions-item {
         min-height: 396px;
