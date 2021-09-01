@@ -967,17 +967,15 @@ body a {
 }
 
 .footer .footer-logos__wrapper {
+  display: none;
   width: 533px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .footer .footer-logos__copywrite {
-  margin-top: 150px;
+  margin-top: 177px;
   text-align: right;
   font-family: 'Solomon-Sans' Normal;
   font-style: normal;
@@ -1309,6 +1307,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 530px) {
+  #el1 > div > div > div.numbers-item--8 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 520px) {
   body > div.section-outor.header-bg > div > div > div > div.header-nav > ul {
     width: 235px;
@@ -1348,6 +1352,11 @@ ul {
 }
 
 @media screen and (max-width: 428px) {
+  #el1 > div > div > div.numbers-item--8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .header {
     position: fixed;
     padding: 0;

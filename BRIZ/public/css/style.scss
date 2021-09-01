@@ -759,13 +759,13 @@ body {
     }
     .footer-logos {
         &__wrapper {
+            display: none;
             width: 533px;
-            display: flex;
             justify-content: space-between;
             .logo {}
         }
         &__copywrite {
-            margin-top: 150px;
+            margin-top: 177px;
             text-align: right;
             font-family: 'Solomon-Sans' Normal;
             font-style: normal;
@@ -1075,6 +1075,12 @@ ul {
     }
 }
 
+@media screen and (max-width: 530px) {
+    #el1>div>div>div.numbers-item--8 {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 520px) {
     body>div.section-outor.header-bg>div>div>div>div.header-nav>ul {
         width: 235px;
@@ -1112,6 +1118,9 @@ ul {
 }
 
 @media screen and (max-width: 428px) {
+    #el1>div>div>div.numbers-item--8 {
+        display: flex;
+    }
     .header {
         position: fixed;
         padding: 0;
@@ -1539,7 +1548,6 @@ ul {
     }
     .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
         padding-top: 20px;
-
     }
     .directions .directions-item__wrapper .directions-item {
         min-height: 396px;

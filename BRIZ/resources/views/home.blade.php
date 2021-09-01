@@ -2490,7 +2490,7 @@
                 var geoY = dik.y+dh-50;
 
                 let rDesc = `${item[1]}`;
-                let rDescLengs = rDesc.length*10+10;
+                let rDescLengs = rDesc.length*10+20;
 
                 var  svgns = "http://www.w3.org/2000/svg";
                 var  xlinkns = "http://www.w3.org/1999/xlink";
@@ -2552,7 +2552,7 @@
                     group1.appendChild(g1t1);
                 
                 geoGroup.appendChild(group1);
-                //+_+_+_+_
+                //+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
 
             // //содержимое второй группы
 
