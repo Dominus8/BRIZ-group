@@ -193,7 +193,7 @@
                 <div class="geography-title">география</div>
                 <div id='mapWrap' class="geography-map__wrapper">
                     <div class="geo animated bounce slower wow bounceInDown" id="geo1" ></div> <!--style="display: none;"-->
-                    <svg id='svWrapp' width="100%" height="100%" viewBox="0 0 1110 635" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <svg id='svWrapp' loading="lazy" width="100%" height="100%" viewBox="0 0 1110 635" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <style>
                       .gri {font: normal||500 14px/16px SolomonSans-Regular; fill: #302E2C;}
                     </style>
@@ -2165,7 +2165,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="Красноярский">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/kras-mob-slider.svg" alt="Красноярский">
                             </div>
                             <div class="title">
                                 Красноярск
@@ -2176,7 +2176,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-SA.svg" alt="Саха">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-SA.svg" alt="Саха">
                             </div>
                             <div class="title">
                                 Республика Саха
@@ -2187,7 +2187,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-KHA.svg" alt="Хабаровский">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-KHA.svg" alt="Хабаровский">
                             </div>
                             <div class="title">
                                 Хабаровский край
@@ -2198,7 +2198,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-AMU.svg" alt="Амурская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-AMU.svg" alt="Амурская">
                             </div>
                             <div class="title">
                                 Амурская область
@@ -2209,7 +2209,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-ZAB.svg" alt="Забайкальский">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-ZAB.svg" alt="Забайкальский">
                             </div>
                             <div class="title">
                             Забайкальский край
@@ -2220,7 +2220,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-BU.svg" alt="Бурятия">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-BU.svg" alt="Бурятия">
                             </div>
                             <div class="title">
                             Республика бурятия
@@ -2231,7 +2231,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-IRK.svg" alt="Иркутская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-IRK.svg" alt="Иркутская">
                             </div>
                             <div class="title">
                             Иркутская область
@@ -2242,7 +2242,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-TY.svg" alt=" Тыва">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-TY.svg" alt=" Тыва">
                             </div>
                             <div class="title">
                             Республика Тыва
@@ -2253,7 +2253,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/MN.svg" alt=" Монголия">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/MN.svg" alt=" Монголия">
                             </div>
                             <div class="title">
                             Монголия
@@ -2264,7 +2264,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-KK.svg" alt=" Хакасия">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-KK.svg" alt=" Хакасия">
                             </div>
                             <div class="title">
                             Республика Хакасия
@@ -2275,7 +2275,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-AL.svg" alt="Алтай">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-AL.svg" alt="Алтай">
                             </div>
                             <div class="title">
                             Республика Алтай
@@ -2286,7 +2286,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-KEM.svg" alt="Кемеровская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-KEM.svg" alt="Кемеровская">
                             </div>
                             <div class="title">
                             Кемеровская область
@@ -2297,7 +2297,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-TOM.svg" alt="Томская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-TOM.svg" alt="Томская">
                             </div>
                             <div class="title">
                             Томская область
@@ -2308,7 +2308,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-NVS.svg" alt="Новосибирская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-NVS.svg" alt="Новосибирская">
                             </div>
                             <div class="title">
                             Новосибирская область
@@ -2319,7 +2319,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-ALT.svg" alt="Алтайский">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-ALT.svg" alt="Алтайский">
                             </div>
                             <div class="title">
                             Алтайский край
@@ -2330,7 +2330,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-OMS.svg" alt="Омская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-OMS.svg" alt="Омская">
                             </div>
                             <div class="title">
                             Омская область
@@ -2341,7 +2341,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/KZ.svg" alt="Казахстан">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/KZ.svg" alt="Казахстан">
                             </div>
                             <div class="title">
                             Казахстан
@@ -2352,7 +2352,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-SAM.svg" alt="Самарская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-SAM.svg" alt="Самарская">
                             </div>
                             <div class="title">
                             Самарская область
@@ -2363,7 +2363,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-TA.svg" alt="Татарстан">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-TA.svg" alt="Татарстан">
                             </div>
                             <div class="title">
                             Республика Татарстан
@@ -2374,7 +2374,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-MOS.svg" alt="Московская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-MOS.svg" alt="Московская">
                             </div>
                             <div class="title">
                             Московская область
@@ -2385,7 +2385,7 @@
                     <div  class="swiper-slide">
                         <div class="slide-item-wrapper">
                             <div class="image">
-                                <img class="animated infinite pulse delay-5s slower" src="image/RU-LEN.svg" alt="Ленинградская">
+                                <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-LEN.svg" alt="Ленинградская">
                             </div>
                             <div class="title">
                             Ленинградская область
@@ -2429,7 +2429,7 @@
                     @foreach($contact as $el)
                     <div class="item">
                         <div class="item__img">
-                            <img src="/storage/contacts_image/{{$el->contact_image}}" alt="">
+                            <img loading="lazy" src="/storage/contacts_image/{{$el->contact_image}}" alt="">
                         </div>
                         <div class="item__description">{{$el->contact_body}}</div>
                         <div class="item__number">{{$el->contact_phone}}</div>
@@ -2440,7 +2440,7 @@
                     @else
                     <div class="item">
                         <div class="item__img">
-                        <img src="image//c-plug.jpg" alt="Изображение">
+                        <img loading="lazy" src="image//c-plug.jpg" alt="Изображение">
                         </div>
                         <div class="item__description">
                             Адрес карточки контакта
