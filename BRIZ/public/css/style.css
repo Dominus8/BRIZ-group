@@ -1,4 +1,11 @@
 @import url(/css/font.css);
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+
 body {
   font-family: 'SolomonSans-Regular';
 }

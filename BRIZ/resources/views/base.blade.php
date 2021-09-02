@@ -24,8 +24,19 @@
     <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
     <link rel="preload" href="/css/swiper-bundle.min.css" as="style" />
 
-    <script async src="js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script async src="js/jquery-3.6.0.min.js"></script>
     <script async src="js/d3.v7.min.js"></script>
+    <script>
+        el=document.getElementById('bb');
+        console.log(el);
+        // el.classList.add('js-loading');
+
+        window.addEventListener("load", showPage, false);
+
+        function showPage() {
+        // el.classList.remove('js-loading');
+}
+    </script>
 
     
     
@@ -36,7 +47,7 @@
     @yield('style')
 </head>
 
-<body>
+<body id="bb">
     
 
     <!-- header -->
@@ -200,12 +211,24 @@
     <!-- js include -->
 
 
-    <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script async src="js/bootstrap.bundle.min.js"></script>
     
-    <script src="/js/wow.min.js"></script>
+    <script async src="/js/wow.min.js"></script>
     
     <script src="js/swiper-bundle.min.js"></script>
-    <script src="/js/mine.js"></script>
+    <script async src="/js/mine.js"></script>
+
+    <script>
+        el=document.getElementById('bb');
+        
+        el.classList.add('js-loading');
+
+        window.addEventListener("load", showPage, false);
+
+        function showPage() {
+        el.classList.remove('js-loading');
+}
+    </script>
 </body>
 
 </html>
