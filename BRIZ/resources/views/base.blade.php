@@ -11,13 +11,21 @@
     <meta content='width' name='MobileOptimized'/>
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <!-- normalize -->
-    <link href="/css/normalize.css" rel="stylesheet" type="text/css" >
-    <link href="/css/animate.min.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="/css/normalize.css"  type="text/css" >
+    <link rel="preload" href="/css/normalize.css" as="style" />
+
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css" >
+    <link rel="preload" href="/css/animate.min.css" as="style" />
+
     <!-- mine css -->
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="preload" href="/css/style.css" as="style" />
+
     <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
-    <script src="js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/d3.v7.min.js"></script>
+    <link rel="preload" href="/css/swiper-bundle.min.css" as="style" />
+
+    <script async src="js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script async src="js/d3.v7.min.js"></script>
 
     
     
