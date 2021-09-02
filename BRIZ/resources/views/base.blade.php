@@ -14,10 +14,15 @@
     <link href="/css/normalize.css" rel="stylesheet" type="text/css" >
     <link href="/css/animate.min.css" rel="stylesheet" type="text/css" >
     <!-- mine css -->
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preload" href="/css/style.css" as="style"  type="text/css">
+    <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.css" as="style" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        window.onload=function(){
+            document.getElementById('mapWrap').style.display='block';
+        }
+    </script>
     
     
     @yield('head-link')
