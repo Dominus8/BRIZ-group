@@ -12,7 +12,12 @@ const swiper = new Swiper('.swiper1', {
         320: {
             spaceBetween: 250
         }
-    }
+    },
+    autoplay: {
+        delay: 5000,
+
+    },
+    speed: 1500,
 
 });
 
@@ -30,7 +35,12 @@ const swiper2 = new Swiper('.swiper2', {
         320: {
             spaceBetween: 250
         }
-    }
+    },
+    autoplay: {
+        delay: 5000,
+
+    },
+    speed: 1000,
 
 });
 

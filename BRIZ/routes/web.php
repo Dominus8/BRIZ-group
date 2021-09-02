@@ -52,13 +52,13 @@ Route::get('/admin/dell-directions-card/{id}', [MainController::class, 'dell_dir
 // Создание карточек Контактов
 Route::post('/admin/create-contact', [MainController::class, 'create_contact']) ->name('create_contact')->middleware('auth');
 
-//Изменение карточек направления
+//Изменение карточек Контактов
 Route::get('/admin/edit-contact/{id}', [MainController::class, 'edit_contact']) ->name('edit_contact')->middleware('auth');
 
-//Обновление карточек направления
+//Обновление карточек Контактов
 Route::post('/admin/update-contact/{id}', [MainController::class, 'update_contact']) ->name('update_contact')->middleware('auth');
 
-//Удаление карточек направления
+//Удаление карточек Контактов
 Route::get('/admin/dell-contact/{id}', [MainController::class, 'dell_contact']) ->name('dell_contact')->middleware('auth');
 
 
@@ -68,7 +68,7 @@ Route::get('/admin/dell-contact/{id}', [MainController::class, 'dell_contact']) 
 Route::post('/admin/create-presentation', [MainController::class, 'create_presentation']) ->name('create-presentation')->middleware('auth'); 
 
 //Скачивание презентации
-Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation')->middleware('auth');
+Route::get('/download/download-presentation/{id}', [MainController::class, 'download_presentation']) ->name('download-presentation'); //->middleware('auth')
 
 //Изменение презентации
 Route::get('/admin/edit-presentation/{id}', [MainController::class, 'edit_presentation']) ->name('edit-presentation')->middleware('auth');
