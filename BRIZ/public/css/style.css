@@ -577,6 +577,8 @@ body a {
   transition: fill 0, 5s;
   -webkit-animation: ropas infinite 6s linear;
           animation: ropas infinite 6s linear;
+  -webkit-animation-delay: 0.00001s;
+          animation-delay: 0.00001s;
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(4) {
@@ -589,6 +591,8 @@ body a {
   stroke-width: 1.4;
   -webkit-animation: anime infinite 6s linear;
           animation: anime infinite 6s linear;
+  -webkit-animation-delay: 0.00001s;
+          animation-delay: 0.00001s;
 }
 
 @-webkit-keyframes anime {

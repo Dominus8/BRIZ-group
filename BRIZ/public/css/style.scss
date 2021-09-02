@@ -471,6 +471,7 @@ body {
                         transition: fill-opacity 1s;
                         transition: fill 0, 5s;
                         animation: ropas infinite 6s linear;
+                        animation-delay: 0.00001s;
                     }
                     path:nth-child(4) {
                         visibility: hidden;
@@ -479,6 +480,7 @@ body {
                     path:nth-child(5) {
                         stroke-width: 1.4;
                         animation: anime infinite 6s linear;
+                        animation-delay: 0.00001s;
                     }
                     @keyframes anime {
                         0% {
