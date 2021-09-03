@@ -26,8 +26,7 @@
 
     <script async src="js/jquery-3.6.0.min.js"></script>
     <script async src="js/d3.v7.min.js"></script>
-    <script async src="js/jquery.lazy.min.js"></script>
-    <script async src="js/jquery.lazy.plugins.min.js"></script>
+
 
     
     
