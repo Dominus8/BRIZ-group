@@ -108,3 +108,13 @@ $(document).ready(function() {
         }, 600);
     });
 });
+
+// $(document).ready(function() {
+//     $(function() {
+//         $("#mapWrap").Lazy();
+//     });
+// });
+$('.r_on').addClass("r_load");
+$(window).on('load', function() {
+    $('.r_on').removeClass("r_load");
+});

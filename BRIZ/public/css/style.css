@@ -549,6 +549,16 @@ body a {
   color: #002855;
 }
 
+.geography-title .preloader {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.geography-title .preloader-remove {
+  -webkit-animation-play-state: start;
+          animation-play-state: start;
+}
+
 .geography .geography-map__wrapper {
   margin-top: 65px;
   position: relative;
@@ -560,6 +570,11 @@ body a {
 
 .geography .geography-map__wrapper svg g {
   position: relative;
+}
+
+.geography .geography-map__wrapper svg g .r_load {
+  -webkit-animation-delay: 50s;
+          animation-delay: 50s;
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(2) {
@@ -577,8 +592,6 @@ body a {
   transition: fill 0, 5s;
   -webkit-animation: ropas infinite 6s linear;
           animation: ropas infinite 6s linear;
-  -webkit-animation-delay: 0.00001s;
-          animation-delay: 0.00001s;
 }
 
 .geography .geography-map__wrapper svg g .r_on path:nth-child(4) {
@@ -591,8 +604,6 @@ body a {
   stroke-width: 1.4;
   -webkit-animation: anime infinite 6s linear;
           animation: anime infinite 6s linear;
-  -webkit-animation-delay: 0.00001s;
-          animation-delay: 0.00001s;
 }
 
 @-webkit-keyframes anime {
@@ -1405,11 +1416,11 @@ ul {
     padding: 0;
     height: 725px;
   }
-  .slider .swiper {
+  .slider .swiper1 {
     margin-top: 0px;
     text-align: left;
   }
-  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item {
+  .slider .swiper1 .swiper-wrapper .swiper-slide .carousel-item {
     text-align: left;
     margin: 15px 0;
     margin-top: 57px;
@@ -1421,23 +1432,25 @@ ul {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image {
+  .slider .swiper1 .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image {
     max-width: 428px;
     height: 388px;
   }
-  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
+  .slider .swiper1 .swiper-wrapper .swiper-slide .carousel-item .carousel-item__image img {
     display: inline-block;
     max-width: 428px;
     height: 388px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
-  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
+  .slider .swiper1 .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content {
     padding-top: 0;
     margin: 0 15px 30px 15px !important;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
+  .slider .swiper1 .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__title {
     height: 62px;
     font-style: normal;
     font-weight: 600;
@@ -1452,7 +1465,7 @@ ul {
             align-items: center;
     letter-spacing: 0.2px;
   }
-  .slider .swiper .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
+  .slider .swiper1 .swiper-wrapper .swiper-slide .carousel-item .carousel-item__content .item-content__subtitle {
     height: 77px;
     white-space: normal;
     font-style: normal;

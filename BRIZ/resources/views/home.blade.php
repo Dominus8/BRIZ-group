@@ -191,9 +191,9 @@
         <div class="section-inner">
             <div class="geography">
                 <div class="geography-title">география</div>
-                <div id='mapWrap' class="geography-map__wrapper">
-                    <div class="geo animated bounce slower wow bounceInDown" id="geo1" ></div> <!--style="display: none;"-->
-                    <svg id='svWrapp' loading="lazy" width="100%" height="100%" viewBox="0 0 1110 635" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <div id='mapWrap' class="geography-map__wrapper preloader">
+
+                    <svg id='svWrapp' width="100%" height="100%" viewBox="0 0 1110 635" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <style>
                       .gri {font: normal||500 14px/16px SolomonSans-Regular; fill: #302E2C;}
                     </style>

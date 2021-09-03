@@ -26,17 +26,8 @@
 
     <script async src="js/jquery-3.6.0.min.js"></script>
     <script async src="js/d3.v7.min.js"></script>
-    <script>
-        el=document.getElementById('bb');
-        console.log(el);
-        // el.classList.add('js-loading');
-
-        window.addEventListener("load", showPage, false);
-
-        function showPage() {
-        // el.classList.remove('js-loading');
-}
-    </script>
+    <script async src="js/jquery.lazy.min.js"></script>
+    <script async src="js/jquery.lazy.plugins.min.js"></script>
 
     
     
@@ -216,7 +207,7 @@
     <script async src="/js/wow.min.js"></script>
     
     <script src="js/swiper-bundle.min.js"></script>
-    <script async src="/js/mine.js"></script>
+    <script src="/js/mine.js"></script>
 
     <script>
         el=document.getElementById('bb');

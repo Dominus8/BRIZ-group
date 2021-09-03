@@ -452,6 +452,12 @@ body {
         text-transform: uppercase;
         letter-spacing: 0.2px;
         color: #002855;
+        .preloader {
+            animation-play-state: paused;
+        }
+        .preloader-remove {
+            animation-play-state: start;
+        }
     }
     .geography-map__wrapper {
         margin-top: 65px;
@@ -460,6 +466,9 @@ body {
             position: relative;
             g {
                 position: relative;
+                .r_load {
+                    animation-delay: 50s;
+                }
                 .r_on {
                     path:nth-child(2) {
                         visibility: hidden;
@@ -471,7 +480,6 @@ body {
                         transition: fill-opacity 1s;
                         transition: fill 0, 5s;
                         animation: ropas infinite 6s linear;
-                        animation-delay: 0.00001s;
                     }
                     path:nth-child(4) {
                         visibility: hidden;
@@ -480,7 +488,6 @@ body {
                     path:nth-child(5) {
                         stroke-width: 1.4;
                         animation: anime infinite 6s linear;
-                        animation-delay: 0.00001s;
                     }
                     @keyframes anime {
                         0% {
@@ -1037,6 +1044,9 @@ ul {
                 padding-bottom: 60px;
                 .swiper-slide {
                     .carousel-item {
+                        .carousel-item__image {
+                            // max-width: auto;
+                        }
                         margin-top: 60px;
                         text-align: center;
                         flex-direction: column;
@@ -1164,7 +1174,7 @@ ul {
         margin: 0;
         padding: 0;
         height: 725px;
-        .swiper {
+        .swiper1 {
             margin-top: 0px;
             text-align: left;
             .swiper-wrapper {
@@ -1182,6 +1192,7 @@ ul {
                                 display: inline-block;
                                 max-width: 428px;
                                 height: 388px;
+                                object-fit: cover;
                             }
                         }
                         .carousel-item__content {
