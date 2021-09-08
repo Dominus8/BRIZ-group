@@ -922,6 +922,9 @@ ul {
 @media screen and (max-width: 1250px) {
     .header {
         padding: 0;
+        .header-contacts {
+            display: none;
+        }
     }
     .header-content {}
     .slider {

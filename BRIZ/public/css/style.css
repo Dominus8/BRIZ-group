@@ -1165,6 +1165,9 @@ ul {
   .header {
     padding: 0;
   }
+  .header .header-contacts {
+    display: none;
+  }
   .slider {
     padding: 0 100px;
     height: 480px;
