@@ -103,6 +103,9 @@ body {
         font-weight: normal;
         font-size: 16px;
         line-height: 19px;
+        .header-contacts_phone_number {
+            white-space: nowrap;
+        }
     }
 }
 

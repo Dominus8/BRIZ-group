@@ -118,6 +118,10 @@ body a {
   line-height: 19px;
 }
 
+.header .header-contacts .header-contacts_phone_number {
+  white-space: nowrap;
+}
+
 .slider-outer {
   width: 100%;
 }
