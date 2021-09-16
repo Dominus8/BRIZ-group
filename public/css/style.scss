@@ -103,6 +103,9 @@ body {
         font-weight: normal;
         font-size: 16px;
         line-height: 19px;
+        .header-contacts_phone_number {
+            white-space: nowrap;
+        }
     }
 }
 
@@ -922,6 +925,9 @@ ul {
 @media screen and (max-width: 1250px) {
     .header {
         padding: 0;
+        .header-contacts {
+            display: none;
+        }
     }
     .header-content {}
     .slider {
