@@ -36,14 +36,69 @@ class MainController extends Controller
         return view('home',['slides'=>$slides->all()],['directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'arrFoMap'=>$arrFoMap]);
     }
 // Проброс данных в админку
-    public function admin(){
+    public function admin_base(){
         $slide = new SlideModel();
         $directions_card = new DirectionsCardModel();
         $contact = new ContactModel();
         $presentation = new PresentationModel();
         $map= new MapModel();
 
-        return view('admin',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
+        return view('adminbase',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
+    }
+
+// Управление слайдами
+    public function admin_slides(){
+        $slide = new SlideModel();
+        $directions_card = new DirectionsCardModel();
+        $contact = new ContactModel();
+        $presentation = new PresentationModel();
+        $map= new MapModel();
+
+        return view('adminslides',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
+    }
+
+// Управление картачками
+    public function admin_cards(){
+        $slide = new SlideModel();
+        $directions_card = new DirectionsCardModel();
+        $contact = new ContactModel();
+        $presentation = new PresentationModel();
+        $map= new MapModel();
+
+        return view('admincards',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
+    }
+
+// Управление контакты
+    public function admin_contacts(){
+        $slide = new SlideModel();
+        $directions_card = new DirectionsCardModel();
+        $contact = new ContactModel();
+        $presentation = new PresentationModel();
+        $map= new MapModel();
+
+        return view('admincontacts',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
+    }
+
+// Управление презентациями
+    public function admin_presentation(){
+        $slide = new SlideModel();
+        $directions_card = new DirectionsCardModel();
+        $contact = new ContactModel();
+        $presentation = new PresentationModel();
+        $map= new MapModel();
+
+        return view('adminpresentation',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
+    }
+
+// Управление презентациями
+    public function admin_map(){
+        $slide = new SlideModel();
+        $directions_card = new DirectionsCardModel();
+        $contact = new ContactModel();
+        $presentation = new PresentationModel();
+        $map= new MapModel();
+
+        return view('adminmap',['slide'=>$slide->all(),'directions_card'=>$directions_card->all(),'contact'=>$contact->all(),'presentation'=>$presentation->all(),'map'=>$map->all()]);
     }
 
 // Для просмотра и загрузки презентаций
@@ -73,7 +128,7 @@ class MainController extends Controller
 
         $slide->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-slides');
     }
 
 // Для редактирования слайда
@@ -112,7 +167,7 @@ class MainController extends Controller
 
         $slide->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-slides');
     }
 
 // Для удаления слайда
@@ -124,7 +179,7 @@ class MainController extends Controller
 
         $slide->delete();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-slides');
     }
 
 //Создание карточки направления
@@ -148,7 +203,7 @@ class MainController extends Controller
 
         $directions_card->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-cards');
     }
 
 // Для редактирования карточки направления
@@ -187,7 +242,7 @@ class MainController extends Controller
 
         $directions_card->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-cards');
     }
 
 // Для удаления карточек направления
@@ -200,7 +255,7 @@ class MainController extends Controller
         
         $dcard->delete();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-cards');
 
     }
     
@@ -226,7 +281,7 @@ class MainController extends Controller
     
             $contact->save();
     
-            return redirect()->route('admin');
+            return redirect()->route('admin-contacts');
 
     }
 
@@ -266,7 +321,7 @@ class MainController extends Controller
 
         $contact->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-contacts');
 }
 
 // Для удаления карточек контактов
@@ -278,7 +333,7 @@ class MainController extends Controller
             
             $contact->delete();
 
-            return redirect()->route('admin');
+            return redirect()->route('admin-contacts');
 
         }
 
@@ -303,7 +358,7 @@ class MainController extends Controller
 
             $presentation->save();
 
-            return redirect()->route('admin');
+            return redirect()->route('admin-presentation');
     }
 
 // Редактирование карточки направления
@@ -343,7 +398,7 @@ class MainController extends Controller
 
         $presentation->save();
 
-        return redirect()->route('admin');
+        return redirect()->route('admin-presentation');
     }
 
 // Для удаления презентации
@@ -357,7 +412,7 @@ class MainController extends Controller
             
             $presentation->delete();
 
-            return redirect()->route('admin');
+            return redirect()->route('admin-presentation');
 
         }
 
@@ -489,10 +544,10 @@ class MainController extends Controller
             DB::table('map_models')->whereIn('id_region',$keys)->update(["status_region"=>1]);
             DB::table('map_models')->whereNotIn('id_region',$keys)->update(["status_region"=>0]);
             
-            return redirect()->route('admin');
+            return redirect()->route('admin-map');
         }
 
-// Для завершения даминской сессии
+// Для завершения админской сессии
         public function logout(Request $request){
             Auth::logout();
             return redirect('/');
