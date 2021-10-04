@@ -2223,7 +2223,7 @@
                                 <img loading="lazy" class="animated infinite pulse delay-5s slower" src="image/RU-BU.svg" alt="Бурятия">
                             </div>
                             <div class="title">
-                            Республика бурятия
+                            Республика Бурятия
                             </div>
                         </div>
                     </div>

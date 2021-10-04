@@ -20,7 +20,12 @@ Route::get('/', [MainController::class, 'home']);
 
 Route::get('/download', [MainController::class, 'download']);
 
-Route::get('/admin', [MainController::class, 'admin']) ->name('admin')->middleware('auth');
+Route::get('/admin', [MainController::class, 'admin_base']) ->name('admin-base')->middleware('auth');
+Route::get('/admin-slides', [MainController::class, 'admin_slides']) ->name('admin-slides')->middleware('auth');
+Route::get('/admin-cards', [MainController::class, 'admin_cards']) ->name('admin-cards')->middleware('auth');
+Route::get('/admin-contacts', [MainController::class, 'admin_contacts']) ->name('admin-contacts')->middleware('auth');
+Route::get('/admin-presentation', [MainController::class, 'admin_presentation']) ->name('admin-presentation')->middleware('auth');
+Route::get('/admin-map', [MainController::class, 'admin_map']) ->name('admin-map')->middleware('auth');
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
