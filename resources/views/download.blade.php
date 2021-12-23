@@ -31,11 +31,15 @@
                         <div class="presentation-item__image">
                             <img src="/storage/presentation_image/{{$el->presentation_image}}" alt="">
                         </div>
-
+                        @if(strlen($el->presentation_title) > 55)
+                        <div style="font-size:12px; line-height: 15px;" class="presentation-item__title">
+                            {{$el->presentation_title}}
+                        </div>
+                        @else
                         <div class="presentation-item__title">
                             {{$el->presentation_title}}
                         </div>
-
+                        @endif
                         <div class="presentation-item__subtitle">
                             {{$el->presentation_subtitle}}
                         </div>
