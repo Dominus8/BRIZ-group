@@ -100,12 +100,10 @@ Route::post('/test', function(Request $request){
         echo( $x.'&nbsp-&nbsp'.$y.'<br>');
 
     }
-    
-
 });
 
-Auth::routes();
+Auth::routes(['register' => false]); // регистрация отключена 
 
-Route::get('/home', [MainController::class, 'admin'])->name('home');
+Route::get('/home', [MainController::class, 'admin_base'])->name('home');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
