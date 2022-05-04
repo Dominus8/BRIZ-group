@@ -23,6 +23,7 @@
             <!--Список существующих слайдов-->
             @foreach($slide as $el)
                 <div class="manage-element slide">
+                    <img style="width:35px; height:35px" src="storage/slider_image/{{$el->slide_image}}" alt="alt">
                     <h6>{{$el->slide_title }}</h6>
                     <a class='btn btn-warning' href="/admin/edit-slide/{{$el->id}}">edit</a>
                     <a class='btn btn-danger' href="/admin/dell-slide/{{$el->id}}">x</a>
